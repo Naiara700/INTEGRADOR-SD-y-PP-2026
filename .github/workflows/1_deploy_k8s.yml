@@ -1,0 +1,56 @@
+name: 1 - Deploy K8s Infrastructure
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Pilar3/infra/**'
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  TF_VAR_project_id: ${{ secrets.GCP_PROJECT_ID }}
+  WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+  SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+jobs:
+  opentofu:
+    name: Provision GKE Cluster with OpenTofu
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write' # Requerido para Workload Identity
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Zero static keys: autenticación vía Workload Identity
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v2'
+        with:
+          workload_identity_provider: '${{ env.WORKLOAD_IDENTITY_PROVIDER }}'
+          service_account: '${{ env.SERVICE_ACCOUNT }}'
+
+      - name: Setup OpenTofu
+        uses: opentofu/setup-opentofu@v1
+        with:
+          tofu_version: 1.6.0
+
+      - name: Tofu Init
+        working-directory: Pilar3/infra
+        run: tofu init
+
+      - name: Tofu Format Check
+        working-directory: Pilar3/infra
+        run: tofu fmt -check
+
+      - name: Tofu Validate
+        working-directory: Pilar3/infra
+        run: tofu validate
+
+      - name: Tofu Apply
+        working-directory: Pilar3/infra
+        run: tofu apply -auto-approve
