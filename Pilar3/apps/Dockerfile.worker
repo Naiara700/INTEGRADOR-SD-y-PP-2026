@@ -1,0 +1,52 @@
+# ==========================================
+# Etapa 1: Builder (Compilación de CUDA)
+# ==========================================
+# Usar la imagen de desarrollo completa que incluye nvcc y cabeceras
+FROM nvidia/cuda:12.4.1-devel-ubuntu22.04 AS builder
+
+WORKDIR /build
+
+# Copiar únicamente los recursos requeridos para compilar el código de minería
+# Utiliza rutas relativas desde la raíz del repositorio
+COPY include/ /build/include/
+COPY Hit7/ /build/Hit7/
+
+# Compilar nativamente hit7_cuda para Linux
+RUN nvcc -I/build/include/crypto-c -I/build/include /build/Hit7/hit7_cuda.cu -o hit7_cuda
+
+# ==========================================
+# Etapa 2: Runtime (Imagen final de ejecución)
+# ==========================================
+# Usar la imagen de runtime de CUDA que es considerablemente más ligera
+FROM nvidia/cuda:12.4.1-runtime-ubuntu22.04
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+# Crear usuario y grupo sin privilegios
+RUN groupadd --system --gid 10001 appgroup && \
+    useradd --system --uid 10001 --gid 10001 --create-home --shell /bin/bash appuser
+
+WORKDIR /app
+
+# Instalar únicamente el runtime de Python (sin python3-dev ni compiladores adicionales)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Cachear dependencias de Python copiando y compilando desde la raíz
+COPY --chown=10001:10001 requirements.txt ./
+RUN pip3 install --no-cache-dir --upgrade pip && \
+    pip3 install --no-cache-dir -r requirements.txt
+
+# Copiar el código del script CPU de minería y el binario CUDA compilado
+COPY --chown=10001:10001 Hit7/ ./Hit7/
+COPY --from=builder --chown=10001:10001 /build/hit7_cuda ./hit7_cuda
+
+# Correr como usuario no-root por seguridad
+USER 10001
+
+# Ejecutar el script real de minería CPU (hit7_cpu.py) como entrypoint
+CMD ["python3", "Hit7/hit7_cpu.py"]
