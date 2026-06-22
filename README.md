@@ -1,4 +1,4 @@
-# INTEGRADOR-SD-y-PP-2026 - PROPUESTA-1
+# INTEGRADOR-SD-y-PP-2026 - PROPUESTA
 ## StickerChain: Álbum de Figuritas Digital Descentralizado
 ### Descripción de la Propuesta
 StickerChain es una plataforma descentralizada diseñada para coleccionar e intercambiar figuritas digitales de eventos masivos (como un Mundial). El sistema reemplaza los servidores centrales tradicionales por una red blockchain, garantizando a los usuarios la propiedad absoluta de sus coleccionables y asegurando matemáticamente la escasez o "rareza" de las figuritas.
