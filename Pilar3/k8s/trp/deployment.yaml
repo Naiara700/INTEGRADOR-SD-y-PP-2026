@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trp-deployment
+  namespace: default
+  labels:
+    app: trp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: trp
+  template:
+    metadata:
+      labels:
+        app: trp
+    spec:
+      nodeSelector:
+        node_role: applications
+      containers:
+      - name: trp
+        image: gcr.io/stickerchain-project/trp:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+          name: http
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        env:
+        - name: PORT
+          value: "8000"
+        - name: REDIS_HOST
+          value: "redis-service"
+        - name: RABBITMQ_HOST
+          value: "rabbitmq-service"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trp-service
+  namespace: default
+spec:
+  selector:
+    app: trp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+  type: ClusterIP
