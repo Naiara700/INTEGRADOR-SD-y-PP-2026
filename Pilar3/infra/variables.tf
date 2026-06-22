@@ -1,6 +1,7 @@
 variable "project_id" {
   description = "The ID of the GCP project"
   type        = string
+  default     = "project-f3583ede-db03-4872-95c"  
 }
 
 variable "region" {
@@ -30,5 +31,5 @@ variable "domain" {
 variable "letsencrypt_email" {
   description = "Email for Let's Encrypt certificate notifications"
   type        = string
-  default     = "admin@stickerchain.lat"
+  default     = "abril.nadia.babino984@gmail.com"
 }
