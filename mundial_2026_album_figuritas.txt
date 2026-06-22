@@ -1,0 +1,1719 @@
+ESTRUCTURA DE ÁLBUM DE FIGURITAS - COPA MUNDIAL DE LA FIFA 2026™
+================================================================
+Este archivo contiene la organización completa de las 48 selecciones clasificadas,
+divididas en sus respectivos 12 grupos. Para cada equipo, se incluye una lista con
+los jugadores más destacados (Top Figuritas) y el esquema para completar el plantel
+de 26 jugadores requerido por la FIFA.
+
+[Grupo A]
+-------
+
+  EQUIPO: México
+  PÁGINA DEL ÁLBUM: MÉXICO
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Guillermo Ochoa
+    * Edson Álvarez
+    * Santiago Giménez
+    * Hirving Lozano
+  PLANTILLA COMPLETA (1-26):
+    01. Guillermo Ochoa
+    02. Edson Álvarez
+    03. Santiago Giménez
+    04. Hirving Lozano
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Corea del Sur
+  PÁGINA DEL ÁLBUM: COREA DEL SUR
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Son Heung-min
+    * Kim Min-jae
+    * Lee Kang-in
+    * Hwang Hee-chan
+  PLANTILLA COMPLETA (1-26):
+    01. Son Heung-min
+    02. Kim Min-jae
+    03. Lee Kang-in
+    04. Hwang Hee-chan
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: República Checa
+  PÁGINA DEL ÁLBUM: REPÚBLICA CHECA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Patrik Schick
+    * Tomáš Souček
+    * Vladimír Coufal
+  PLANTILLA COMPLETA (1-26):
+    01. Patrik Schick
+    02. Tomáš Souček
+    03. Vladimír Coufal
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Sudáfrica
+  PÁGINA DEL ÁLBUM: SUDÁFRICA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Percy Tau
+    * Ronwen Williams
+    * Teboho Mokoena
+  PLANTILLA COMPLETA (1-26):
+    01. Percy Tau
+    02. Ronwen Williams
+    03. Teboho Mokoena
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
+[Grupo B]
+-------
+
+  EQUIPO: Canadá
+  PÁGINA DEL ÁLBUM: CANADÁ
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Alphonso Davies
+    * Jonathan David
+    * Stephen Eustáquio
+  PLANTILLA COMPLETA (1-26):
+    01. Alphonso Davies
+    02. Jonathan David
+    03. Stephen Eustáquio
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Suiza
+  PÁGINA DEL ÁLBUM: SUIZA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Granit Xhaka
+    * Manuel Akanji
+    * Yann Sommer
+  PLANTILLA COMPLETA (1-26):
+    01. Granit Xhaka
+    02. Manuel Akanji
+    03. Yann Sommer
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Bosnia y Herzegovina
+  PÁGINA DEL ÁLBUM: BOSNIA Y HERZEGOVINA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Edin Džeko
+    * Sead Kolašinac
+    * Miralem Pjanić
+  PLANTILLA COMPLETA (1-26):
+    01. Edin Džeko
+    02. Sead Kolašinac
+    03. Miralem Pjanić
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Qatar
+  PÁGINA DEL ÁLBUM: QATAR
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Akram Afif
+    * Almoez Ali
+    * Hassan Al-Haydos
+  PLANTILLA COMPLETA (1-26):
+    01. Akram Afif
+    02. Almoez Ali
+    03. Hassan Al-Haydos
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
+[Grupo C]
+-------
+
+  EQUIPO: Brasil
+  PÁGINA DEL ÁLBUM: BRASIL
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Vinícius Júnior
+    * Rodrygo
+    * Lucas Paquetá
+    * Marquinhos
+    * Alisson
+  PLANTILLA COMPLETA (1-26):
+    01. Vinícius Júnior
+    02. Rodrygo
+    03. Lucas Paquetá
+    04. Marquinhos
+    05. Alisson
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Marruecos
+  PÁGINA DEL ÁLBUM: MARRUECOS
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Achraf Hakimi
+    * Yassine Bounou
+    * Hakim Ziyech
+    * Sofyan Amrabat
+  PLANTILLA COMPLETA (1-26):
+    01. Achraf Hakimi
+    02. Yassine Bounou
+    03. Hakim Ziyech
+    04. Sofyan Amrabat
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Escocia
+  PÁGINA DEL ÁLBUM: ESCOCIA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Andrew Robertson
+    * Scott McTominay
+    * John McGinn
+  PLANTILLA COMPLETA (1-26):
+    01. Andrew Robertson
+    02. Scott McTominay
+    03. John McGinn
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Haití
+  PÁGINA DEL ÁLBUM: HAITÍ
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Frantzdy Pierrot
+    * Duckens Nazon
+    * Johny Placide
+  PLANTILLA COMPLETA (1-26):
+    01. Frantzdy Pierrot
+    02. Duckens Nazon
+    03. Johny Placide
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
+[Grupo D]
+-------
+
+  EQUIPO: Estados Unidos
+  PÁGINA DEL ÁLBUM: ESTADOS UNIDOS
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Christian Pulisic
+    * Weston McKennie
+    * Tyler Adams
+    * Folarin Balogun
+  PLANTILLA COMPLETA (1-26):
+    01. Christian Pulisic
+    02. Weston McKennie
+    03. Tyler Adams
+    04. Folarin Balogun
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Australia
+  PÁGINA DEL ÁLBUM: AUSTRALIA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Mathew Ryan
+    * Harry Souttar
+    * Jackson Irvine
+  PLANTILLA COMPLETA (1-26):
+    01. Mathew Ryan
+    02. Harry Souttar
+    03. Jackson Irvine
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Paraguay
+  PÁGINA DEL ÁLBUM: PARAGUAY
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Miguel Almirón
+    * Julio Enciso
+    * Gustavo Gómez
+  PLANTILLA COMPLETA (1-26):
+    01. Miguel Almirón
+    02. Julio Enciso
+    03. Gustavo Gómez
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Turquía
+  PÁGINA DEL ÁLBUM: TURQUÍA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Hakan Çalhanoğlu
+    * Arda Güler
+    * Kerem Aktürkoğlu
+  PLANTILLA COMPLETA (1-26):
+    01. Hakan Çalhanoğlu
+    02. Arda Güler
+    03. Kerem Aktürkoğlu
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
+[Grupo E]
+-------
+
+  EQUIPO: Alemania
+  PÁGINA DEL ÁLBUM: ALEMANIA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Jamal Musiala
+    * Florian Wirtz
+    * Antonio Rüdiger
+    * İlkay Gündoğan
+  PLANTILLA COMPLETA (1-26):
+    01. Jamal Musiala
+    02. Florian Wirtz
+    03. Antonio Rüdiger
+    04. İlkay Gündoğan
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Costa de Marfil
+  PÁGINA DEL ÁLBUM: COSTA DE MARFIL
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Sébastien Haller
+    * Franck Kessié
+    * Odilon Kossounou
+  PLANTILLA COMPLETA (1-26):
+    01. Sébastien Haller
+    02. Franck Kessié
+    03. Odilon Kossounou
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Ecuador
+  PÁGINA DEL ÁLBUM: ECUADOR
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Moisés Caicedo
+    * Piero Hincapié
+    * Enner Valencia
+  PLANTILLA COMPLETA (1-26):
+    01. Moisés Caicedo
+    02. Piero Hincapié
+    03. Enner Valencia
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Curazao
+  PÁGINA DEL ÁLBUM: CURAZAO
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Leandro Bacuna
+    * Juninho Bacuna
+    * Eloy Room
+  PLANTILLA COMPLETA (1-26):
+    01. Leandro Bacuna
+    02. Juninho Bacuna
+    03. Eloy Room
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
+[Grupo F]
+-------
+
+  EQUIPO: Países Bajos
+  PÁGINA DEL ÁLBUM: PAÍSES BAJOS
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Virgil van Dijk
+    * Frenkie de Jong
+    * Cody Gakpo
+    * Xavi Simons
+  PLANTILLA COMPLETA (1-26):
+    01. Virgil van Dijk
+    02. Frenkie de Jong
+    03. Cody Gakpo
+    04. Xavi Simons
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Japón
+  PÁGINA DEL ÁLBUM: JAPÓN
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Kaoru Mitoma
+    * Takefusa Kubo
+    * Wataru Endo
+  PLANTILLA COMPLETA (1-26):
+    01. Kaoru Mitoma
+    02. Takefusa Kubo
+    03. Wataru Endo
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Suecia
+  PÁGINA DEL ÁLBUM: SUECIA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Alexander Isak
+    * Dejan Kulusevski
+    * Viktor Gyökeres
+  PLANTILLA COMPLETA (1-26):
+    01. Alexander Isak
+    02. Dejan Kulusevski
+    03. Viktor Gyökeres
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Túnez
+  PÁGINA DEL ÁLBUM: TÚNEZ
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Youssef Msakni
+    * Ellyes Skhiri
+    * Aïssa Laïdouni
+  PLANTILLA COMPLETA (1-26):
+    01. Youssef Msakni
+    02. Ellyes Skhiri
+    03. Aïssa Laïdouni
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
+[Grupo G]
+-------
+
+  EQUIPO: Bélgica
+  PÁGINA DEL ÁLBUM: BÉLGICA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Kevin De Bruyne
+    * Romelu Lukaku
+    * Jérémy Doku
+    * Amadou Onana
+  PLANTILLA COMPLETA (1-26):
+    01. Kevin De Bruyne
+    02. Romelu Lukaku
+    03. Jérémy Doku
+    04. Amadou Onana
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Egipto
+  PÁGINA DEL ÁLBUM: EGIPTO
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Mohamed Salah
+    * Omar Marmoush
+    * Trezeguet
+  PLANTILLA COMPLETA (1-26):
+    01. Mohamed Salah
+    02. Omar Marmoush
+    03. Trezeguet
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Irán
+  PÁGINA DEL ÁLBUM: IRÁN
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Mehdi Taremi
+    * Sardar Azmoun
+    * Alireza Jahanbakhsh
+  PLANTILLA COMPLETA (1-26):
+    01. Mehdi Taremi
+    02. Sardar Azmoun
+    03. Alireza Jahanbakhsh
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Nueva Zelanda
+  PÁGINA DEL ÁLBUM: NUEVA ZELANDA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Chris Wood
+    * Liberato Cacace
+    * Matthew Garbett
+  PLANTILLA COMPLETA (1-26):
+    01. Chris Wood
+    02. Liberato Cacace
+    03. Matthew Garbett
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
+[Grupo H]
+-------
+
+  EQUIPO: España
+  PÁGINA DEL ÁLBUM: ESPAÑA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Rodri
+    * Pedri
+    * Lamine Yamal
+    * Dani Carvajal
+    * Álvaro Morata
+  PLANTILLA COMPLETA (1-26):
+    01. Rodri
+    02. Pedri
+    03. Lamine Yamal
+    04. Dani Carvajal
+    05. Álvaro Morata
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Uruguay
+  PÁGINA DEL ÁLBUM: URUGUAY
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Federico Valverde
+    * Darwin Núñez
+    * Ronald Araújo
+    * Manuel Ugarte
+  PLANTILLA COMPLETA (1-26):
+    01. Federico Valverde
+    02. Darwin Núñez
+    03. Ronald Araújo
+    04. Manuel Ugarte
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Arabia Saudita
+  PÁGINA DEL ÁLBUM: ARABIA SAUDITA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Salem Al-Dawsari
+    * Firas Al-Buraikan
+    * Saud Abdulhamid
+  PLANTILLA COMPLETA (1-26):
+    01. Salem Al-Dawsari
+    02. Firas Al-Buraikan
+    03. Saud Abdulhamid
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Cabo Verde
+  PÁGINA DEL ÁLBUM: CABO VERDE
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Vozinha
+    * Ryan Mendes
+    * Jamiro Monteiro
+  PLANTILLA COMPLETA (1-26):
+    01. Vozinha
+    02. Ryan Mendes
+    03. Jamiro Monteiro
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
+[Grupo I]
+-------
+
+  EQUIPO: Francia
+  PÁGINA DEL ÁLBUM: FRANCIA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Kylian Mbappé
+    * Antoine Griezmann
+    * William Saliba
+    * Eduardo Camavinga
+  PLANTILLA COMPLETA (1-26):
+    01. Kylian Mbappé
+    02. Antoine Griezmann
+    03. William Saliba
+    04. Eduardo Camavinga
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Senegal
+  PÁGINA DEL ÁLBUM: SENEGAL
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Sadio Mané
+    * Kalidou Koulibaly
+    * Pape Matar Sarr
+  PLANTILLA COMPLETA (1-26):
+    01. Sadio Mané
+    02. Kalidou Koulibaly
+    03. Pape Matar Sarr
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Noruega
+  PÁGINA DEL ÁLBUM: NORUEGA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Erling Haaland
+    * Martin Ødegaard
+    * Alexander Sørloth
+  PLANTILLA COMPLETA (1-26):
+    01. Erling Haaland
+    02. Martin Ødegaard
+    03. Alexander Sørloth
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Irak
+  PÁGINA DEL ÁLBUM: IRAK
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Aymen Hussein
+    * Ali Jasim
+    * Zidane Iqbal
+  PLANTILLA COMPLETA (1-26):
+    01. Aymen Hussein
+    02. Ali Jasim
+    03. Zidane Iqbal
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
+[Grupo J]
+-------
+
+  EQUIPO: Argentina
+  PÁGINA DEL ÁLBUM: ARGENTINA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Lionel Messi
+    * Emiliano Martínez
+    * Julián Álvarez
+    * Alexis Mac Allister
+    * Enzo Fernández
+  PLANTILLA COMPLETA (1-26):
+    01. Lionel Messi
+    02. Emiliano Martínez
+    03. Julián Álvarez
+    04. Alexis Mac Allister
+    05. Enzo Fernández
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Austria
+  PÁGINA DEL ÁLBUM: AUSTRIA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * David Alaba
+    * Marcel Sabitzer
+    * Konrad Laimer
+  PLANTILLA COMPLETA (1-26):
+    01. David Alaba
+    02. Marcel Sabitzer
+    03. Konrad Laimer
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Argelia
+  PÁGINA DEL ÁLBUM: ARGELIA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Riyad Mahrez
+    * Ismaël Bennacer
+    * Houssem Aouar
+  PLANTILLA COMPLETA (1-26):
+    01. Riyad Mahrez
+    02. Ismaël Bennacer
+    03. Houssem Aouar
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Jordania
+  PÁGINA DEL ÁLBUM: JORDANIA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Musa Al-Taamari
+    * Yazan Al-Naimat
+    * Ali Olwan
+  PLANTILLA COMPLETA (1-26):
+    01. Musa Al-Taamari
+    02. Yazan Al-Naimat
+    03. Ali Olwan
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
+[Grupo K]
+-------
+
+  EQUIPO: Portugal
+  PÁGINA DEL ÁLBUM: PORTUGAL
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Cristiano Ronaldo
+    * Bruno Fernandes
+    * Bernardo Silva
+    * Rafael Leão
+    * Rúben Dias
+  PLANTILLA COMPLETA (1-26):
+    01. Cristiano Ronaldo
+    02. Bruno Fernandes
+    03. Bernardo Silva
+    04. Rafael Leão
+    05. Rúben Dias
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Colombia
+  PÁGINA DEL ÁLBUM: COLOMBIA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Luis Díaz
+    * James Rodríguez
+    * Jhon Arias
+    * Camilo Vargas
+  PLANTILLA COMPLETA (1-26):
+    01. Luis Díaz
+    02. James Rodríguez
+    03. Jhon Arias
+    04. Camilo Vargas
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: RD Congo
+  PÁGINA DEL ÁLBUM: RD CONGO
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Chancel Mbemba
+    * Yoane Wissa
+    * Arthur Masuaku
+  PLANTILLA COMPLETA (1-26):
+    01. Chancel Mbemba
+    02. Yoane Wissa
+    03. Arthur Masuaku
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Uzbekistán
+  PÁGINA DEL ÁLBUM: UZBEKISTÁN
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Eldor Shomurodov
+    * Jaloliddin Masharipov
+    * Abbosbek Fayzullaev
+  PLANTILLA COMPLETA (1-26):
+    01. Eldor Shomurodov
+    02. Jaloliddin Masharipov
+    03. Abbosbek Fayzullaev
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
+[Grupo L]
+-------
+
+  EQUIPO: Inglaterra
+  PÁGINA DEL ÁLBUM: INGLATERRA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Harry Kane
+    * Jude Bellingham
+    * Phil Foden
+    * Bukayo Saka
+    * Declan Rice
+  PLANTILLA COMPLETA (1-26):
+    01. Harry Kane
+    02. Jude Bellingham
+    03. Phil Foden
+    04. Bukayo Saka
+    05. Declan Rice
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Croacia
+  PÁGINA DEL ÁLBUM: CROACIA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Luka Modrić
+    * Joško Gvardiol
+    * Mateo Kovačić
+  PLANTILLA COMPLETA (1-26):
+    01. Luka Modrić
+    02. Joško Gvardiol
+    03. Mateo Kovačić
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Ghana
+  PÁGINA DEL ÁLBUM: GHANA
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Mohammed Kudus
+    * Thomas Partey
+    * Iñaki Williams
+  PLANTILLA COMPLETA (1-26):
+    01. Mohammed Kudus
+    02. Thomas Partey
+    03. Iñaki Williams
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+  EQUIPO: Panamá
+  PÁGINA DEL ÁLBUM: PANAMÁ
+  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
+    * Adalberto Carrasquilla
+    * Michael Amir Murillo
+    * José Fajardo
+  PLANTILLA COMPLETA (1-26):
+    01. Adalberto Carrasquilla
+    02. Michael Amir Murillo
+    03. José Fajardo
+    04. [Jugador por confirmar]
+    05. [Jugador por confirmar]
+    06. [Jugador por confirmar]
+    07. [Jugador por confirmar]
+    08. [Jugador por confirmar]
+    09. [Jugador por confirmar]
+    10. [Jugador por confirmar]
+    11. [Jugador por confirmar]
+    12. [Jugador por confirmar]
+    13. [Jugador por confirmar]
+    14. [Jugador por confirmar]
+    15. [Jugador por confirmar]
+    16. [Jugador por confirmar]
+    17. [Jugador por confirmar]
+    18. [Jugador por confirmar]
+    19. [Jugador por confirmar]
+    20. [Jugador por confirmar]
+    21. [Jugador por confirmar]
+    22. [Jugador por confirmar]
+    23. [Jugador por confirmar]
+    24. [Jugador por confirmar]
+    25. [Jugador por confirmar]
+    26. [Jugador por confirmar]
+
+================================================================
+
