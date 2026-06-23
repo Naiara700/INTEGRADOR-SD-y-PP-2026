@@ -60,6 +60,7 @@ db = DBBlockchain()
 
 # Variables de configuración extraídas del entorno para adaptabilidad en Kubernetes
 TRP_URL = os.environ.get("TRP_URL", "http://integrador-trp:8001")
+# En desarrollo local usará guest, en K8s usará las credenciales reales inyectadas
 RABBITMQ_URL = os.environ.get("RABBITMQ_URL", "amqp://guest:guest@localhost:5672")
 
 # ==============================================================================
