@@ -19,7 +19,7 @@ spec:
         node_role: applications
       containers:
       - name: worker
-        image: naiaracollazo/sticker-worker-miner:latest
+        image: us-central1-docker.pkg.dev/project-f3583ede-db03-4872-95c/stickerchain/sticker-worker-miner:latest
         imagePullPolicy: Always
         resources:
           requests:
@@ -29,7 +29,16 @@ spec:
             cpu: "2000m"
             memory: "2Gi"
         env:
-        - name: REDIS_HOST
-          value: "redis-service"
-        - name: RABBITMQ_HOST
-          value: "rabbitmq-service"
+        - name: RABBITMQ_USER
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-secret
+              key: username
+        - name: RABBITMQ_PASS
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-secret
+              key: password
+        # RABBITMQ_URL construida desde el Secret de ESO (nunca hardcodeada)
+        - name: RABBITMQ_URL
+          value: "amqp://$(RABBITMQ_USER):$(RABBITMQ_PASS)@rabbitmq-service:5672"

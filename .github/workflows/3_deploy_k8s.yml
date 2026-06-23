@@ -1,0 +1,102 @@
+name: 3 - Deploy to Kubernetes
+
+on:
+  workflow_dispatch:
+  # Se dispara automáticamente después del workflow de build
+  workflow_run:
+    workflows: ["2 - Build & Push Images"]
+    types:
+      - completed
+    branches:
+      - main
+  push:
+    branches:
+      - main
+    paths:
+      - 'Pilar3/k8s/**'
+
+env:
+  PROJECT_ID: project-f3583ede-db03-4872-95c
+  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_NAME }}
+  GKE_ZONE: ${{ secrets.GKE_ZONE }}
+  WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+  SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+jobs:
+  deploy:
+    name: Apply K8s Manifests
+    runs-on: ubuntu-latest
+    # Solo ejecutar si el workflow de build fue exitoso (o si se dispara manualmente / por push a k8s)
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Sin claves estáticas: autenticación vía Workload Identity Federation
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ env.SERVICE_ACCOUNT }}
+
+      - name: Get GKE Credentials
+        uses: google-github-actions/get-gke-credentials@v2
+        with:
+          cluster_name: ${{ env.GKE_CLUSTER }}
+          location: ${{ env.GKE_ZONE }}
+
+      # ------------------------------------------------------------------
+      # Infraestructura de datos (Redis + RabbitMQ)
+      # Se aplican primero porque el resto depende de ellos
+      # ------------------------------------------------------------------
+      - name: Deploy Redis
+        run: kubectl apply -f Pilar3/k8s/redis/
+
+      - name: Deploy RabbitMQ (ConfigMap + StatefulSet)
+        run: |
+          kubectl apply -f Pilar3/k8s/rabbit/configmap.yaml
+          # secret-store.yaml y external-secret.yaml solo si ESO está instalado
+          kubectl apply -f Pilar3/k8s/rabbit/secret-store.yaml  || true
+          kubectl apply -f Pilar3/k8s/rabbit/external-secret.yaml || true
+          kubectl apply -f Pilar3/k8s/rabbit/statefulset.yaml
+
+      # ------------------------------------------------------------------
+      # Aplicaciones
+      # ------------------------------------------------------------------
+      - name: Deploy NCT (Nodo Coordinador)
+        run: kubectl apply -f Pilar3/k8s/nct/
+
+      - name: Deploy TRP (Pool de Transacciones)
+        run: kubectl apply -f Pilar3/k8s/trp/
+
+      - name: Deploy Frontend
+        run: kubectl apply -f Pilar3/k8s/frontend/
+
+      - name: Deploy Worker (CPU)
+        run: kubectl apply -f Pilar3/k8s/worker/
+
+      # ------------------------------------------------------------------
+      # Ingress y red
+      # ------------------------------------------------------------------
+      - name: Deploy Ingress
+        run: |
+          kubectl apply -f Pilar3/k8s/cluster-issuer.yaml || true
+          kubectl apply -f Pilar3/k8s/ingress.yaml
+
+      # ------------------------------------------------------------------
+      # Verificación del rollout
+      # ------------------------------------------------------------------
+      - name: Wait for NCT rollout
+        run: kubectl rollout status statefulset/nct-statefulset --timeout=120s
+
+      - name: Wait for Frontend rollout
+        run: kubectl rollout status deployment/frontend-deployment --timeout=120s
+
+      - name: Show pod status
+        if: always()
+        run: kubectl get pods -o wide
