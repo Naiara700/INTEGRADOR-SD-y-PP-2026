@@ -186,3 +186,81 @@ h1, h2, h3, h4, h5, h6 {
 .action-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0; text-align: center; }
 .action-card:hover { transform: translateY(-5px); background: rgba(30, 41, 59, 0.8); border-color: rgba(59, 130, 246, 0.4); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
 
+/* MOBILE LANDSCAPE SUPPORT */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  /* Reducir espacio global para aprovechar el alto */
+  .app-container {
+    padding: 10px;
+  }
+  
+  .top-nav {
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    position: static; /* Quitar sticky para ahorrar espacio */
+  }
+
+  /* Dashboard Action Grid a fila compacta */
+  .dashboard-action-grid {
+    display: flex !important;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .action-card {
+    min-width: 180px;
+    padding: 15px 10px;
+    gap: 8px;
+  }
+  
+  .action-card h4 {
+    font-size: 1rem;
+  }
+  
+  .action-card p {
+    display: none; /* Ocultar descripciones secundarias */
+  }
+
+  .action-card svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Pack Opener 3D Layout */
+  .pack-results-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    justify-content: flex-start !important;
+    padding: 10px 0;
+  }
+  
+  /* Escalar cartas 3D a un 60% para que quepan */
+  .card-item {
+    height: 220px !important;
+    width: 150px !important;
+    flex-shrink: 0;
+  }
+
+  /* Scanner QR Restricción de Altura */
+  #reader {
+    max-height: 55vh;
+  }
+  
+  #reader video {
+    object-fit: cover !important;
+    max-height: 55vh !important;
+  }
+
+  /* SwapP2P formulario lateral en vez de apilado */
+  .swap-form-container {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    padding: 15px !important;
+    gap: 10px !important;
+  }
+  
+  .swap-form-container > div {
+    flex: 1;
+    min-width: 150px;
+  }
+}

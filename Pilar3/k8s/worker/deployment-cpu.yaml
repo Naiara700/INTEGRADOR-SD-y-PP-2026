@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-cpu-deployment
+  namespace: default
+  labels:
+    app: worker-cpu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker-cpu
+  template:
+    metadata:
+      labels:
+        app: worker-cpu
+    spec:
+      containers:
+      - name: worker-cpu
+        image: naiaracollazo/sticker-worker-miner:latest
+        imagePullPolicy: Always
+        command: ["python", "Pilar3/worker_miner_cpu.py"]
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "512Mi"
+          limits:
+            cpu: "2000m"
+            memory: "2Gi"
+        env:
+        - name: RABBITMQ_HOST
+          value: "rabbitmq-service"

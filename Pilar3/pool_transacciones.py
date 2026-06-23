@@ -38,7 +38,17 @@ def mine_block(block: BlockCandidate):
     chunk_size = MAX_NONCE // NUM_CHUNKS
     
     try:
-        connection, channel = get_rabbitmq_channel()
+        connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBITMQ_HOST))
+        channel = connection.channel()
+        queue_info = channel.queue_declare(queue='tareas_mineria', durable=True)
+        consumer_count = queue_info.method.consumer_count
+        
+        # Lógica de fallback: Si no hay nadie escuchando, la GPU está off.
+        # Bajamos la dificultad temporalmente al mínimo para que las CPUs puedan resolverlo
+        if consumer_count == 0 and len(block.difficulty_prefix) > 1:
+            print("TrP [ALERTA]: No hay mineros activos conectados. Reduciendo dificultad para CPU.")
+            block.difficulty_prefix = "0"
+            
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Fallo crítico: No se pudo conectar a RabbitMQ: {str(e)}")
 
