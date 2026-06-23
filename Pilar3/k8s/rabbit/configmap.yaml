@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rabbitmq-config
+  namespace: default
+  labels:
+    app: rabbitmq
+data:
+  rabbitmq.conf: |
+    loopback_users.guest = false
+    management.load_definitions = /etc/rabbitmq/definitions.json
+  definitions.json: |
+    {
+      "users": [
+        {
+          "name": "guest",
+          "password_hash": "BMs8d48Q5+4i0vL09v+dG6m7ZREvG16Tz8+0r+9A2sHwM8c2",
+          "hashing_algorithm": "rabbit_password_hashing_sha256",
+          "tags": ["administrator"]
+        }
+      ],
+      "vhosts": [
+        {
+          "name": "/"
+        }
+      ],
+      "permissions": [
+        {
+          "user": "guest",
+          "vhost": "/",
+          "configure": ".*",
+          "write": ".*",
+          "read": ".*"
+        }
+      ]
+    }

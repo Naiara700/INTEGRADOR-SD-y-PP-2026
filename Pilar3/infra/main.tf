@@ -94,7 +94,7 @@ resource "google_container_node_pool" "apps_pool" {
 # Static IP for Nginx Ingress
 # ----------------------------------------------------------
 resource "google_compute_address" "nginx_ingress_ip" {
-  name   = "nginx-ingress-ip"
+  name   = "stickerchain-nginx-ingress-ip"
   region = var.region
 }
 
