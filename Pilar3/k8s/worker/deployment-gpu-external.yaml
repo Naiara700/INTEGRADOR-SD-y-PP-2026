@@ -19,7 +19,7 @@ spec:
         node_role: gpu # Etiqueta para nodos con GPU en el clúster k3s de Ale
       containers:
       - name: worker-gpu
-        image: naiaracollazo/sticker-hit7:latest
+        image: us-central1-docker.pkg.dev/project-f3583ede-db03-4872-95c/stickerchain/sticker-hit7:latest
         imagePullPolicy: Always
         resources:
           requests:
