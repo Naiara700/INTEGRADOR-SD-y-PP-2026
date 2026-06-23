@@ -1,54 +1,47 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: trp-deployment
+  name: frontend-deployment
   namespace: default
   labels:
-    app: trp
+    app: frontend
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: trp
+      app: frontend
   template:
     metadata:
       labels:
-        app: trp
+        app: frontend
     spec:
       nodeSelector:
         node_role: applications
       containers:
-      - name: trp
-        image: naiaracollazo/sticker-trp:latest
+      - name: frontend
+        image: naiaracollazo/sticker-frontend:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8001
+        - containerPort: 80
           name: http
         resources:
           requests:
             cpu: "100m"
             memory: "128Mi"
           limits:
-            cpu: "500m"
-            memory: "512Mi"
-        env:
-        - name: PORT
-          value: "8001"
-        - name: REDIS_HOST
-          value: "redis-service"
-        - name: RABBITMQ_HOST
-          value: "rabbitmq-service"
+            cpu: "300m"
+            memory: "256Mi"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: trp-service
+  name: frontend-service
   namespace: default
 spec:
   selector:
-    app: trp
+    app: frontend
   ports:
   - protocol: TCP
-    port: 8001
-    targetPort: 8001
+    port: 80
+    targetPort: 80
   type: ClusterIP
