@@ -22,7 +22,8 @@ import threading
 import pika
 import requests
 import random
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import RedirectResponse, JSONResponse
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any
 
@@ -33,9 +34,11 @@ from db_blockchain import DBBlockchain
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """
-    Hook de FastAPI moderno (lifespan). Inicializa de forma transparente el hilo 
-    de daemon de RabbitMQ para no bloquear el ThreadLoop principal asíncrono.
+    Hook de FastAPI moderno (lifespan). Inicializa los hilos daemon.
     """
+    monitor_thread = threading.Thread(target=bully_monitor, daemon=True)
+    monitor_thread.start()
+    
     join_thread = threading.Thread(target=rabbitmq_join_listener, daemon=True)
     join_thread.start()
     yield
@@ -49,8 +52,133 @@ app = FastAPI(
 db = DBBlockchain()
 
 # Variables de configuración extraídas del entorno para adaptabilidad en Kubernetes
-TRP_URL = os.environ.get("TRP_URL", "http://localhost:8001")
-RABBITMQ_HOST = os.environ.get("RABBITMQ_HOST", "localhost")
+TRP_URL = os.environ.get("TRP_URL", "http://integrador-trp:8001")
+RABBITMQ_HOST = os.environ.get("RABBITMQ_HOST", "rabbitmq")
+
+# ==============================================================================
+# ESTADO DEL ALGORITMO DE BULLY
+# ==============================================================================
+IS_LEADER = False
+HOSTNAME = os.environ.get("HOSTNAME", "nct-0")
+try:
+    NODE_ID = int(HOSTNAME.split("-")[-1])
+except:
+    NODE_ID = 0
+
+PEERS_ENV = os.environ.get("PEERS", "nct-0.nct-svc:8000,nct-1.nct-svc:8000,nct-2.nct-svc:8000")
+PEERS = [p.strip() for p in PEERS_ENV.split(",") if p.strip()]
+LEADER_ID = None
+LAST_HEARTBEAT = time.time()
+ELECTION_IN_PROGRESS = False
+
+def get_leader_peer_hostname():
+    for peer in PEERS:
+        try:
+            peer_id = int(peer.split(".")[0].split("-")[-1])
+            if peer_id == LEADER_ID:
+                return peer
+        except:
+            pass
+    return None
+
+def start_election():
+    global IS_LEADER, LEADER_ID, ELECTION_IN_PROGRESS
+    ELECTION_IN_PROGRESS = True
+    higher_peers = []
+    
+    for peer in PEERS:
+        try:
+            peer_id = int(peer.split(".")[0].split("-")[-1])
+            if peer_id > NODE_ID:
+                higher_peers.append(peer)
+        except:
+            pass
+            
+    got_response = False
+    for peer in higher_peers:
+        try:
+            resp = requests.post(f"http://{peer}/bully/election", json={"node_id": NODE_ID, "hostname": HOSTNAME}, timeout=2)
+            if resp.status_code == 200:
+                got_response = True
+        except:
+            pass
+            
+    if not got_response:
+        IS_LEADER = True
+        LEADER_ID = NODE_ID
+        ELECTION_IN_PROGRESS = False
+        print(f"NCT {NODE_ID}: SOY EL NUEVO LIDER!")
+        for peer in PEERS:
+            try:
+                peer_id = int(peer.split(".")[0].split("-")[-1])
+                if peer_id < NODE_ID:
+                    requests.post(f"http://{peer}/bully/coordinator", json={"node_id": NODE_ID, "hostname": HOSTNAME}, timeout=2)
+            except:
+                pass
+    else:
+        IS_LEADER = False
+
+def bully_monitor():
+    global LAST_HEARTBEAT, IS_LEADER, LEADER_ID
+    while True:
+        time.sleep(5)
+        if IS_LEADER:
+            continue
+            
+        if LEADER_ID is None:
+            start_election()
+            continue
+            
+        leader_peer = get_leader_peer_hostname()
+        if leader_peer:
+            try:
+                resp = requests.get(f"http://{leader_peer}/bully/heartbeat", timeout=2)
+                if resp.status_code == 200 and resp.json().get("is_leader"):
+                    LAST_HEARTBEAT = time.time()
+                else:
+                    raise Exception("Not leader anymore")
+            except:
+                print(f"NCT {NODE_ID}: Líder {LEADER_ID} no responde. Iniciando elección...")
+                LEADER_ID = None
+                start_election()
+
+@app.middleware("http")
+async def bully_leadership_middleware(request: Request, call_next):
+    if request.url.path.startswith("/smart_contracts/") and not request.url.path.startswith("/bully/"):
+        if not IS_LEADER:
+            leader_host = get_leader_peer_hostname()
+            if not leader_host:
+                return JSONResponse(status_code=503, content={"detail": "Elección de líder en progreso. Intente nuevamente en unos segundos."})
+            url = f"http://{leader_host}{request.url.path}"
+            # 307 preserve method and body
+            return RedirectResponse(url=url, status_code=307)
+    response = await call_next(request)
+    return response
+
+class BullyMessage(BaseModel):
+    node_id: int
+    hostname: str
+
+@app.post("/bully/election")
+def bully_election(msg: BullyMessage):
+    global ELECTION_IN_PROGRESS
+    if msg.node_id < NODE_ID:
+        threading.Thread(target=start_election, daemon=True).start()
+        return {"status": "ok", "message": "I will take over"}
+    return {"status": "ignored"}
+
+@app.post("/bully/coordinator")
+def bully_coordinator(msg: BullyMessage):
+    global IS_LEADER, LEADER_ID, ELECTION_IN_PROGRESS, LAST_HEARTBEAT
+    IS_LEADER = False
+    LEADER_ID = msg.node_id
+    ELECTION_IN_PROGRESS = False
+    LAST_HEARTBEAT = time.time()
+    return {"status": "ok"}
+
+@app.get("/bully/heartbeat")
+def bully_heartbeat():
+    return {"status": "alive", "node_id": NODE_ID, "is_leader": IS_LEADER}
 
 # Mempool temporal en memoria para agrupar transacciones antes del minado
 pending_transactions: List[Dict[str, Any]] = []
@@ -418,54 +546,56 @@ def claim_reward_contract(req: ClaimRewardRequest):
 
 def rabbitmq_join_listener():
     """
-    (Daemon Thread) Se suscribe a la topología de RabbitMQ escuchando la cola 'solved_blocks'.
-    Cuando un Worker de GPU/CPU encuentra un 'hit', este hilo verifica independientemente el hash.
-    Esta función cumple el rol crítico de JOIN en el patrón Split/Join.
+    (Daemon Thread) Se suscribe a RabbitMQ solo si es Líder.
     """
-    # Espera cautelar a que el broker de RabbitMQ esté arriba en Kubernetes
     time.sleep(10) 
-    try:
-        connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBITMQ_HOST))
-        channel = connection.channel()
-        channel.queue_declare(queue='solved_blocks')
-        
-        def on_solved_block_received(ch, method, properties, body):
-            data = json.loads(body)
-            candidate = data.get("candidate", {})
-            nonce = data.get("nonce")
-            reported_hash = data.get("block_hash", "")
+    while True:
+        if not IS_LEADER:
+            time.sleep(5)
+            continue
             
-            # 1. Reconstrucción matemática de la validación
-            base_string = f"{candidate.get('previous_hash', '')}{json.dumps(candidate.get('transactions', []))}"
-            calculated_hash = hashlib.md5(f"{base_string}{nonce}".encode('utf-8')).hexdigest()
+        try:
+            connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBITMQ_HOST))
+            channel = connection.channel()
+            channel.queue_declare(queue='solved_blocks')
             
-            # 2. Validación cruzada de Proof of Work
-            # Se exige que el hash calculado coincida con el reportado y respete la dificultad.
-            if calculated_hash == reported_hash and calculated_hash.startswith(candidate.get('difficulty_prefix', '')):
-                print(f"NCT [JOIN]: Validación de Consenso EXITOSA para el Bloque {candidate.get('index')}. Hash: {calculated_hash}")
+            def on_solved_block_received(ch, method, properties, body):
+                data = json.loads(body)
+                candidate = data.get("candidate", {})
+                nonce = data.get("nonce")
+                reported_hash = data.get("block_hash", "")
                 
-                # 3. Empaquetado formal y Persistencia (Redis)
-                candidate["nonce"] = nonce
-                candidate["block_hash"] = calculated_hash
-                candidate["transactions"] = json.dumps(candidate["transactions"])
+                base_string = f"{candidate.get('previous_hash', '')}{json.dumps(candidate.get('transactions', []))}"
+                calculated_hash = hashlib.md5(f"{base_string}{nonce}".encode('utf-8')).hexdigest()
                 
-                # Descartamos metadatos temporales de dificultad
-                if "difficulty_prefix" in candidate:
-                    del candidate["difficulty_prefix"]
+                if calculated_hash == reported_hash and calculated_hash.startswith(candidate.get('difficulty_prefix', '')):
+                    print(f"NCT {NODE_ID} [JOIN]: Validación EXITOSA Bloque {candidate.get('index')}. Hash: {calculated_hash}")
                     
-                # 4. Impacto inmutable en el Ledger
-                if db.save_block(candidate):
-                    print(f"NCT [JOIN]: Bloque {candidate.get('index')} persistido inmutablemente en Redis.")
-            else:
-                print(f"NCT [JOIN] CRÍTICO: Rechazando bloque malicioso o erróneo. Hash calculado {calculated_hash} difiere.")
+                    candidate["nonce"] = nonce
+                    candidate["block_hash"] = calculated_hash
+                    candidate["transactions"] = json.dumps(candidate["transactions"])
+                    
+                    if "difficulty_prefix" in candidate:
+                        del candidate["difficulty_prefix"]
+                        
+                    if db.save_block(candidate):
+                        print(f"NCT {NODE_ID} [JOIN]: Bloque {candidate.get('index')} persistido.")
+                else:
+                    print(f"NCT {NODE_ID} [JOIN] CRÍTICO: Bloque rechazado.")
+                    
+            channel.basic_consume(queue='solved_blocks', on_message_callback=on_solved_block_received, auto_ack=True)
+            print(f"NCT {NODE_ID} [LÍDER]: Escuchando Proof of Works...")
+            
+            # Consume events without blocking indefinitely, allowing us to check IS_LEADER
+            while IS_LEADER:
+                connection.process_data_events(time_limit=2)
                 
-        # Consumo de la cola con Auto ACK para desechar mensajes procesados
-        channel.basic_consume(queue='solved_blocks', on_message_callback=on_solved_block_received, auto_ack=True)
-        print("NCT [JOIN]: Hilo de Consenso Asíncrono inicializado. Escuchando Proof of Works...")
-        channel.start_consuming()
-        
-    except Exception as e:
-        print(f"NCT Error CRÍTICO: Fallo en la conexión asíncrona con RabbitMQ: {e}")
+            connection.close()
+            print(f"NCT {NODE_ID}: Perdí el liderazgo. Desconectando de RabbitMQ.")
+            
+        except Exception as e:
+            print(f"NCT Error CRÍTICO: Fallo en la conexión asíncrona con RabbitMQ: {e}")
+            time.sleep(5)
 
 # Entrada para entorno de ejecución local (Desarrollo)
 if __name__ == "__main__":
