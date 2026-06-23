@@ -17,9 +17,14 @@ spec:
     spec:
       containers:
       - name: worker-cpu
-        image: naiaracollazo/sticker-worker-miner:latest
+        image: us-central1-docker.pkg.dev/project-f3583ede-db03-4872-95c/stickerchain/sticker-worker-cpu:latest
         imagePullPolicy: Always
-        command: ["python", "Pilar3/worker_miner_cpu.py"]
+        # Armamos la URL dinámicamente en tiempo de ejecución para no exponer contraseñas en Git
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            export RABBITMQ_URL="amqp://${RABBITMQ_USER}:${RABBITMQ_PASS}@rabbitmq-service:5672"
+            exec python Pilar3/worker_miner_cpu.py
         resources:
           requests:
             cpu: "500m"
@@ -38,5 +43,3 @@ spec:
             secretKeyRef:
               name: rabbitmq-secret
               key: password
-        - name: RABBITMQ_URL
-          value: "amqp://$(RABBITMQ_USER):$(RABBITMQ_PASS)@rabbitmq-service:5672"

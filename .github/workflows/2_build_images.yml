@@ -49,7 +49,9 @@ jobs:
           - name: sticker-frontend
             dockerfile: frontend/Dockerfile
             context: frontend
-
+          - name: sticker-worker-cpu
+            dockerfile: Pilar3/apps/Dockerfile.worker-cpu
+            context: .
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
