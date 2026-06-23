@@ -28,6 +28,12 @@ from fastapi.responses import RedirectResponse, JSONResponse
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any
 
+# Criptografía asimétrica
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import padding, rsa
+from cryptography.hazmat.primitives import serialization
+from cryptography.exceptions import InvalidSignature
+
 from contextlib import asynccontextmanager
 
 from db_blockchain import DBBlockchain
@@ -278,8 +284,7 @@ def cargar_base_datos_mundial():
         linea = linea.strip()
         if linea.startswith("EQUIPO:"):
             equipo_actual = linea.split("EQUIPO:")[1].strip()
-            # Añadir automáticamente Escudo y Foto Grupal para llegar a las 20 requeridas
-            EQUIPOS_MUNDIAL[equipo_actual] = ["Escudo Oficial", "Foto Grupal"]
+            EQUIPOS_MUNDIAL[equipo_actual] = []
         elif linea.startswith("JUGADORES DESTACADOS"):
             modo = "destacados"
         elif linea.startswith("PLANTILLA COMPLETA"):
@@ -289,15 +294,12 @@ def cargar_base_datos_mundial():
             if jugador not in JUGADORES_DORADOS:
                 JUGADORES_DORADOS.append(jugador)
         elif modo == "plantilla" and linea and linea[0].isdigit():
-            # Formato: 01. Nombre
             partes = linea.split(".", 1)
             if len(partes) == 2:
                 num = int(partes[0].strip())
                 jugador = partes[1].strip()
-                # Solo tomamos los primeros 18 jugadores para llegar a 20 tokens por equipo
-                if num <= 18:
+                if num <= 20:
                     if jugador == "[Jugador por confirmar]":
-                        # Hacemos el nombre único para no romper el conteo de figuritas únicas
                         jugador = f"Jugador {num} (Por confirmar)"
                     EQUIPOS_MUNDIAL[equipo_actual].append(jugador)
 
@@ -344,23 +346,35 @@ QR_SECRET_KEY = os.environ.get("QR_SECRET_KEY", "sdypp2026")
 # Modelos de Datos (Pydantic) para Validación Rigurosa de Payloads REST
 # ==============================================================================
 
-class QRRequest(BaseModel):
-    wallet_id: str = Field(..., description="ID de la billetera del usuario")
-    nonce: str = Field(..., description="ID único e irrepetible impreso en el QR físico")
-    firma_hmac: str = Field(..., description="Firma criptográfica HMAC-SHA256 validando la autenticidad")
+class SignedTransaction(BaseModel):
+    public_key: str = Field(..., description="Clave pública PEM de la billetera")
+    payload: dict = Field(..., description="Diccionario con los datos de la transacción")
+    signature: str = Field(..., description="Firma digital hexadecimal generada con la Clave Privada")
 
-class BuyPackRequest(BaseModel):
-    wallet_id: str = Field(..., description="ID de la billetera que desea comprar un sobre")
-
-class SwapRequest(BaseModel):
-    usuario_a: str = Field(..., description="ID del emisor de la figurita X")
-    usuario_b: str = Field(..., description="ID del emisor de la figurita Y")
-    fig_x: str = Field(..., description="ID de la figurita entregada por Usuario A")
-    fig_y: str = Field(..., description="ID de la figurita entregada por Usuario B")
-
-class ClaimRewardRequest(BaseModel):
-    wallet_id: str = Field(..., description="ID de la billetera reclamante del premio final")
-    tipo_desafio: str = Field(..., description="Puede ser LOGIN_DIARIO, COLECCIONISTA_PRINCIPIANTE, FIGURITA_DORADA, u HOJA_COMPLETA")
+def verificar_firma_digital(public_key_pem: str, payload_dict: dict, signature_hex: str) -> str:
+    try:
+        payload_str = json.dumps(payload_dict, separators=(',', ':'), sort_keys=True).encode('utf-8')
+        signature_bytes = bytes.fromhex(signature_hex)
+        public_key = serialization.load_pem_public_key(public_key_pem.encode('utf-8'))
+        
+        if not isinstance(public_key, rsa.RSAPublicKey):
+             raise HTTPException(status_code=400, detail="FRAUDE: Formato de llave no soportado. Solo se admite RSA.")
+             
+        # Validar usando RSA PKCS#1 v1.5 y SHA256 (estándar ampliamente soportado en Web Crypto API)
+        public_key.verify(
+            signature_bytes,
+            payload_str,
+            padding.PKCS1v15(),
+            hashes.SHA256()
+        )
+        
+        # Derivar Wallet ID (dirección pública) del hash de la clave pública
+        wallet_id = "0x" + hashlib.sha256(public_key_pem.encode('utf-8')).hexdigest()[:40]
+        return wallet_id
+    except InvalidSignature:
+        raise HTTPException(status_code=403, detail="FRAUDE: La firma digital es inválida.")
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Error criptográfico: {str(e)}")
 
 
 # ==============================================================================
@@ -427,61 +441,64 @@ def pack_candidate_block():
 # Smart Contracts - Lógica de Negocio y Oráculo Rest
 # ==============================================================================
 
+@app.get("/wallet/balance", summary="Consultar Saldo Público (Dashboard)")
+def get_wallet_balance(address: str):
+    """
+    Endpoint de lectura pública. No requiere firma.
+    Devuelve los PTS y figuritas de una dirección.
+    """
+    estado = db.get_wallet_state(address)
+    return {"status": "success", "address": address, "estado": estado}
+
 @app.post("/smart_contracts/mint_points", summary="Contrato de Emisión (MINT_POINTS)")
-def mint_points_contract(req: QRRequest):
-    """
-    Valida criptográficamente un QR físico mediante HMAC-SHA256 con prevención de doble gasto.
-    Actúa como un Oráculo seguro.
-    """
-    # 1. Verificar Doble Gasto en Redis
-    if db.fue_qr_usado(req.nonce):
+def mint_points_contract(req: SignedTransaction):
+    wallet_id = verificar_firma_digital(req.public_key, req.payload, req.signature)
+    
+    nonce = req.payload.get("nonce")
+    firma_hmac = req.payload.get("firma_hmac")
+    
+    if not nonce or not firma_hmac:
+         raise HTTPException(status_code=400, detail="Faltan datos en el payload (nonce, firma_hmac).")
+
+    if db.fue_qr_usado(nonce):
         raise HTTPException(status_code=400, detail="FRAUDE: Este QR físico ya fue escaneado y gastado anteriormente.")
 
-    # 2. Validación de Firma Criptográfica
-    mensaje = f"{req.nonce}:{req.wallet_id}"
+    mensaje = f"{nonce}:{wallet_id}"
     firma_esperada = hmac.new(QR_SECRET_KEY.encode(), mensaje.encode(), hashlib.sha256).hexdigest()
     
-    if not hmac.compare_digest(firma_esperada, req.firma_hmac):
+    if not hmac.compare_digest(firma_esperada, firma_hmac):
         raise HTTPException(status_code=403, detail="FRAUDE: Firma del QR inválida o falsificada matemáticamente.")
 
-    # 3. Éxito: Marcar usado y emitir transacción
-    db.marcar_qr_usado(req.nonce)
-    
+    db.marcar_qr_usado(nonce)
     tx = {
         "usuario_a": "Sistema_Sponsor",
-        "usuario_b": req.wallet_id,
+        "usuario_b": wallet_id,
         "monto": 500,
-        "metadata": {"concepto": f"Escaneo validado QR {req.nonce}"}
+        "metadata": {"concepto": f"Escaneo validado QR {nonce}"}
     }
     add_transaction_to_mempool(tx)
     return {"status": "success", "message": "Firma verificada exitosamente. 500 PTS asignados al mempool."}
 
 @app.post("/smart_contracts/buy_pack", summary="Contrato de Apertura (BUY_PACK)")
-def buy_pack_contract(req: BuyPackRequest):
-    """
-    Verifica los fondos disponibles en el ledger y, de ser suficientes, 
-    ejecuta una transacción atómica doble: 
-    1) Quema (burn) los puntos del usuario.
-    2) Emite (mint) 5 tokens no fungibles (figuritas) asociadas criptográficamente a la billetera.
-    """
-    estado_billetera = db.get_wallet_state(req.wallet_id)
+def buy_pack_contract(req: SignedTransaction):
+    wallet_id = verificar_firma_digital(req.public_key, req.payload, req.signature)
+    
+    estado_billetera = db.get_wallet_state(wallet_id)
     
     if estado_billetera["puntos_disponibles"] >= 500:
-        # Transacción de debito (Burn)
         tx_burn = {
-            "usuario_a": req.wallet_id,
+            "usuario_a": wallet_id,
             "usuario_b": "Direccion_Nula_Tesoreria",
             "monto": 500,
             "metadata": {"concepto": "Pago por apertura de sobre virtual"}
         }
         add_transaction_to_mempool(tx_burn)
         
-        # Transacción de Emisión de Activos (Minting de Figuritas con RNG)
         for _ in range(5):
             fig_data = generar_figurita_rng()
             tx_mint = {
                 "usuario_a": "Direccion_Nula_Tesoreria",
-                "usuario_b": req.wallet_id,
+                "usuario_b": wallet_id,
                 "monto": 1,
                 "metadata": fig_data
             }
@@ -492,23 +509,26 @@ def buy_pack_contract(req: BuyPackRequest):
     raise HTTPException(status_code=400, detail="Fondos insuficientes en la blockchain.")
 
 @app.post("/smart_contracts/swap_stickers", summary="Contrato de Intercambio (SWAP_STICKERS)")
-def swap_stickers_contract(req: SwapRequest):
-    """
-    Ejecuta un swap atómico P2P entre dos billeteras. Verifica rígidamente en la blockchain 
-    que ambos usuarios posean el activo subyacente que desean intercambiar.
-    Previene el doble gasto y operaciones fraudulentas.
-    """
-    estado_a = db.get_wallet_state(req.usuario_a)
-    estado_b = db.get_wallet_state(req.usuario_b)
+def swap_stickers_contract(req: SignedTransaction):
+    wallet_id_a = verificar_firma_digital(req.public_key, req.payload, req.signature)
     
-    # 1. Encontrar la metadata de los tokens solicitados
-    fig_x_data = next((f for f in estado_a["figuritas_poseidas"] if isinstance(f, dict) and f.get("fig_id") == req.fig_x), None)
-    fig_y_data = next((f for f in estado_b["figuritas_poseidas"] if isinstance(f, dict) and f.get("fig_id") == req.fig_y), None)
+    usuario_b = req.payload.get("usuario_b")
+    fig_x = req.payload.get("fig_x")
+    fig_y = req.payload.get("fig_y")
+    
+    if not usuario_b or not fig_x or not fig_y:
+        raise HTTPException(status_code=400, detail="Faltan datos en el payload del swap.")
+        
+    estado_a = db.get_wallet_state(wallet_id_a)
+    estado_b = db.get_wallet_state(usuario_b)
+    
+    fig_x_data = next((f for f in estado_a["figuritas_poseidas"] if isinstance(f, dict) and f.get("fig_id") == fig_x), None)
+    fig_y_data = next((f for f in estado_b["figuritas_poseidas"] if isinstance(f, dict) and f.get("fig_id") == fig_y), None)
     
     if not fig_x_data:
-        raise HTTPException(status_code=400, detail=f"Inconsistencia: El emisor A no posee el token {req.fig_x}")
+        raise HTTPException(status_code=400, detail=f"Inconsistencia: El emisor A no posee el token {fig_x}")
     if not fig_y_data:
-        raise HTTPException(status_code=400, detail=f"Inconsistencia: El emisor B no posee el token {req.fig_y}")
+        raise HTTPException(status_code=400, detail=f"Inconsistencia: El emisor B no posee el token {fig_y}")
         
     # 2. Validar regla de "Pegada vs Repetida"
     # Solo se puede intercambiar si el jugador está repetido (>1 copias en el inventario)
@@ -520,14 +540,13 @@ def swap_stickers_contract(req: SwapRequest):
     if count_jugador_b <= 1:
         raise HTTPException(status_code=400, detail=f"Inconsistencia: El usuario B tiene su única copia de {fig_y_data.get('jugador')} pegada en el álbum. Solo puede intercambiar repetidas.")
         
-    # Doble transacción atómica para el Swap
     tx_swap_1 = {
-        "usuario_a": req.usuario_a, "usuario_b": req.usuario_b, "monto": 1,
-        "metadata": {"fig_id": req.fig_x, "operacion": "SWAP_P2P"}
+        "usuario_a": wallet_id_a, "usuario_b": usuario_b, "monto": 1,
+        "metadata": {"fig_id": fig_x, "operacion": "SWAP_P2P"}
     }
     tx_swap_2 = {
-        "usuario_a": req.usuario_b, "usuario_b": req.usuario_a, "monto": 1,
-        "metadata": {"fig_id": req.fig_y, "operacion": "SWAP_P2P"}
+        "usuario_a": usuario_b, "usuario_b": wallet_id_a, "monto": 1,
+        "metadata": {"fig_id": fig_y, "operacion": "SWAP_P2P"}
     }
     
     add_transaction_to_mempool(tx_swap_1)
@@ -535,26 +554,27 @@ def swap_stickers_contract(req: SwapRequest):
     return {"status": "success", "message": "Contrato P2P validado. Intercambio atómico encolado."}
 
 @app.post("/smart_contracts/claim_reward", summary="Contrato de Recompensa (CLAIM_REWARD)")
-def claim_reward_contract(req: ClaimRewardRequest):
-    """
-    Audita el estado actual en la blockchain y la base Redis para liberar premios si y solo si 
-    las reglas de negocio reales se cumplen, evitando abusos y reclamos dobles.
-    """
-    estado_billetera = db.get_wallet_state(req.wallet_id)
+def claim_reward_contract(req: SignedTransaction):
+    wallet_id = verificar_firma_digital(req.public_key, req.payload, req.signature)
+    
+    tipo_desafio = req.payload.get("tipo_desafio")
+    if not tipo_desafio:
+         raise HTTPException(status_code=400, detail="Falta tipo_desafio en payload.")
+         
+    estado_billetera = db.get_wallet_state(wallet_id)
     figuritas_poseidas = estado_billetera["figuritas_poseidas"]
     
-    # Evaluar los desafíos reales propuestos
-    if req.tipo_desafio == "LOGIN_DIARIO":
-        if db.fue_desafio_reclamado(req.wallet_id, "LOGIN_DIARIO", es_diario=True):
+    if tipo_desafio == "LOGIN_DIARIO":
+        if db.fue_desafio_reclamado(wallet_id, "LOGIN_DIARIO", es_diario=True):
             raise HTTPException(status_code=400, detail="FRAUDE: Ya reclamaste tu recompensa diaria de inicio de sesión hoy.")
             
-        db.marcar_desafio(req.wallet_id, "LOGIN_DIARIO", es_diario=True)
-        tx_premio = {"usuario_a": "Direccion_Nula_Tesoreria", "usuario_b": req.wallet_id, "monto": 50, "metadata": {"concepto": "Login Diario"}}
+        db.marcar_desafio(wallet_id, "LOGIN_DIARIO", es_diario=True)
+        tx_premio = {"usuario_a": "Direccion_Nula_Tesoreria", "usuario_b": wallet_id, "monto": 50, "metadata": {"concepto": "Login Diario"}}
         add_transaction_to_mempool(tx_premio)
         return {"status": "success", "message": "50 PTS de login diario cobrados exitosamente."}
         
-    elif req.tipo_desafio == "COLECCIONISTA_PRINCIPIANTE":
-        if db.fue_desafio_reclamado(req.wallet_id, "COLECCIONISTA_PRINCIPIANTE", es_diario=False):
+    elif tipo_desafio == "COLECCIONISTA_PRINCIPIANTE":
+        if db.fue_desafio_reclamado(wallet_id, "COLECCIONISTA_PRINCIPIANTE", es_diario=False):
              raise HTTPException(status_code=400, detail="FRAUDE: Ya reclamaste este logro único.")
              
         jugadores_unicos = set()
@@ -563,29 +583,28 @@ def claim_reward_contract(req: ClaimRewardRequest):
                 jugadores_unicos.add(fig["jugador"])
              
         if len(jugadores_unicos) >= 5:
-            db.marcar_desafio(req.wallet_id, "COLECCIONISTA_PRINCIPIANTE", es_diario=False)
-            tx_premio = {"usuario_a": "Direccion_Nula_Tesoreria", "usuario_b": req.wallet_id, "monto": 500, "metadata": {"concepto": "Logro: 5 Jugadores Únicos"}}
+            db.marcar_desafio(wallet_id, "COLECCIONISTA_PRINCIPIANTE", es_diario=False)
+            tx_premio = {"usuario_a": "Direccion_Nula_Tesoreria", "usuario_b": wallet_id, "monto": 500, "metadata": {"concepto": "Logro: 5 Jugadores Únicos"}}
             add_transaction_to_mempool(tx_premio)
             return {"status": "success", "message": "Logro de Coleccionista Principiante completado! 500 PTS cobrados."}
             
-    elif req.tipo_desafio == "FIGURITA_DORADA":
-        if db.fue_desafio_reclamado(req.wallet_id, "FIGURITA_DORADA", es_diario=False):
+    elif tipo_desafio == "FIGURITA_DORADA":
+        if db.fue_desafio_reclamado(wallet_id, "FIGURITA_DORADA", es_diario=False):
              raise HTTPException(status_code=400, detail="FRAUDE: Ya reclamaste la recompensa por esta figurita dorada.")
              
-        # El logro se desbloquea si tienes una figurita Legendaria de alguna de las estrellas del Mundial
         tiene_dorada = any(
             isinstance(fig, dict) and fig.get("jugador") in JUGADORES_DORADOS and fig.get("rareza") == "Legendaria"
             for fig in figuritas_poseidas
         )
              
         if tiene_dorada:
-            db.marcar_desafio(req.wallet_id, "FIGURITA_DORADA", es_diario=False)
-            tx_premio = {"usuario_a": "Direccion_Nula_Tesoreria", "usuario_b": req.wallet_id, "monto": 2000, "metadata": {"concepto": "Logro: Obtuviste un Jugador Dorado Legendario"}}
+            db.marcar_desafio(wallet_id, "FIGURITA_DORADA", es_diario=False)
+            tx_premio = {"usuario_a": "Direccion_Nula_Tesoreria", "usuario_b": wallet_id, "monto": 2000, "metadata": {"concepto": "Logro: Obtuviste un Jugador Dorado Legendario"}}
             add_transaction_to_mempool(tx_premio)
             return {"status": "success", "message": "Logro de Figurita Dorada completado! 2000 PTS cobrados."}
 
-    elif req.tipo_desafio == "HOJA_COMPLETA":
-        if db.fue_desafio_reclamado(req.wallet_id, "HOJA_COMPLETA", es_diario=False):
+    elif tipo_desafio == "HOJA_COMPLETA":
+        if db.fue_desafio_reclamado(wallet_id, "HOJA_COMPLETA", es_diario=False):
              raise HTTPException(status_code=400, detail="FRAUDE: Ya reclamaste el premio de hoja completa.")
              
         equipos_completos = False
@@ -598,14 +617,13 @@ def claim_reward_contract(req: ClaimRewardRequest):
                     jugadores_por_equipo[eq] = set()
                 jugadores_por_equipo[eq].add(fig["jugador"])
                 
-                # Regla: 20 figuritas únicas de la misma selección del Mundial 2026 (18 Jugadores + Escudo + Foto Grupal)
                 if len(jugadores_por_equipo[eq]) >= 20:
                     equipos_completos = True
                     break
              
         if equipos_completos:
-            db.marcar_desafio(req.wallet_id, "HOJA_COMPLETA", es_diario=False)
-            tx_premio = {"usuario_a": "Direccion_Nula_Tesoreria", "usuario_b": req.wallet_id, "monto": 5000, "metadata": {"concepto": "Premio por Desafío: Selección Completada"}}
+            db.marcar_desafio(wallet_id, "HOJA_COMPLETA", es_diario=False)
+            tx_premio = {"usuario_a": "Direccion_Nula_Tesoreria", "usuario_b": wallet_id, "monto": 5000, "metadata": {"concepto": "Premio por Desafío: Selección Completada"}}
             add_transaction_to_mempool(tx_premio)
             return {"status": "success", "message": "Hoja de Selección verificada criptográficamente. 5000 PTS emitidos."}
             
