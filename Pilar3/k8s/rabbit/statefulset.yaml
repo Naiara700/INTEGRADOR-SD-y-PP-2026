@@ -30,9 +30,6 @@ spec:
             - name: rabbitmq-config
               mountPath: /etc/rabbitmq/rabbitmq.conf
               subPath: rabbitmq.conf
-            - name: rabbitmq-config
-              mountPath: /etc/rabbitmq/definitions.json
-              subPath: definitions.json
             - name: rabbitmq-data
               mountPath: /var/lib/rabbitmq
           readinessProbe:
@@ -47,6 +44,19 @@ spec:
             initialDelaySeconds: 40
             periodSeconds: 15
             timeoutSeconds: 5
+          env:
+            # Credenciales inyectadas desde el K8s Secret generado por External Secrets Operator.
+            # El Secret 'rabbitmq-secret' es creado automáticamente por ESO desde GCP Secret Manager.
+            - name: RABBITMQ_DEFAULT_USER
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-secret
+                  key: username
+            - name: RABBITMQ_DEFAULT_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-secret
+                  key: password
           resources:
             requests:
               memory: "256Mi"
