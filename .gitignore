@@ -1,12 +1,61 @@
+# Compiled / Build outputs
 abrir_cuda.bat
 UsoInterno.md
 bin/
-.vscode/
 *.exe
 *.obj
 *.pdb
 *.ilk
+*.o
+*.out
+*.app
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Python
 .venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+pyrightconfig.json
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+.terraform.tfstate.lock.info
+.terraform.lock.hcl
+
+# Environments & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.cert
+secret.json
+credentials.json
+
+# OS files
+.DS_Store
+Thumbs.db
 pyrightconfig.json
 # Python
 __pycache__/
