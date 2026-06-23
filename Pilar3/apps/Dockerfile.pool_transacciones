@@ -26,5 +26,9 @@ USER 10001
 
 EXPOSE 8000
 
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s \
+  CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/docs')" || exit 1
+
 # 6. Ejecutar en formato vectorial (exec-form)
 CMD ["python", "Pilar3/pool_transacciones.py"]

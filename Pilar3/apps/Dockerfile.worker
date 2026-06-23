@@ -48,5 +48,9 @@ COPY --from=builder --chown=10001:10001 /build/hit7_cuda ./hit7_cuda
 # Correr como usuario no-root por seguridad
 USER 10001
 
+# Health check usando pgrep
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s \
+  CMD pgrep -f "python3 Hit7/hit7_cpu.py" || exit 1
+
 # Ejecutar el script real de minería CPU (hit7_cpu.py) como entrypoint
 CMD ["python3", "Hit7/hit7_cpu.py"]
