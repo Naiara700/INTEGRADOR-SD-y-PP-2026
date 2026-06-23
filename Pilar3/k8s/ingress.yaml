@@ -5,11 +5,18 @@ metadata:
   namespace: default
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    # Este es el subdominio desde donde el frontend consumirá la API del backend
+    - api.stickerchain.lat
+    # Aquí se guardará físicamente la clave privada y el certificado emitido
+    secretName: stickerchain-tls-secret
   rules:
-  - http:
+  - host: api.stickerchain.lat
+    http:
       paths:
       - path: /
         pathType: Prefix
