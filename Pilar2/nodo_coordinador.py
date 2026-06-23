@@ -60,7 +60,7 @@ db = DBBlockchain()
 
 # Variables de configuración extraídas del entorno para adaptabilidad en Kubernetes
 TRP_URL = os.environ.get("TRP_URL", "http://integrador-trp:8001")
-RABBITMQ_HOST = os.environ.get("RABBITMQ_HOST", "rabbitmq")
+RABBITMQ_URL = os.environ.get("RABBITMQ_URL", "amqp://guest:guest@localhost:5672")
 
 # ==============================================================================
 # ESTADO DEL ALGORITMO DE BULLY
@@ -690,7 +690,7 @@ def rabbitmq_join_listener():
             continue
             
         try:
-            connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBITMQ_HOST))
+            connection = pika.BlockingConnection(pika.URLParameters(RABBITMQ_URL))
             channel = connection.channel()
             channel.queue_declare(queue='solved_blocks')
             

@@ -8,7 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from Hit7.hit7_cpu import buscar_en_rango
 
 # Configuración y Variables de Entorno
-RABBITMQ_HOST = os.environ.get("RABBITMQ_HOST", "localhost")
+RABBITMQ_URL = os.environ.get("RABBITMQ_URL", "amqp://guest:guest@localhost:5672")
 HOSTNAME = os.environ.get("HOSTNAME", "worker-cpu-local")
 
 def generar_cadena_base(block_data):
@@ -76,7 +76,7 @@ def procesar_tarea(ch, method, properties, body):
 def iniciar_worker():
     """Conecta con RabbitMQ e inicia el bucle infinito del Daemon minero (CPU)"""
     try:
-        connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBITMQ_HOST))
+        connection = pika.BlockingConnection(pika.URLParameters(RABBITMQ_URL))
         channel = connection.channel()
         
         channel.queue_declare(queue='tareas_mineria', durable=True)
@@ -87,7 +87,7 @@ def iniciar_worker():
         channel.basic_consume(queue='tareas_mineria', on_message_callback=procesar_tarea)
         
         print(f" [*] Worker Minero Inicializado (Modo CPU Nativo)")
-        print(f" [*] Esperando tareas en RabbitMQ '{RABBITMQ_HOST}'...")
+        print(f" [*] Esperando tareas en RabbitMQ '{RABBITMQ_URL}'...")
         channel.start_consuming()
     except KeyboardInterrupt:
         print("\n[!] Minero CPU detenido manualmente por el usuario.")
