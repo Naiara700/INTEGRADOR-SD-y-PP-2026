@@ -15,8 +15,13 @@ spec:
       labels:
         app: worker-gpu
     spec:
-      nodeSelector:
-        node_role: gpu # Etiqueta para nodos con GPU en el clúster k3s de Ale
+
+      # Toleration para nodos con GPU (k3s suele tener taint nvidia.com/gpu=present:NoSchedule)
+      tolerations:
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+
       containers:
       - name: worker-gpu
         image: us-central1-docker.pkg.dev/project-f3583ede-db03-4872-95c/stickerchain/sticker-hit7:latest
@@ -28,10 +33,8 @@ spec:
           limits:
             cpu: "2"
             memory: "4Gi"
-            nvidia.com/gpu: 1 # Asignación de 1 GPU física
+            nvidia.com/gpu: 1   # Solicita 1 GPU física al device plugin de NVIDIA
         env:
-        # PENDIENTE: Reemplazar con la IP externa real expuesta por el LoadBalancer de RabbitMQ en tu GKE
-        - name: RABBITMQ_HOST
-          value: "<RABBITMQ_EXTERNAL_IP>"
-        - name: REDIS_HOST
-          value: "<REDIS_EXTERNAL_IP_SI_APLICA>"
+        # RABBITMQ_URL con credenciales embebidas — el worker lee esta variable directamente
+        - name: RABBITMQ_URL
+          value: "amqp://REDACTED"
