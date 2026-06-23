@@ -1,0 +1,288 @@
+/* Pack Store - 3D CSS */
+
+.pack-store-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(20, 20, 30, 0.6);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  color: white;
+  margin-top: 30px;
+  perspective: 1200px; /* Para el efecto 3D */
+}
+
+.pack-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #FFD700, #FDB931);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.pack-subtitle {
+  font-size: 1.1rem;
+  color: #A0AEC0;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* El Sobre (Holográfico) */
+.pack-wrapper {
+  position: relative;
+  width: 260px;
+  height: 380px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pack-wrapper:hover {
+  transform: translateY(-10px) rotateY(15deg) scale(1.05);
+}
+
+.pack-wrapper.opening {
+  animation: packBurst 1.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+@keyframes packBurst {
+  0% { transform: scale(1) rotateY(0); filter: brightness(1); }
+  40% { transform: scale(1.1) rotateY(180deg) translateY(-20px); filter: brightness(1.5) drop-shadow(0 0 40px rgba(255, 215, 0, 0.8)); }
+  80% { transform: scale(1.2) rotateY(360deg); opacity: 1; filter: brightness(2); }
+  100% { transform: scale(0.8) rotateY(360deg); opacity: 0; filter: brightness(0); visibility: hidden; }
+}
+
+.pack-front, .pack-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pack-front {
+  background: linear-gradient(135deg, #1E1E2F, #2D2D44);
+  border: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+/* Efecto Holográfico / Shiny */
+.pack-front::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: linear-gradient(
+    45deg, 
+    rgba(255,255,255,0) 40%, 
+    rgba(255, 255, 255, 0.2) 45%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    rgba(255, 255, 255, 0.2) 55%, 
+    rgba(255,255,255,0) 60%
+  );
+  transform: rotate(-45deg) translateY(-100%);
+  animation: shimmer 4s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { transform: rotate(-45deg) translateY(-100%); }
+  50% { transform: rotate(-45deg) translateY(100%); }
+  100% { transform: rotate(-45deg) translateY(100%); }
+}
+
+.pack-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+}
+
+.pack-price {
+  background: rgba(0,0,0,0.6);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #FFD700;
+  border: 1px solid #FFD700;
+  z-index: 2;
+}
+
+.pack-back {
+  background: #1A1A2E;
+  transform: rotateY(180deg);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+/* Resultados (Las Cartas) */
+.cards-reveal-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  perspective: 1000px;
+}
+
+.card-item {
+  width: 180px;
+  height: 260px;
+  background: rgba(30, 30, 45, 0.8);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px) rotateX(-20deg);
+  animation: cardPop 0.8s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+/* Delays para que las cartas salgan en cascada */
+.card-item:nth-child(1) { animation-delay: 1.0s; }
+.card-item:nth-child(2) { animation-delay: 1.2s; }
+.card-item:nth-child(3) { animation-delay: 1.4s; }
+.card-item:nth-child(4) { animation-delay: 1.6s; }
+.card-item:nth-child(5) { animation-delay: 1.8s; }
+
+@keyframes cardPop {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+.card-image-placeholder {
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.card-name {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.card-team {
+  font-size: 0.85rem;
+  color: #A0AEC0;
+  margin-bottom: 10px;
+}
+
+.card-rarity {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Variaciones de Rareza */
+.rarity-común .card-rarity {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.rarity-épica {
+  border: 1px solid #9d4edd;
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+}
+.rarity-épica .card-rarity {
+  background: rgba(157, 78, 221, 0.2);
+  color: #e0aaff;
+}
+
+.rarity-legendaria {
+  border: 1px solid #FFD700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+}
+.rarity-legendaria .card-rarity {
+  background: rgba(255, 215, 0, 0.2);
+  color: #FFD700;
+}
+.rarity-legendaria::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,255,255,0) 50%, rgba(255,215,0,0.1) 100%);
+  pointer-events: none;
+}
+
+.buy-button {
+  margin-top: 30px;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+  transition: all 0.3s ease;
+}
+
+.buy-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.6);
+}
+
+.buy-button:disabled {
+  background: #555;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.error-message {
+  color: #ff6b6b;
+  margin-top: 15px;
+  text-align: center;
+  background: rgba(255, 107, 107, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -60,7 +60,8 @@ db = DBBlockchain()
 
 # Variables de configuración extraídas del entorno para adaptabilidad en Kubernetes
 TRP_URL = os.environ.get("TRP_URL", "http://integrador-trp:8001")
-RABBITMQ_HOST = os.environ.get("RABBITMQ_HOST", "rabbitmq")
+# En desarrollo local usará guest, en K8s usará las credenciales reales inyectadas
+RABBITMQ_URL = os.environ.get("RABBITMQ_URL", "amqp://guest:guest@localhost:5672")
 
 # ==============================================================================
 # ESTADO DEL ALGORITMO DE BULLY
@@ -441,6 +442,39 @@ def pack_candidate_block():
 # Smart Contracts - Lógica de Negocio y Oráculo Rest
 # ==============================================================================
 
+@app.post("/wallet/register_alias", summary="Registrar Alias de Billetera")
+def register_alias(req: SignedTransaction):
+    """Asocia un alias a una dirección de billetera pública (Wallet ID)."""
+    wallet_id = verificar_firma_digital(req.public_key, req.payload, req.signature)
+    alias = req.payload.get("alias")
+    
+    if not alias or len(alias) < 3:
+        raise HTTPException(status_code=400, detail="Alias inválido. Debe tener al menos 3 caracteres.")
+        
+    # Verificar si el alias ya existe y pertenece a otro
+    existing = db.client.get(f"alias:{alias.lower()}")
+    if existing and existing != wallet_id:
+        raise HTTPException(status_code=400, detail="El alias ya está en uso por otra billetera.")
+        
+    db.client.set(f"alias:{alias.lower()}", wallet_id)
+    return {"status": "success", "message": f"Alias '{alias}' registrado correctamente para {wallet_id[:8]}..."}
+
+@app.get("/wallet/resolve_alias", summary="Resolver Alias a Wallet ID")
+def resolve_alias(alias: str):
+    """Busca el Wallet ID asociado a un alias."""
+    wallet_id = db.client.get(f"alias:{alias.lower()}")
+    if not wallet_id:
+        raise HTTPException(status_code=404, detail="Alias no encontrado.")
+    return {"wallet_id": wallet_id}
+
+@app.get("/album_template", summary="Obtener la plantilla base del álbum")
+def get_album_template():
+    """Devuelve la estructura completa del álbum (equipos y jugadores) para el Frontend."""
+    return {
+        "equipos": EQUIPOS_MUNDIAL,
+        "jugadores_dorados": JUGADORES_DORADOS
+    }
+
 @app.get("/wallet/balance", summary="Consultar Saldo Público (Dashboard)")
 def get_wallet_balance(address: str):
     """
@@ -463,7 +497,7 @@ def mint_points_contract(req: SignedTransaction):
     if db.fue_qr_usado(nonce):
         raise HTTPException(status_code=400, detail="FRAUDE: Este QR físico ya fue escaneado y gastado anteriormente.")
 
-    mensaje = f"{nonce}:{wallet_id}"
+    mensaje = f"{nonce}"
     firma_esperada = hmac.new(QR_SECRET_KEY.encode(), mensaje.encode(), hashlib.sha256).hexdigest()
     
     if not hmac.compare_digest(firma_esperada, firma_hmac):
@@ -514,7 +548,17 @@ def buy_pack_contract(req: SignedTransaction):
 def swap_stickers_contract(req: SignedTransaction):
     wallet_id_a = verificar_firma_digital(req.public_key, req.payload, req.signature)
     
-    usuario_b = req.payload.get("usuario_b")
+    usuario_b_input = req.payload.get("usuario_b") # Alias o Wallet B
+    if not isinstance(usuario_b_input, str):
+        raise HTTPException(status_code=400, detail="El destinatario debe ser un texto válido.")
+        
+    # Intento de resolución de alias
+    usuario_b_redis = db.client.get(f"alias:{usuario_b_input.lower()}")
+    if usuario_b_redis is not None:
+        usuario_b = str(usuario_b_redis)
+    else:
+        usuario_b = usuario_b_input # Fallback: asumir que ingresó un Wallet ID directamente
+    
     fig_x = req.payload.get("fig_x")
     fig_y = req.payload.get("fig_y")
     
@@ -647,7 +691,7 @@ def rabbitmq_join_listener():
             continue
             
         try:
-            connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBITMQ_HOST))
+            connection = pika.BlockingConnection(pika.URLParameters(RABBITMQ_URL))
             channel = connection.channel()
             channel.queue_declare(queue='solved_blocks')
             
@@ -669,6 +713,13 @@ def rabbitmq_join_listener():
                     
                     if "difficulty_prefix" in candidate:
                         del candidate["difficulty_prefix"]
+                        
+                    # Medir tiempo y ajustar dificultad dinámica
+                    block_index = candidate.get('index')
+                    if block_index in mining_started_at:
+                        tiempo_transcurrido = time.time() - mining_started_at[block_index]
+                        ajustar_dificultad(tiempo_transcurrido)
+                        del mining_started_at[block_index]
                         
                     if db.save_block(candidate):
                         print(f"NCT {NODE_ID} [JOIN]: Bloque {candidate.get('index')} persistido.")

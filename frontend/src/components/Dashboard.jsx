@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { deriveAddress } from '../utils/cryptoUtils';
-import { Coins, BookOpen, PackageOpen, QrCode, RefreshCcw, ArrowRightLeft } from 'lucide-react';
+import { Coins, BookOpen, PackageOpen, QrCode, RefreshCcw, ArrowRightLeft, ArrowLeft } from 'lucide-react';
+import PackOpener from './PackOpener';
+import QRScanner from './QRScanner';
+import Album from './Album';
+import SwapP2P from './SwapP2P';
 
 export default function Dashboard({ wallet }) {
     const [balanceData, setBalanceData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const [address, setAddress] = useState('');
+    const [activeView, setActiveView] = useState('home'); // 'home', 'pack_opener'
 
     const fetchBalance = async () => {
         setLoading(true);
         setError('');
         try {
-            // 1. Derivar la dirección pública (Wallet ID) a partir de la llave pública RSA
             const derivedAddr = await deriveAddress(wallet.publicKeyPem);
             setAddress(derivedAddr);
 
-            // 2. Llamar al Ingress del backend en Kubernetes
-            const baseUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+            const baseUrl = import.meta.env.VITE_BACKEND_URL || '/proxy-api';
             const response = await fetch(`${baseUrl}/wallet/balance?address=${derivedAddr}`);
             
             if (!response.ok) {
@@ -32,13 +35,45 @@ export default function Dashboard({ wallet }) {
         setLoading(false);
     };
 
+    const registerAlias = async () => {
+        try {
+            const baseUrl = import.meta.env.VITE_BACKEND_URL || '/proxy-api';
+            const { signTransaction } = await import('../utils/cryptoUtils');
+            
+            const payload = { alias: wallet.alias };
+            const signature = await signTransaction(wallet.privateKeyHex, payload);
+            
+            await fetch(`${baseUrl}/wallet/register_alias`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    public_key: wallet.publicKeyPem,
+                    payload: payload,
+                    signature: signature
+                })
+            });
+        } catch (err) {
+            console.error("Error registrando alias:", err);
+        }
+    };
+
     useEffect(() => {
         fetchBalance();
+        registerAlias();
     }, [wallet]);
 
     return (
-        <div className="animate-fade-in" style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <div className="animate-fade-in" style={{ padding: '20px', maxWidth: '900px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: '40px', position: 'relative' }}>
+                {activeView !== 'home' && (
+                    <button 
+                        onClick={() => setActiveView('home')}
+                        className="glass-button"
+                        style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', padding: '10px' }}
+                    >
+                        <ArrowLeft size={24} /> Volver
+                    </button>
+                )}
                 <h1 style={{ fontSize: '2.5rem', marginBottom: '10px' }}>
                     Bienvenido, <span style={{ color: 'var(--primary)' }}>{wallet.alias}</span>
                 </h1>
@@ -47,7 +82,7 @@ export default function Dashboard({ wallet }) {
                 </p>
             </div>
 
-            {/* Tarjeta de Saldo */}
+            {/* Tarjeta de Saldo Principal */}
             <div className="glass-panel" style={{ padding: '30px', textAlign: 'center', marginBottom: '40px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                     <h2 style={{ fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -78,37 +113,73 @@ export default function Dashboard({ wallet }) {
                         </div>
                     </div>
                 )}
-            </div>
 
-            {/* Grilla de Acciones Principales */}
-            <h3 style={{ marginBottom: '20px', fontSize: '1.2rem', color: 'var(--text-muted)' }}>Acciones Disponibles</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
-                
-                <button className="glass-panel action-card">
-                    <BookOpen size={40} color="#3b82f6" />
-                    <h4>Mi Álbum</h4>
-                    <p>Pega tus figuritas y completa selecciones.</p>
-                </button>
-
-                <button className="glass-panel action-card">
-                    <PackageOpen size={40} color="#a855f7" />
-                    <h4>Abrir Sobres</h4>
-                    <p>Compra sobres por 500 PTS.</p>
-                </button>
-
-                <button className="glass-panel action-card">
-                    <QrCode size={40} color="#10b981" />
-                    <h4>Escanear Código</h4>
-                    <p>Reclama puntos de productos físicos.</p>
-                </button>
-
-                <button className="glass-panel action-card">
-                    <ArrowRightLeft size={40} color="#f59e0b" />
-                    <h4>Intercambio</h4>
-                    <p>Swap P2P con otros coleccionistas.</p>
-                </button>
 
             </div>
+
+            {/* Vista Dinámica */}
+            {activeView === 'home' ? (
+                <>
+                    <h3 style={{ marginBottom: '20px', fontSize: '1.2rem', color: 'var(--text-muted)' }} className="dashboard-action-title">Acciones Disponibles</h3>
+                    <div className="dashboard-action-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+                        <button className="glass-panel action-card" onClick={() => setActiveView('album')}>
+                            <BookOpen size={40} color="#3b82f6" />
+                            <h4>Mi Álbum</h4>
+                            <p>Pega tus figuritas y completa selecciones.</p>
+                        </button>
+
+                        <button className="glass-panel action-card" onClick={() => setActiveView('pack_opener')}>
+                            <PackageOpen size={40} color="#a855f7" />
+                            <h4>Abrir Sobres</h4>
+                            <p>Compra sobres holográficos por 500 PTS.</p>
+                        </button>
+
+                        <button className="glass-panel action-card" onClick={() => setActiveView('qr_scanner')}>
+                            <QrCode size={40} color="#10b981" />
+                            <h4>Escanear Código</h4>
+                            <p>Reclama puntos de productos físicos.</p>
+                        </button>
+
+                        <button className="glass-panel action-card" onClick={() => setActiveView('swap')}>
+                            <ArrowRightLeft size={40} color="#f59e0b" />
+                            <h4>Intercambio</h4>
+                            <p>Swap P2P con otros coleccionistas.</p>
+                        </button>
+                    </div>
+                </>
+            ) : activeView === 'pack_opener' ? (
+                <PackOpener 
+                    privateKeyHex={wallet.privateKeyHex} 
+                    publicKeyPem={wallet.publicKeyPem} 
+                    currentPts={balanceData?.puntos_disponibles || 0}
+                    onPackOpened={fetchBalance}
+                />
+            ) : activeView === 'qr_scanner' ? (
+                <QRScanner 
+                    privateKeyHex={wallet.privateKeyHex} 
+                    publicKeyPem={wallet.publicKeyPem}
+                    onSuccess={() => {
+                        fetchBalance();
+                    }}
+                />
+            ) : activeView === 'album' ? (
+                <Album 
+                    figuritas={balanceData?.figuritas_poseidas || []}
+                    privateKeyHex={wallet.privateKeyHex}
+                    publicKeyPem={wallet.publicKeyPem}
+                    onRewardClaimed={fetchBalance}
+                />
+            ) : activeView === 'swap' ? (
+                <SwapP2P 
+                    figuritas={balanceData?.figuritas_poseidas || []}
+                    privateKeyHex={wallet.privateKeyHex}
+                    publicKeyPem={wallet.publicKeyPem}
+                    onSuccess={() => {
+                        setActiveView('home');
+                        fetchBalance();
+                    }}
+                />
+            ) : null}
         </div>
     );
 }

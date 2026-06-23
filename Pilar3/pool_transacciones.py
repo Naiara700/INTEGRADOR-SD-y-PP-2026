@@ -7,7 +7,7 @@ import os
 app = FastAPI(title="Pool de Transacciones (Gestor Split)", description="Fragmentador y Distribuidor de Carga hacia RabbitMQ")
 
 # Configuración
-RABBITMQ_HOST = os.environ.get("RABBITMQ_HOST", "localhost")
+RABBITMQ_URL = os.environ.get("RABBITMQ_URL", "amqp://guest:guest@localhost:5672")
 # Dividimos el espacio de 32-bits (4.2 billones) en partes.
 # 100 partes por defecto = 42.9 millones de nonces por worker.
 NUM_CHUNKS = int(os.environ.get("NUM_CHUNKS", 100))
@@ -21,7 +21,7 @@ class BlockCandidate(BaseModel):
 
 def get_rabbitmq_channel():
     """Establece conexión con RabbitMQ y asegura que la cola exista."""
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBITMQ_HOST))
+    connection = pika.BlockingConnection(pika.URLParameters(RABBITMQ_URL))
     channel = connection.channel()
     # durable=True para no perder tareas si RabbitMQ se reinicia
     channel.queue_declare(queue='tareas_mineria', durable=True)
@@ -38,7 +38,17 @@ def mine_block(block: BlockCandidate):
     chunk_size = MAX_NONCE // NUM_CHUNKS
     
     try:
-        connection, channel = get_rabbitmq_channel()
+        connection = pika.BlockingConnection(pika.URLParameters(RABBITMQ_URL))
+        channel = connection.channel()
+        queue_info = channel.queue_declare(queue='tareas_mineria', durable=True)
+        consumer_count = queue_info.method.consumer_count
+        
+        # Lógica de fallback: Si no hay nadie escuchando, la GPU está off.
+        # Bajamos la dificultad temporalmente al mínimo para que las CPUs puedan resolverlo
+        if consumer_count == 0 and len(block.difficulty_prefix) > 1:
+            print("TrP [ALERTA]: No hay mineros activos conectados. Reduciendo dificultad para CPU.")
+            block.difficulty_prefix = "0"
+            
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Fallo crítico: No se pudo conectar a RabbitMQ: {str(e)}")
 

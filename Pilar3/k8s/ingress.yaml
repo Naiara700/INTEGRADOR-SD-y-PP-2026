@@ -10,12 +10,14 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    # Este es el subdominio desde donde el frontend consumirá la API del backend
+    - stickerchain.lat
     - api.stickerchain.lat
-    # Aquí se guardará físicamente la clave privada y el certificado emitido
     secretName: stickerchain-tls-secret
   rules:
-  - host: api.stickerchain.lat
+  # ==========================================
+  # 1. FRONTEND: El usuario entra a la web visual
+  # ==========================================
+  - host: stickerchain.lat
     http:
       paths:
       - path: /
@@ -25,14 +27,15 @@ spec:
             name: frontend-service
             port:
               number: 80
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: nct-service
-            port:
-              number: 8000
-      - path: /bully
+
+  # ==========================================
+  # 2. BACKEND: La aplicación consume los datos
+  # ==========================================
+  - host: api.stickerchain.lat
+    http:
+      paths:
+      # Todo lo que vaya a api.stickerchain.lat/* va al Backend
+      - path: /
         pathType: Prefix
         backend:
           service:
