@@ -56,3 +56,15 @@ credentials.json
 # OS files
 .DS_Store
 Thumbs.db
+pyrightconfig.json
+# Python
+__pycache__/
+*.pyc
+
+# Node / React Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.env
+.env.local
+
