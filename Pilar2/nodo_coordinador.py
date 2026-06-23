@@ -494,8 +494,10 @@ def buy_pack_contract(req: SignedTransaction):
         }
         add_transaction_to_mempool(tx_burn)
         
+        cartas_reveladas = []
         for _ in range(5):
             fig_data = generar_figurita_rng()
+            cartas_reveladas.append(fig_data)
             tx_mint = {
                 "usuario_a": "Direccion_Nula_Tesoreria",
                 "usuario_b": wallet_id,
@@ -504,7 +506,7 @@ def buy_pack_contract(req: SignedTransaction):
             }
             add_transaction_to_mempool(tx_mint)
             
-        return {"status": "success", "message": "Fondos verificados. Transacciones de sobre encoladas."}
+        return {"status": "success", "message": "Fondos verificados. Transacciones de sobre encoladas.", "cartas": cartas_reveladas}
     
     raise HTTPException(status_code=400, detail="Fondos insuficientes en la blockchain.")
 
