@@ -10,8 +10,12 @@ COPY include/ /build/include/
 COPY Hit7/ /build/Hit7/
 
 # Compilar nativamente hit7_cuda para Linux
-RUN nvcc -I/build/include/crypto-c -I/build/include /build/Hit7/hit7_cuda.cu -o hit7_cuda
-
+RUN nvcc -rdc=true -I/build/include/crypto-c/src \
+    -I/build/include/crypto-c \
+    -I/build/include \
+    /build/Hit7/hit7_cuda.cu \
+    /build/include/crypto-c/src/md5.cu \
+    -o hit7_cuda
 # ==========================================
 # Etapa 2: Runtime (Imagen final de ejecución)
 # ==========================================
