@@ -1,0 +1,25 @@
+# HPA para el Worker GPU en el clúster k3s de Ale (namespace: g-naj)
+# IMPORTANTE: maxReplicas debe coincidir con la cantidad de nodos con GPU disponibles.
+# Cada pod pide 1 GPU física (nvidia.com/gpu: 1), por lo que no se pueden
+# schedulear más pods que nodos GPU disponibles en el clúster.
+#
+# Para aplicar: kubectl apply -f hpa-gpu-external.yaml  (en contexto naiara@k3s-cluster)
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: worker-gpu-hpa
+  namespace: g-naj
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: worker-gpu-deployment
+  minReplicas: 1
+  maxReplicas: 4   # Ajustar según la cantidad de nodos GPU disponibles en k3s de Ale
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70   # Escala cuando el worker supera 70% de CPU
