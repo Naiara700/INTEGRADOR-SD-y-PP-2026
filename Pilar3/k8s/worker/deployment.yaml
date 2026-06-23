@@ -19,7 +19,7 @@ spec:
         node_role: applications
       containers:
       - name: worker
-        image: naiaracollazo/sticker-worker-miner:latest
+        image: us-central1-docker.pkg.dev/project-f3583ede-db03-4872-95c/stickerchain/sticker-worker-miner:latest
         imagePullPolicy: Always
         resources:
           requests:
