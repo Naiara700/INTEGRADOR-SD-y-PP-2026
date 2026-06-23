@@ -1,1719 +1,1208 @@
-ESTRUCTURA DE ÁLBUM DE FIGURITAS - COPA MUNDIAL DE LA FIFA 2026™
-================================================================
-Este archivo contiene la organización completa de las 48 selecciones clasificadas,
-divididas en sus respectivos 12 grupos. Para cada equipo, se incluye una lista con
-los jugadores más destacados (Top Figuritas) y el esquema para completar el plantel
-de 26 jugadores requerido por la FIFA.
+================================================================================
+ÁLBUM OFICIAL PANINI - COPA MUNDIAL DE LA FIFA 2026
+(Canadá · México · Estados Unidos)
+================================================================================
+
+Listado completo de figuritas por selección, ordenado por grupo (A-L).
+
+ESTRUCTURA DEL ÁLBUM:
+  - 48 selecciones · 20 figuritas por equipo = 960 figuritas de selecciones
+  - Cada equipo: 1 escudo + 18 jugadores + 1 foto grupal (la foto va en la pos. 13)
+  - + 9 figuritas de apertura (foil) + 11 figuritas 'Historia del Mundial' (foil)
+  - TOTAL base del álbum: 980 figuritas
+
+NOTA SOBRE EXACTITUD: el plantel de cada selección refleja el checklist
+publicado del álbum oficial (cerrado al lanzamiento del 1 de abril de 2026),
+no necesariamente la lista final de 26 que cada DT presentó para el torneo.
+La asignación de grupos coincide con el sorteo oficial FIFA del 5/12/2025.
 
 [Grupo A]
 -------
-
   EQUIPO: México
   PÁGINA DEL ÁLBUM: MÉXICO
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Guillermo Ochoa
-    * Edson Álvarez
-    * Santiago Giménez
-    * Hirving Lozano
-  PLANTILLA COMPLETA (1-26):
-    01. Guillermo Ochoa
-    02. Edson Álvarez
-    03. Santiago Giménez
-    04. Hirving Lozano
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: Corea del Sur
-  PÁGINA DEL ÁLBUM: COREA DEL SUR
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Son Heung-min
-    * Kim Min-jae
-    * Lee Kang-in
-    * Hwang Hee-chan
-  PLANTILLA COMPLETA (1-26):
-    01. Son Heung-min
-    02. Kim Min-jae
-    03. Lee Kang-in
-    04. Hwang Hee-chan
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: República Checa
-  PÁGINA DEL ÁLBUM: REPÚBLICA CHECA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Patrik Schick
-    * Tomáš Souček
-    * Vladimír Coufal
-  PLANTILLA COMPLETA (1-26):
-    01. Patrik Schick
-    02. Tomáš Souček
-    03. Vladimír Coufal
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de México
+    02. Luis Malagón
+    03. Johan Vásquez
+    04. Jorge Sánchez
+    05. César Montes
+    06. Jesús Gallardo
+    07. Israel Reyes
+    08. Diego Lainez
+    09. Carlos Rodríguez
+    10. Edson Álvarez
+    11. Orbelín Pineda
+    12. Marcel Ruiz
+    13. Foto Grupal de México
+    14. Érick Sánchez
+    15. Hirving Lozano
+    16. Santiago Giménez
+    17. Raúl Jiménez
+    18. Alexis Vega
+    19. Roberto Alvarado
+    20. César Huerta
   EQUIPO: Sudáfrica
   PÁGINA DEL ÁLBUM: SUDÁFRICA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Percy Tau
-    * Ronwen Williams
-    * Teboho Mokoena
-  PLANTILLA COMPLETA (1-26):
-    01. Percy Tau
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Sudáfrica
     02. Ronwen Williams
-    03. Teboho Mokoena
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+    03. Sipho Chaine
+    04. Aubrey Modiba
+    05. Samukele Kabini
+    06. Mbekezeli Mbokazi
+    07. Khulumani Ndamane
+    08. Siyabonga Ngezana
+    09. Khuliso Mudau
+    10. Nkosinathi Sibisi
+    11. Teboho Mokoena
+    12. Thalente Mbatha
+    13. Foto Grupal de Sudáfrica
+    14. Bathusi Aubaas
+    15. Yaya Sithole
+    16. Sipho Mbule
+    17. Lyle Foster
+    18. Iqraam Rayners
+    19. Mohau Nkota
+    20. Oswin Appollis
+  EQUIPO: Corea del Sur
+  PÁGINA DEL ÁLBUM: COREA DEL SUR
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Corea del Sur
+    02. Jo Hyeon-woo
+    03. Kim Seung-gyu
+    04. Kim Min-jae
+    05. Cho Yu-min
+    06. Seol Young-woo
+    07. Lee Han-beom
+    08. Lee Tae-seok
+    09. Lee Myung-jae
+    10. Lee Jae-sung
+    11. Hwang In-beom
+    12. Lee Kang-in
+    13. Foto Grupal de Corea del Sur
+    14. Paik Seung-ho
+    15. Jens Castrop
+    16. Lee Dong-gyeong
+    17. Cho Gue-sung
+    18. Son Heung-min
+    19. Hwang Hee-chan
+    20. Oh Hyeon-gyu
+  EQUIPO: República Checa
+  PÁGINA DEL ÁLBUM: REPÚBLICA CHECA
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de República Checa
+    02. Matej Kovar
+    03. Jindrich Stanek
+    04. Ladislav Krejci
+    05. Vladimir Coufal
+    06. Jaroslav Zeleny
+    07. Tomas Holes
+    08. David Zima
+    09. Michal Sadilek
+    10. Lukas Provod
+    11. Lukas Cerv
+    12. Tomas Soucek
+    13. Foto Grupal de República Checa
+    14. Pavel Sulc
+    15. Matej Vydra
+    16. Vasil Kusej
+    17. Tomas Chory
+    18. Vaclav Cerny
+    19. Adam Hlozek
+    20. Patrik Schick
 
-================================================================
 
 [Grupo B]
 -------
-
   EQUIPO: Canadá
   PÁGINA DEL ÁLBUM: CANADÁ
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Alphonso Davies
-    * Jonathan David
-    * Stephen Eustáquio
-  PLANTILLA COMPLETA (1-26):
-    01. Alphonso Davies
-    02. Jonathan David
-    03. Stephen Eustáquio
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: Suiza
-  PÁGINA DEL ÁLBUM: SUIZA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Granit Xhaka
-    * Manuel Akanji
-    * Yann Sommer
-  PLANTILLA COMPLETA (1-26):
-    01. Granit Xhaka
-    02. Manuel Akanji
-    03. Yann Sommer
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Canadá
+    02. Dayne St. Clair
+    03. Alphonso Davies
+    04. Alistair Johnston
+    05. Samuel Adekugbe
+    06. Richie Laryea
+    07. Derek Cornelius
+    08. Moïse Bombito
+    09. Kamal Miller
+    10. Stephen Eustáquio
+    11. Ismaël Koné
+    12. Jonathan Osorio
+    13. Foto Grupal de Canadá
+    14. Jacob Shaffelburg
+    15. Mathieu Choinière
+    16. Niko Sigur
+    17. Tajon Buchanan
+    18. Liam Millar
+    19. Cyle Larin
+    20. Jonathan David
   EQUIPO: Bosnia y Herzegovina
   PÁGINA DEL ÁLBUM: BOSNIA Y HERZEGOVINA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Edin Džeko
-    * Sead Kolašinac
-    * Miralem Pjanić
-  PLANTILLA COMPLETA (1-26):
-    01. Edin Džeko
-    02. Sead Kolašinac
-    03. Miralem Pjanić
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Bosnia y Herzegovina
+    02. Nikola Vasilj
+    03. Amer Dedic
+    04. Sead Kolasinac
+    05. Tarik Muharemovic
+    06. Nihad Mujakic
+    07. Nikola Katic
+    08. Amir Hadziahmetovic
+    09. Benjamin Tahirovic
+    10. Armin Gigovic
+    11. Ivan Sunjic
+    12. Ivan Basic
+    13. Foto Grupal de Bosnia y Herzegovina
+    14. Dzenis Burnic
+    15. Esmir Bajraktarevic
+    16. Amar Memic
+    17. Ermedin Demirovic
+    18. Edin Dzeko
+    19. Samed Bazdar
+    20. Haris Tabakovic
   EQUIPO: Qatar
   PÁGINA DEL ÁLBUM: QATAR
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Akram Afif
-    * Almoez Ali
-    * Hassan Al-Haydos
-  PLANTILLA COMPLETA (1-26):
-    01. Akram Afif
-    02. Almoez Ali
-    03. Hassan Al-Haydos
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Qatar
+    02. Meshaal Barsham
+    03. Sultan Albrake
+    04. Lucas Mendes
+    05. Homam Ahmed
+    06. Boualem Khoukhi
+    07. Pedro Miguel
+    08. Tarek Salman
+    09. Mohamed Al-Mannai
+    10. Karim Boudiaf
+    11. Assim Madibo
+    12. Ahmed Fatehi
+    13. Foto Grupal de Qatar
+    14. Mohammed Waad
+    15. Abdulaziz Hatem
+    16. Hassan Al-Haydos
+    17. Edmilson Junior
+    18. Akram Hassan Afif
+    19. Ahmed Al Ganehi
+    20. Almoez Ali
+  EQUIPO: Suiza
+  PÁGINA DEL ÁLBUM: SUIZA
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Suiza
+    02. Gregor Kobel
+    03. Yvon Mvogo
+    04. Manuel Akanji
+    05. Ricardo Rodriguez
+    06. Nico Elvedi
+    07. Aurèle Amenda
+    08. Silvan Widmer
+    09. Granit Xhaka
+    10. Denis Zakaria
+    11. Remo Freuler
+    12. Fabian Rieder
+    13. Foto Grupal de Suiza
+    14. Ardon Jashari
+    15. Johan Manzambi
+    16. Michel Aebischer
+    17. Breel Embolo
+    18. Ruben Vargas
+    19. Dan Ndoye
+    20. Zeki Amdouni
 
-================================================================
 
 [Grupo C]
 -------
-
   EQUIPO: Brasil
   PÁGINA DEL ÁLBUM: BRASIL
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Vinícius Júnior
-    * Rodrygo
-    * Lucas Paquetá
-    * Marquinhos
-    * Alisson
-  PLANTILLA COMPLETA (1-26):
-    01. Vinícius Júnior
-    02. Rodrygo
-    03. Lucas Paquetá
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Brasil
+    02. Alisson
+    03. Bento
     04. Marquinhos
-    05. Alisson
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+    05. Éder Militão
+    06. Gabriel Magalhães
+    07. Danilo
+    08. Wesley
+    09. Lucas Paquetá
+    10. Casemiro
+    11. Bruno Guimarães
+    12. Luiz Henrique
+    13. Foto Grupal de Brasil
+    14. Vinicius Júnior
+    15. Rodrygo
+    16. João Pedro
+    17. Matheus Cunha
+    18. Gabriel Martinelli
+    19. Raphinha
+    20. Estêvão
   EQUIPO: Marruecos
   PÁGINA DEL ÁLBUM: MARRUECOS
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Achraf Hakimi
-    * Yassine Bounou
-    * Hakim Ziyech
-    * Sofyan Amrabat
-  PLANTILLA COMPLETA (1-26):
-    01. Achraf Hakimi
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Marruecos
     02. Yassine Bounou
-    03. Hakim Ziyech
-    04. Sofyan Amrabat
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: Escocia
-  PÁGINA DEL ÁLBUM: ESCOCIA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Andrew Robertson
-    * Scott McTominay
-    * John McGinn
-  PLANTILLA COMPLETA (1-26):
-    01. Andrew Robertson
-    02. Scott McTominay
-    03. John McGinn
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+    03. Munir El Kajoui
+    04. Achraf Hakimi
+    05. Noussair Mazraoui
+    06. Nayef Aguerd
+    07. Romain Saïss
+    08. Jawad El Yamiq
+    09. Adam Masina
+    10. Sofyan Amrabat
+    11. Azzedine Ounahi
+    12. Eliesse Ben Seghir
+    13. Foto Grupal de Marruecos
+    14. Bilal El Khannouss
+    15. Ismael Saibari
+    16. Youssef En-Nesyri
+    17. Abde Ezzalzouli
+    18. Soufiane Rahimi
+    19. Brahim Díaz
+    20. Ayoub El Kaabi
   EQUIPO: Haití
   PÁGINA DEL ÁLBUM: HAITÍ
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Frantzdy Pierrot
-    * Duckens Nazon
-    * Johny Placide
-  PLANTILLA COMPLETA (1-26):
-    01. Frantzdy Pierrot
-    02. Duckens Nazon
-    03. Johny Placide
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Haití
+    02. Johny Placide
+    03. Carlens Arcus
+    04. Martin Experience
+    05. Jean-Kevin Duverne
+    06. Ricardo Adé
+    07. Duke Lacroix
+    08. Garven Metusala
+    09. Hannes Delcroix
+    10. Leverton Pierre
+    11. Danley Jean Jacques
+    12. Jean-Ricner Bellegarde
+    13. Foto Grupal de Haití
+    14. Christopher Attys
+    15. Derrick Etienne Jr.
+    16. Josue Casimir
+    17. Ruben Providence
+    18. Duckens Nazon
+    19. Louicius Deedson
+    20. Frantzdy Pierrot
+  EQUIPO: Escocia
+  PÁGINA DEL ÁLBUM: ESCOCIA
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Escocia
+    02. Angus Gunn
+    03. Jack Hendry
+    04. Kieran Tierney
+    05. Aaron Hickey
+    06. Andrew Robertson
+    07. Scott McKenna
+    08. John Souttar
+    09. Anthony Ralston
+    10. Grant Hanley
+    11. Scott McTominay
+    12. Billy Gilmour
+    13. Foto Grupal de Escocia
+    14. Lewis Ferguson
+    15. Ryan Christie
+    16. Kenny McLean
+    17. John McGinn
+    18. Lyndon Dykes
+    19. Che Adams
+    20. Ben Gannon-Doak
 
-================================================================
 
 [Grupo D]
 -------
-
   EQUIPO: Estados Unidos
   PÁGINA DEL ÁLBUM: ESTADOS UNIDOS
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Christian Pulisic
-    * Weston McKennie
-    * Tyler Adams
-    * Folarin Balogun
-  PLANTILLA COMPLETA (1-26):
-    01. Christian Pulisic
-    02. Weston McKennie
-    03. Tyler Adams
-    04. Folarin Balogun
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: Australia
-  PÁGINA DEL ÁLBUM: AUSTRALIA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Mathew Ryan
-    * Harry Souttar
-    * Jackson Irvine
-  PLANTILLA COMPLETA (1-26):
-    01. Mathew Ryan
-    02. Harry Souttar
-    03. Jackson Irvine
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Estados Unidos
+    02. Matt Freese
+    03. Chris Richards
+    04. Tim Ream
+    05. Mark McKenzie
+    06. Alex Freeman
+    07. Antonee Robinson
+    08. Tyler Adams
+    09. Tanner Tessmann
+    10. Weston McKennie
+    11. Christian Roldan
+    12. Timothy Weah
+    13. Foto Grupal de Estados Unidos
+    14. Diego Luna
+    15. Malik Tillman
+    16. Christian Pulisic
+    17. Brenden Aaronson
+    18. Ricardo Pepi
+    19. Haji Wright
+    20. Folarin Balogun
   EQUIPO: Paraguay
   PÁGINA DEL ÁLBUM: PARAGUAY
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Miguel Almirón
-    * Julio Enciso
-    * Gustavo Gómez
-  PLANTILLA COMPLETA (1-26):
-    01. Miguel Almirón
-    02. Julio Enciso
-    03. Gustavo Gómez
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Paraguay
+    02. Roberto Fernández
+    03. Orlando Gill
+    04. Gustavo Gómez
+    05. Fabián Balbuena
+    06. Juan José Cáceres
+    07. Omar Alderete
+    08. Junior Alonso
+    09. Mathías Villasanti
+    10. Diego Gómez
+    11. Damián Bobadilla
+    12. Andrés Cubas
+    13. Foto Grupal de Paraguay
+    14. Matías Galarza Fonda
+    15. Julio Enciso
+    16. Alejandro Romero Gamarra
+    17. Miguel Almirón
+    18. Ramón Sosa
+    19. Ángel Romero
+    20. Antonio Sanabria
+  EQUIPO: Australia
+  PÁGINA DEL ÁLBUM: AUSTRALIA
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Australia
+    02. Mathew Ryan
+    03. Joe Gauci
+    04. Harry Souttar
+    05. Alessandro Circati
+    06. Jordan Bos
+    07. Aziz Behich
+    08. Cameron Burgess
+    09. Lewis Miller
+    10. Milos Degenek
+    11. Jackson Irvine
+    12. Riley McGree
+    13. Foto Grupal de Australia
+    14. Aiden O'Neill
+    15. Connor Metcalfe
+    16. Patrick Yazbek
+    17. Craig Goodwin
+    18. Kusini Vengi
+    19. Nestory Irankunda
+    20. Mohamed Touré
   EQUIPO: Turquía
   PÁGINA DEL ÁLBUM: TURQUÍA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Hakan Çalhanoğlu
-    * Arda Güler
-    * Kerem Aktürkoğlu
-  PLANTILLA COMPLETA (1-26):
-    01. Hakan Çalhanoğlu
-    02. Arda Güler
-    03. Kerem Aktürkoğlu
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Turquía
+    02. Ugurcan Cakir
+    03. Mert Muldur
+    04. Zeki Celik
+    05. Abdulkerim Bardakci
+    06. Caglar Soyuncu
+    07. Merih Demiral
+    08. Ferdi Kadioglu
+    09. Kaan Ayhan
+    10. Ismail Yuksek
+    11. Hakan Calhanoglu
+    12. Orkun Kokcu
+    13. Foto Grupal de Turquía
+    14. Arda Guler
+    15. Irfan Can Kahveci
+    16. Yunus Akgun
+    17. Can Uzun
+    18. Baris Alper Yilmaz
+    19. Kerem Akturkoglu
+    20. Kenan Yildiz
 
-================================================================
 
 [Grupo E]
 -------
-
   EQUIPO: Alemania
   PÁGINA DEL ÁLBUM: ALEMANIA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Jamal Musiala
-    * Florian Wirtz
-    * Antonio Rüdiger
-    * İlkay Gündoğan
-  PLANTILLA COMPLETA (1-26):
-    01. Jamal Musiala
-    02. Florian Wirtz
-    03. Antonio Rüdiger
-    04. İlkay Gündoğan
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: Costa de Marfil
-  PÁGINA DEL ÁLBUM: COSTA DE MARFIL
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Sébastien Haller
-    * Franck Kessié
-    * Odilon Kossounou
-  PLANTILLA COMPLETA (1-26):
-    01. Sébastien Haller
-    02. Franck Kessié
-    03. Odilon Kossounou
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: Ecuador
-  PÁGINA DEL ÁLBUM: ECUADOR
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Moisés Caicedo
-    * Piero Hincapié
-    * Enner Valencia
-  PLANTILLA COMPLETA (1-26):
-    01. Moisés Caicedo
-    02. Piero Hincapié
-    03. Enner Valencia
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Alemania
+    02. Marc-André ter Stegen
+    03. Jonathan Tah
+    04. David Raum
+    05. Nico Schlotterbeck
+    06. Antonio Rüdiger
+    07. Waldemar Anton
+    08. Ridle Baku
+    09. Maximilian Mittelstädt
+    10. Joshua Kimmich
+    11. Florian Wirtz
+    12. Felix Nmecha
+    13. Foto Grupal de Alemania
+    14. Leon Goretzka
+    15. Jamal Musiala
+    16. Serge Gnabry
+    17. Kai Havertz
+    18. Leroy Sané
+    19. Karim Adeyemi
+    20. Nick Woltemade
   EQUIPO: Curazao
   PÁGINA DEL ÁLBUM: CURAZAO
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Leandro Bacuna
-    * Juninho Bacuna
-    * Eloy Room
-  PLANTILLA COMPLETA (1-26):
-    01. Leandro Bacuna
-    02. Juninho Bacuna
-    03. Eloy Room
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Curazao
+    02. Eloy Room
+    03. Armando Obispo
+    04. Sherel Floranus
+    05. Jurien Gaari
+    06. Joshua Brenet
+    07. Roshon van Eijma
+    08. Shurandy Sambo
+    09. Livano Comenencia
+    10. Godfried Roemeratoe
+    11. Juninho Bacuna
+    12. Leandro Bacuna
+    13. Foto Grupal de Curazao
+    14. Tahith Chong
+    15. Kenji Gorre
+    16. Jearl Margaritha
+    17. Jürgen Locadia
+    18. Jeremy Antonisse
+    19. Gervane Kastaneer
+    20. Sontje Hansen
+  EQUIPO: Costa de Marfil
+  PÁGINA DEL ÁLBUM: COSTA DE MARFIL
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Costa de Marfil
+    02. Yahia Fofana
+    03. Ghislain Konan
+    04. Wilfried Singo
+    05. Odilon Kossounou
+    06. Evan Ndicka
+    07. Willy Boly
+    08. Emmanuel Agbadou
+    09. Ousmane Diomande
+    10. Franck Kessié
+    11. Seko Fofana
+    12. Ibrahim Sangaré
+    13. Foto Grupal de Costa de Marfil
+    14. Jean-Philippe Gbamin
+    15. Amad Diallo
+    16. Sébastien Haller
+    17. Simon Adingra
+    18. Yan Diomande
+    19. Evann Guessand
+    20. Oumar Diakité
+  EQUIPO: Ecuador
+  PÁGINA DEL ÁLBUM: ECUADOR
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Ecuador
+    02. Hernán Galíndez
+    03. Gonzalo Valle
+    04. Piero Hincapié
+    05. Pervis Estupiñán
+    06. Willian Pacho
+    07. Ángelo Preciado
+    08. Joel Ordóñez
+    09. Moisés Caicedo
+    10. Alan Franco
+    11. Kendry Páez
+    12. Pedro Vite
+    13. Foto Grupal de Ecuador
+    14. John Yeboah
+    15. Leonardo Campana
+    16. Gonzalo Plata
+    17. Nilson Angulo
+    18. Alan Minda
+    19. Kevin Rodríguez
+    20. Enner Valencia
 
-================================================================
 
 [Grupo F]
 -------
-
   EQUIPO: Países Bajos
   PÁGINA DEL ÁLBUM: PAÍSES BAJOS
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Virgil van Dijk
-    * Frenkie de Jong
-    * Cody Gakpo
-    * Xavi Simons
-  PLANTILLA COMPLETA (1-26):
-    01. Virgil van Dijk
-    02. Frenkie de Jong
-    03. Cody Gakpo
-    04. Xavi Simons
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Países Bajos
+    02. Bart Verbruggen
+    03. Virgil van Dijk
+    04. Micky van de Ven
+    05. Jurriën Timber
+    06. Denzel Dumfries
+    07. Nathan Aké
+    08. Jeremie Frimpong
+    09. Jan Paul van Hecke
+    10. Tijjani Reijnders
+    11. Ryan Gravenberch
+    12. Teun Koopmeiners
+    13. Foto Grupal de Países Bajos
+    14. Frenkie de Jong
+    15. Xavi Simons
+    16. Justin Kluivert
+    17. Memphis Depay
+    18. Donyell Malen
+    19. Wout Weghorst
+    20. Cody Gakpo
   EQUIPO: Japón
   PÁGINA DEL ÁLBUM: JAPÓN
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Kaoru Mitoma
-    * Takefusa Kubo
-    * Wataru Endo
-  PLANTILLA COMPLETA (1-26):
-    01. Kaoru Mitoma
-    02. Takefusa Kubo
-    03. Wataru Endo
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Japón
+    02. Zion Suzuki
+    03. Henry Hiroki Mochizuki
+    04. Ayumu Seko
+    05. Junnosuke Suzuki
+    06. Shogo Taniguchi
+    07. Tsuyoshi Watanabe
+    08. Kaishu Sano
+    09. Yuki Soma
+    10. Ao Tanaka
+    11. Daichi Kamada
+    12. Takefusa Kubo
+    13. Foto Grupal de Japón
+    14. Ritsu Doan
+    15. Keito Nakamura
+    16. Takumi Minamino
+    17. Shuto Machino
+    18. Junya Ito
+    19. Koki Ogawa
+    20. Ayase Ueda
   EQUIPO: Suecia
   PÁGINA DEL ÁLBUM: SUECIA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Alexander Isak
-    * Dejan Kulusevski
-    * Viktor Gyökeres
-  PLANTILLA COMPLETA (1-26):
-    01. Alexander Isak
-    02. Dejan Kulusevski
-    03. Viktor Gyökeres
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Suecia
+    02. Victor Johansson
+    03. Isak Hien
+    04. Gabriel Gudmundsson
+    05. Emil Holm
+    06. Victor Nilsson Lindelöf
+    07. Gustaf Lagerbielke
+    08. Lucas Bergvall
+    09. Hugo Larsson
+    10. Jesper Karlström
+    11. Yasin Ayari
+    12. Mattias Svanberg
+    13. Foto Grupal de Suecia
+    14. Daniel Svensson
+    15. Ken Sema
+    16. Roony Bardghji
+    17. Dejan Kulusevski
+    18. Anthony Elanga
+    19. Alexander Isak
+    20. Viktor Gyökeres
   EQUIPO: Túnez
   PÁGINA DEL ÁLBUM: TÚNEZ
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Youssef Msakni
-    * Ellyes Skhiri
-    * Aïssa Laïdouni
-  PLANTILLA COMPLETA (1-26):
-    01. Youssef Msakni
-    02. Ellyes Skhiri
-    03. Aïssa Laïdouni
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Túnez
+    02. Bechir Ben Said
+    03. Aymen Dahmen
+    04. Yan Valery
+    05. Montassar Talbi
+    06. Yassine Meriah
+    07. Ali Abdi
+    08. Dylan Bronn
+    09. Ellyes Skhiri
+    10. Aïssa Laïdouni
+    11. Ferjani Sassi
+    12. Mohamed Ali Ben Romdhane
+    13. Foto Grupal de Túnez
+    14. Hannibal Mejbri
+    15. Elias Achouri
+    16. Elias Saad
+    17. Hazem Mastouri
+    18. Ismael Gharbi
+    19. Sayfallah Ltaief
+    20. Naim Sliti
 
-================================================================
 
 [Grupo G]
 -------
-
   EQUIPO: Bélgica
   PÁGINA DEL ÁLBUM: BÉLGICA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Kevin De Bruyne
-    * Romelu Lukaku
-    * Jérémy Doku
-    * Amadou Onana
-  PLANTILLA COMPLETA (1-26):
-    01. Kevin De Bruyne
-    02. Romelu Lukaku
-    03. Jérémy Doku
-    04. Amadou Onana
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Bélgica
+    02. Thibaut Courtois
+    03. Arthur Theate
+    04. Timothy Castagne
+    05. Zeno Debast
+    06. Brandon Mechele
+    07. Maxim De Cuyper
+    08. Thomas Meunier
+    09. Youri Tielemans
+    10. Amadou Onana
+    11. Nicolas Raskin
+    12. Alexis Saelemaekers
+    13. Foto Grupal de Bélgica
+    14. Hans Vanaken
+    15. Kevin De Bruyne
+    16. Jérémy Doku
+    17. Charles De Ketelaere
+    18. Leandro Trossard
+    19. Loïs Openda
+    20. Romelu Lukaku
   EQUIPO: Egipto
   PÁGINA DEL ÁLBUM: EGIPTO
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Mohamed Salah
-    * Omar Marmoush
-    * Trezeguet
-  PLANTILLA COMPLETA (1-26):
-    01. Mohamed Salah
-    02. Omar Marmoush
-    03. Trezeguet
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Egipto
+    02. Mohamed El Shenawy
+    03. Mohamed Hany
+    04. Mohamed Hamdy
+    05. Yasser Ibrahim
+    06. Khaled Sobhi
+    07. Ramy Rabia
+    08. Hossam Abdelmaguid
+    09. Ahmed Fatouh
+    10. Marwan Attia
+    11. Zizo
+    12. Hamdy Fathy
+    13. Foto Grupal de Egipto
+    14. Mohamed Lasheen
+    15. Emam Ashour
+    16. Osama Faisal
+    17. Mohamed Salah
+    18. Mostafa Mohamed
+    19. Trezeguet
+    20. Omar Marmoush
   EQUIPO: Irán
   PÁGINA DEL ÁLBUM: IRÁN
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Mehdi Taremi
-    * Sardar Azmoun
-    * Alireza Jahanbakhsh
-  PLANTILLA COMPLETA (1-26):
-    01. Mehdi Taremi
-    02. Sardar Azmoun
-    03. Alireza Jahanbakhsh
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Irán
+    02. Alireza Beiranvand
+    03. Morteza Pouraliganji
+    04. Ehsan Hajsafi
+    05. Milad Mohammadi
+    06. Shojae Khalilzadeh
+    07. Ramin Rezaeian
+    08. Hossein Kanaani
+    09. Sadegh Moharrami
+    10. Saleh Hardani
+    11. Saeed Ezatolahi
+    12. Saman Ghoddos
+    13. Foto Grupal de Irán
+    14. Omid Noorafkan
+    15. Roozbeh Cheshmi
+    16. Mohammad Mohebi
+    17. Sardar Azmoun
+    18. Mehdi Taremi
+    19. Alireza Jahanbakhsh
+    20. Ali Gholizadeh
   EQUIPO: Nueva Zelanda
   PÁGINA DEL ÁLBUM: NUEVA ZELANDA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Chris Wood
-    * Liberato Cacace
-    * Matthew Garbett
-  PLANTILLA COMPLETA (1-26):
-    01. Chris Wood
-    02. Liberato Cacace
-    03. Matthew Garbett
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Nueva Zelanda
+    02. Max Crocombe
+    03. Alex Paulsen
+    04. Michael Boxall
+    05. Liberato Cacace
+    06. Tim Payne
+    07. Tyler Bindon
+    08. Francis de Vries
+    09. Finn Surman
+    10. Joe Bell
+    11. Sarpreet Singh
+    12. Ryan Thomas
+    13. Foto Grupal de Nueva Zelanda
+    14. Matthew Garbett
+    15. Marko Stamenić
+    16. Ben Old
+    17. Chris Wood
+    18. Elijah Just
+    19. Callum McCowatt
+    20. Kosta Barbarouses
 
-================================================================
 
 [Grupo H]
 -------
-
   EQUIPO: España
   PÁGINA DEL ÁLBUM: ESPAÑA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Rodri
-    * Pedri
-    * Lamine Yamal
-    * Dani Carvajal
-    * Álvaro Morata
-  PLANTILLA COMPLETA (1-26):
-    01. Rodri
-    02. Pedri
-    03. Lamine Yamal
-    04. Dani Carvajal
-    05. Álvaro Morata
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: Uruguay
-  PÁGINA DEL ÁLBUM: URUGUAY
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Federico Valverde
-    * Darwin Núñez
-    * Ronald Araújo
-    * Manuel Ugarte
-  PLANTILLA COMPLETA (1-26):
-    01. Federico Valverde
-    02. Darwin Núñez
-    03. Ronald Araújo
-    04. Manuel Ugarte
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: Arabia Saudita
-  PÁGINA DEL ÁLBUM: ARABIA SAUDITA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Salem Al-Dawsari
-    * Firas Al-Buraikan
-    * Saud Abdulhamid
-  PLANTILLA COMPLETA (1-26):
-    01. Salem Al-Dawsari
-    02. Firas Al-Buraikan
-    03. Saud Abdulhamid
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de España
+    02. Unai Simón
+    03. Robin Le Normand
+    04. Aymeric Laporte
+    05. Dean Huijsen
+    06. Pedro Porro
+    07. Dani Carvajal
+    08. Marc Cucurella
+    09. Martín Zubimendi
+    10. Rodri
+    11. Pedri
+    12. Fabián Ruiz
+    13. Foto Grupal de España
+    14. Mikel Merino
+    15. Lamine Yamal
+    16. Dani Olmo
+    17. Nico Williams
+    18. Ferran Torres
+    19. Álvaro Morata
+    20. Mikel Oyarzabal
   EQUIPO: Cabo Verde
   PÁGINA DEL ÁLBUM: CABO VERDE
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Vozinha
-    * Ryan Mendes
-    * Jamiro Monteiro
-  PLANTILLA COMPLETA (1-26):
-    01. Vozinha
-    02. Ryan Mendes
-    03. Jamiro Monteiro
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Cabo Verde
+    02. Vozinha
+    03. Logan Costa
+    04. Pico
+    05. Diney
+    06. Steven Moreira
+    07. Wagner Pina
+    08. Joao Paulo
+    09. Yannick Semedo
+    10. Kevin Pina
+    11. Patrick Andrade
+    12. Jamiro Monteiro
+    13. Foto Grupal de Cabo Verde
+    14. Deroy Duarte
+    15. Garry Rodrigues
+    16. Jovane Cabral
+    17. Ryan Mendes
+    18. Dailon Livramento
+    19. Willy Semedo
+    20. Bebe
+  EQUIPO: Arabia Saudita
+  PÁGINA DEL ÁLBUM: ARABIA SAUDITA
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Arabia Saudita
+    02. Nawaf Alaqidi
+    03. Abdulrahman Al-Sanbi
+    04. Saud Abdulhamid
+    05. Nawaf Bouwashl
+    06. Jihad Thakri
+    07. Moteb Al-Harbi
+    08. Hassan Altambakti
+    09. Musab Aljuwayr
+    10. Ziyad Aljohani
+    11. Abdullah Alkhaibari
+    12. Nasser Aldawsari
+    13. Foto Grupal de Arabia Saudita
+    14. Saleh Abu Alshamat
+    15. Marwan Alsahafi
+    16. Salem Aldawsari
+    17. Abdulrahman Al-Aboud
+    18. Firas Al-Buraikan
+    19. Saleh Alshehri
+    20. Abdullah Al-Hamdan
+  EQUIPO: Uruguay
+  PÁGINA DEL ÁLBUM: URUGUAY
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Uruguay
+    02. Sergio Rochet
+    03. Santiago Mele
+    04. Ronald Araújo
+    05. José María Giménez
+    06. Sebastián Cáceres
+    07. Mathías Olivera
+    08. Guillermo Varela
+    09. Nahitan Nández
+    10. Federico Valverde
+    11. Giorgian de Arrascaeta
+    12. Rodrigo Bentancur
+    13. Foto Grupal de Uruguay
+    14. Manuel Ugarte
+    15. Nicolás de la Cruz
+    16. Maxi Araújo
+    17. Darwin Núñez
+    18. Federico Viñas
+    19. Rodrigo Aguirre
+    20. Facundo Pellistri
 
-================================================================
 
 [Grupo I]
 -------
-
   EQUIPO: Francia
   PÁGINA DEL ÁLBUM: FRANCIA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Kylian Mbappé
-    * Antoine Griezmann
-    * William Saliba
-    * Eduardo Camavinga
-  PLANTILLA COMPLETA (1-26):
-    01. Kylian Mbappé
-    02. Antoine Griezmann
-    03. William Saliba
-    04. Eduardo Camavinga
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Francia
+    02. Mike Maignan
+    03. Theo Hernandez
+    04. William Saliba
+    05. Jules Koundé
+    06. Ibrahima Konaté
+    07. Dayot Upamecano
+    08. Lucas Digne
+    09. Aurélien Tchouaméni
+    10. Eduardo Camavinga
+    11. Manu Koné
+    12. Adrien Rabiot
+    13. Foto Grupal de Francia
+    14. Michael Olise
+    15. Ousmane Dembélé
+    16. Bradley Barcola
+    17. Désiré Doué
+    18. Kingsley Coman
+    19. Hugo Ekitiké
+    20. Kylian Mbappé
   EQUIPO: Senegal
   PÁGINA DEL ÁLBUM: SENEGAL
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Sadio Mané
-    * Kalidou Koulibaly
-    * Pape Matar Sarr
-  PLANTILLA COMPLETA (1-26):
-    01. Sadio Mané
-    02. Kalidou Koulibaly
-    03. Pape Matar Sarr
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: Noruega
-  PÁGINA DEL ÁLBUM: NORUEGA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Erling Haaland
-    * Martin Ødegaard
-    * Alexander Sørloth
-  PLANTILLA COMPLETA (1-26):
-    01. Erling Haaland
-    02. Martin Ødegaard
-    03. Alexander Sørloth
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Senegal
+    02. Édouard Mendy
+    03. Yehvann Diouf
+    04. Moussa Niakhaté
+    05. Abdoulaye Seck
+    06. Ismail Jakobs
+    07. El Hadji Malick Diouf
+    08. Kalidou Koulibaly
+    09. Idrissa Gana Gueye
+    10. Pape Matar Sarr
+    11. Pape Gueye
+    12. Habib Diarra
+    13. Foto Grupal de Senegal
+    14. Lamine Camara
+    15. Sadio Mané
+    16. Ismaïla Sarr
+    17. Boulaye Dia
+    18. Iliman Ndiaye
+    19. Nicolas Jackson
+    20. Krépin Diatta
   EQUIPO: Irak
   PÁGINA DEL ÁLBUM: IRAK
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Aymen Hussein
-    * Ali Jasim
-    * Zidane Iqbal
-  PLANTILLA COMPLETA (1-26):
-    01. Aymen Hussein
-    02. Ali Jasim
-    03. Zidane Iqbal
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Irak
+    02. Jalal Hassan
+    03. Rebin Sulaka
+    04. Hussein Ali
+    05. Akam Hashem
+    06. Merchas Doski
+    07. Zaid Tahseen
+    08. Manaf Younis
+    09. Zidane Iqbal
+    10. Amir Al-Ammari
+    11. Ibrahim Bayesh
+    12. Ali Jasim
+    13. Foto Grupal de Irak
+    14. Youssef Amyn
+    15. Aimar Sher
+    16. Marko Farji
+    17. Osama Rashid
+    18. Ali Al-Hamadi
+    19. Aymen Hussein
+    20. Mohanad Ali
+  EQUIPO: Noruega
+  PÁGINA DEL ÁLBUM: NORUEGA
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Noruega
+    02. Orjan Nyland
+    03. Julian Ryerson
+    04. Leo Ostigård
+    05. Kristoffer Vassbakk Ajer
+    06. Marcus Holmgren Pedersen
+    07. David Møller Wolfe
+    08. Torbjørn Heggem
+    09. Morten Thorsby
+    10. Martin Ødegaard
+    11. Sander Berge
+    12. Andreas Schjelderup
+    13. Foto Grupal de Noruega
+    14. Patrick Berg
+    15. Erling Haaland
+    16. Alexander Sørloth
+    17. Aron Dønnum
+    18. Jørgen Strand Larsen
+    19. Antonio Nusa
+    20. Oscar Bobb
 
-================================================================
 
 [Grupo J]
 -------
-
   EQUIPO: Argentina
   PÁGINA DEL ÁLBUM: ARGENTINA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Lionel Messi
-    * Emiliano Martínez
-    * Julián Álvarez
-    * Alexis Mac Allister
-    * Enzo Fernández
-  PLANTILLA COMPLETA (1-26):
-    01. Lionel Messi
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Argentina
     02. Emiliano Martínez
-    03. Julián Álvarez
-    04. Alexis Mac Allister
-    05. Enzo Fernández
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: Austria
-  PÁGINA DEL ÁLBUM: AUSTRIA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * David Alaba
-    * Marcel Sabitzer
-    * Konrad Laimer
-  PLANTILLA COMPLETA (1-26):
-    01. David Alaba
-    02. Marcel Sabitzer
-    03. Konrad Laimer
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+    03. Nahuel Molina
+    04. Cristian Romero
+    05. Nicolás Otamendi
+    06. Nicolás Tagliafico
+    07. Leonardo Balerdi
+    08. Enzo Fernández
+    09. Alexis Mac Allister
+    10. Rodrigo De Paul
+    11. Exequiel Palacios
+    12. Leandro Paredes
+    13. Foto Grupal de Argentina
+    14. Nico Paz
+    15. Franco Mastantuono
+    16. Nico González
+    17. Lionel Messi
+    18. Lautaro Martínez
+    19. Julián Álvarez
+    20. Giuliano Simeone
   EQUIPO: Argelia
   PÁGINA DEL ÁLBUM: ARGELIA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Riyad Mahrez
-    * Ismaël Bennacer
-    * Houssem Aouar
-  PLANTILLA COMPLETA (1-26):
-    01. Riyad Mahrez
-    02. Ismaël Bennacer
-    03. Houssem Aouar
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Argelia
+    02. Alexis Guendouz
+    03. Ramy Bensebaini
+    04. Youcef Atal
+    05. Rayan Aït-Nouri
+    06. Mohamed Amine Tougai
+    07. Aïssa Mandi
+    08. Ismaël Bennacer
+    09. Houssem Aouar
+    10. Hicham Boudaoui
+    11. Ramiz Zerrouki
+    12. Nabil Bentaleb
+    13. Foto Grupal de Argelia
+    14. Farès Chaibi
+    15. Riyad Mahrez
+    16. Saïd Benrahma
+    17. Anis Hadj Moussa
+    18. Amine Gouiri
+    19. Baghdad Bounedjah
+    20. Mohammed Amoura
+  EQUIPO: Austria
+  PÁGINA DEL ÁLBUM: AUSTRIA
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Austria
+    02. Alexander Schlager
+    03. Patrick Pentz
+    04. David Alaba
+    05. Kevin Danso
+    06. Philipp Lienhart
+    07. Stefan Posch
+    08. Phillipp Mwene
+    09. Alexander Prass
+    10. Xaver Schlager
+    11. Marcel Sabitzer
+    12. Konrad Laimer
+    13. Foto Grupal de Austria
+    14. Florian Grillitsch
+    15. Nicolas Seiwald
+    16. Romano Schmid
+    17. Patrick Wimmer
+    18. Christoph Baumgartner
+    19. Michael Gregoritsch
+    20. Marko Arnautović
   EQUIPO: Jordania
   PÁGINA DEL ÁLBUM: JORDANIA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Musa Al-Taamari
-    * Yazan Al-Naimat
-    * Ali Olwan
-  PLANTILLA COMPLETA (1-26):
-    01. Musa Al-Taamari
-    02. Yazan Al-Naimat
-    03. Ali Olwan
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Jordania
+    02. Yazeed Abulaila
+    03. Ihsan Haddad
+    04. Mohammad Abu Hashish
+    05. Yazan Al-Arab
+    06. Abdallah Nasib
+    07. Saleem Obaid
+    08. Mohammad Abualnadi
+    09. Ibrahim Saadeh
+    10. Nizar Al-Rashdan
+    11. Noor Al-Rawabdeh
+    12. Mohannad Abu Taha
+    13. Foto Grupal de Jordania
+    14. Amer Jamous
+    15. Musa Al-Taamari
+    16. Yazan Al-Naimat
+    17. Mahmoud Al-Mardi
+    18. Ali Olwan
+    19. Mohammad Abu Zrayq
+    20. Ibrahim Sabra
 
-================================================================
 
 [Grupo K]
 -------
-
   EQUIPO: Portugal
   PÁGINA DEL ÁLBUM: PORTUGAL
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Cristiano Ronaldo
-    * Bruno Fernandes
-    * Bernardo Silva
-    * Rafael Leão
-    * Rúben Dias
-  PLANTILLA COMPLETA (1-26):
-    01. Cristiano Ronaldo
-    02. Bruno Fernandes
-    03. Bernardo Silva
-    04. Rafael Leão
-    05. Rúben Dias
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
-  EQUIPO: Colombia
-  PÁGINA DEL ÁLBUM: COLOMBIA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Luis Díaz
-    * James Rodríguez
-    * Jhon Arias
-    * Camilo Vargas
-  PLANTILLA COMPLETA (1-26):
-    01. Luis Díaz
-    02. James Rodríguez
-    03. Jhon Arias
-    04. Camilo Vargas
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Portugal
+    02. Diogo Costa
+    03. José Sá
+    04. Rúben Dias
+    05. João Cancelo
+    06. Diogo Dalot
+    07. Nuno Mendes
+    08. Gonçalo Inácio
+    09. Bernardo Silva
+    10. Bruno Fernandes
+    11. Rúben Neves
+    12. Vitinha
+    13. Foto Grupal de Portugal
+    14. João Neves
+    15. Cristiano Ronaldo
+    16. Francisco Trincão
+    17. João Félix
+    18. Gonçalo Ramos
+    19. Pedro Neto
+    20. Rafael Leão
   EQUIPO: RD Congo
   PÁGINA DEL ÁLBUM: RD CONGO
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Chancel Mbemba
-    * Yoane Wissa
-    * Arthur Masuaku
-  PLANTILLA COMPLETA (1-26):
-    01. Chancel Mbemba
-    02. Yoane Wissa
-    03. Arthur Masuaku
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de RD Congo
+    02. Lionel Mpasi
+    03. Aaron Wan-Bissaka
+    04. Axel Tuanzebe
+    05. Arthur Masuaku
+    06. Chancel Mbemba
+    07. Joris Kayembe
+    08. Charles Pickel
+    09. Ngal'ayel Mukau
+    10. Edo Kayembe
+    11. Samuel Moutoussamy
+    12. Noah Sadiki
+    13. Foto Grupal de RD Congo
+    14. Théo Bongonda
+    15. Meschack Elia
+    16. Yoane Wissa
+    17. Brian Cipenga
+    18. Fiston Mayele
+    19. Cédric Bakambu
+    20. Nathanaël Mbuku
   EQUIPO: Uzbekistán
   PÁGINA DEL ÁLBUM: UZBEKISTÁN
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Eldor Shomurodov
-    * Jaloliddin Masharipov
-    * Abbosbek Fayzullaev
-  PLANTILLA COMPLETA (1-26):
-    01. Eldor Shomurodov
-    02. Jaloliddin Masharipov
-    03. Abbosbek Fayzullaev
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Uzbekistán
+    02. Utkir Yusupov
+    03. Farrukh Sayfiev
+    04. Sherzod Nasrullaev
+    05. Umar Eshmurodov
+    06. Husniddin Aliqulov
+    07. Rustamjon Ashurmatov
+    08. Khojiakbar Alijonov
+    09. Abdukodir Khusanov
+    10. Odiljon Hamrobekov
+    11. Otabek Shukurov
+    12. Jamshid Iskanderov
+    13. Foto Grupal de Uzbekistán
+    14. Azizbek Turgunboev
+    15. Khojimat Erkinov
+    16. Eldor Shomurodov
+    17. Oston Urunov
+    18. Jaloliddin Masharipov
+    19. Igor Sergeev
+    20. Abbosbek Fayzullaev
+  EQUIPO: Colombia
+  PÁGINA DEL ÁLBUM: COLOMBIA
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Colombia
+    02. Camilo Vargas
+    03. David Ospina
+    04. Dávinson Sánchez
+    05. Yerry Mina
+    06. Daniel Muñoz
+    07. Johan Mojica
+    08. Jhon Lucumí
+    09. Santiago Arias
+    10. Jefferson Lerma
+    11. Kevin Castaño
+    12. Richard Ríos
+    13. Foto Grupal de Colombia
+    14. James Rodríguez
+    15. Juan Fernando Quintero
+    16. Jorge Carrascal
+    17. Jhon Arias
+    18. Jhon Córdoba
+    19. Luis Suárez
+    20. Luis Díaz
 
-================================================================
 
 [Grupo L]
 -------
-
   EQUIPO: Inglaterra
   PÁGINA DEL ÁLBUM: INGLATERRA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Harry Kane
-    * Jude Bellingham
-    * Phil Foden
-    * Bukayo Saka
-    * Declan Rice
-  PLANTILLA COMPLETA (1-26):
-    01. Harry Kane
-    02. Jude Bellingham
-    03. Phil Foden
-    04. Bukayo Saka
-    05. Declan Rice
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Inglaterra
+    02. Jordan Pickford
+    03. John Stones
+    04. Marc Guéhi
+    05. Ezri Konsa
+    06. Trent Alexander-Arnold
+    07. Reece James
+    08. Dan Burn
+    09. Jordan Henderson
+    10. Declan Rice
+    11. Jude Bellingham
+    12. Cole Palmer
+    13. Foto Grupal de Inglaterra
+    14. Morgan Rogers
+    15. Anthony Gordon
+    16. Phil Foden
+    17. Bukayo Saka
+    18. Harry Kane
+    19. Marcus Rashford
+    20. Ollie Watkins
   EQUIPO: Croacia
   PÁGINA DEL ÁLBUM: CROACIA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Luka Modrić
-    * Joško Gvardiol
-    * Mateo Kovačić
-  PLANTILLA COMPLETA (1-26):
-    01. Luka Modrić
-    02. Joško Gvardiol
-    03. Mateo Kovačić
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Croacia
+    02. Dominik Livaković
+    03. Duje Ćaleta-Car
+    04. Joško Gvardiol
+    05. Josip Stanišić
+    06. Luka Vušković
+    07. Josip Šutalo
+    08. Kristijan Jakić
+    09. Luka Modrić
+    10. Mateo Kovačić
+    11. Martin Baturina
+    12. Lovro Majer
+    13. Foto Grupal de Croacia
+    14. Mario Pašalić
+    15. Petar Sučić
+    16. Ivan Perišić
+    17. Marco Pašalić
+    18. Ante Budimir
+    19. Andrej Kramarić
+    20. Franjo Ivanović
   EQUIPO: Ghana
   PÁGINA DEL ÁLBUM: GHANA
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Mohammed Kudus
-    * Thomas Partey
-    * Iñaki Williams
-  PLANTILLA COMPLETA (1-26):
-    01. Mohammed Kudus
-    02. Thomas Partey
-    03. Iñaki Williams
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
-
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Ghana
+    02. Lawrence Ati-Zigi
+    03. Tariq Lamptey
+    04. Mohammed Salisu
+    05. Alidu Seidu
+    06. Alexander Djiku
+    07. Gideon Mensah
+    08. Caleb Yirenkyi
+    09. Fatawu Issahaku
+    10. Thomas Partey
+    11. Salis Abdul Samed
+    12. Kamaldeen Sulemana
+    13. Foto Grupal de Ghana
+    14. Mohammed Kudus
+    15. Iñaki Williams
+    16. Jordan Ayew
+    17. André Ayew
+    18. Joseph Paintsil
+    19. Osman Bukari
+    20. Antoine Semenyo
   EQUIPO: Panamá
   PÁGINA DEL ÁLBUM: PANAMÁ
-  JUGADORES DESTACADOS (FIGURITAS ESPECIALES):
-    * Adalberto Carrasquilla
-    * Michael Amir Murillo
-    * José Fajardo
-  PLANTILLA COMPLETA (1-26):
-    01. Adalberto Carrasquilla
-    02. Michael Amir Murillo
-    03. José Fajardo
-    04. [Jugador por confirmar]
-    05. [Jugador por confirmar]
-    06. [Jugador por confirmar]
-    07. [Jugador por confirmar]
-    08. [Jugador por confirmar]
-    09. [Jugador por confirmar]
-    10. [Jugador por confirmar]
-    11. [Jugador por confirmar]
-    12. [Jugador por confirmar]
-    13. [Jugador por confirmar]
-    14. [Jugador por confirmar]
-    15. [Jugador por confirmar]
-    16. [Jugador por confirmar]
-    17. [Jugador por confirmar]
-    18. [Jugador por confirmar]
-    19. [Jugador por confirmar]
-    20. [Jugador por confirmar]
-    21. [Jugador por confirmar]
-    22. [Jugador por confirmar]
-    23. [Jugador por confirmar]
-    24. [Jugador por confirmar]
-    25. [Jugador por confirmar]
-    26. [Jugador por confirmar]
+  PLANTILLA COMPLETA (1-20):
+    01. Escudo de Panamá
+    02. Orlando Mosquera
+    03. Luis Mejía
+    04. Fidel Escobar
+    05. Andrés Andrade
+    06. Michael Amir Murillo
+    07. Eric Davis
+    08. José Córdoba
+    09. César Blackman
+    10. Cristian Martínez
+    11. Aníbal Godoy
+    12. Adalberto Carrasquilla
+    13. Foto Grupal de Panamá
+    14. Édgar Bárcenas
+    15. Carlos Harvey
+    16. Ismael Díaz
+    17. José Fajardo
+    18. Cecilio Waterman
+    19. José Luis Rodríguez
+    20. Alberto Quintero
 
-================================================================
+================================================================================
+SECCIÓN 'HISTORIA DE LA COPA MUNDIAL' (figuritas foil - campeones del pasado)
+================================================================================
+   FWC9. Italia 1934  [FOIL]
+  FWC10. Uruguay 1950  [FOIL]
+  FWC11. Alemania Occidental 1954  [FOIL]
+  FWC12. Brasil 1962  [FOIL]
+  FWC13. Alemania Occidental 1974  [FOIL]
+  FWC14. Argentina 1986  [FOIL]
+  FWC15. Brasil 1994  [FOIL]
+  FWC16. Brasil 2002  [FOIL]
+  FWC17. Italia 2006  [FOIL]
+  FWC18. Alemania 2014  [FOIL]
+  FWC19. Argentina 2022  [FOIL]
 
+================================================================================
+OTRAS FIGURITAS (NO incluidas en este listado por variar según la región)
+================================================================================
+  - Figuritas Coca-Cola (12): edición especial, con variantes por mercado
+    (Europa, Sudamérica, Norteamérica, 'Resto del Mundo', etc.).
+  - Figuritas Extra (20): set adicional con variantes regionales.
+  No se detallan aquí porque su contenido cambia según la versión del álbum
+  y no formaría parte de un listado único verificable.
+
+================================================================================
+RESUMEN
+================================================================================
+  Selecciones incluidas: 48
+  Jugadores listados:    864
+  Escudos:               48
+  Fotos grupales:        48
+  Figuritas foil:        20
+  Total figuritas base del álbum: 980
+
+Fuente del checklist: listado publicado del álbum oficial (Diamond Cards Online),
+validado contra el sorteo oficial FIFA y referencias cruzadas. Se corrigieron
+~15 errores evidentes de tipeo de la fuente (p. ej. Richie Laryea, Jhon Arias,
+Matt Freese, Weston McKennie, Houssem Aouar, André Ayew, John Yeboah).
+================================================================================
