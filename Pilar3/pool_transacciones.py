@@ -17,7 +17,7 @@ class BlockCandidate(BaseModel):
     previous_hash: str
     timestamp: float
     transactions: list
-    difficulty: str
+    difficulty_prefix: str
 
 def get_rabbitmq_channel():
     """Establece conexión con RabbitMQ y asegura que la cola exista."""
@@ -53,7 +53,8 @@ def mine_block(block: BlockCandidate):
         tarea = {
             "block_data": block.model_dump(),
             "start_nonce": start_nonce,
-            "end_nonce": end_nonce
+            "end_nonce": end_nonce,
+            "difficulty_prefix": block.difficulty_prefix,
         }
         
         # Publicar tarea en la cola de RabbitMQ

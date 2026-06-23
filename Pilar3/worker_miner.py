@@ -24,33 +24,65 @@ def procesar_tarea(ch, method, properties, body):
     block_data = tarea["block_data"]
     start_nonce = tarea["start_nonce"]
     end_nonce = tarea["end_nonce"]
+
+    # El prefijo puede venir en la tarea o dentro del bloque candidato.
+    # Dejamos fallback a "0000" para compatibilidad.
+    difficulty_prefix = (
+        tarea.get("difficulty_prefix")
+        or block_data.get("difficulty_prefix")
+        or "0000"
+    )
     
     cadena_base = generar_cadena_base(block_data)
     print(f"[*] Tarea recibida - Bloque #{block_data['index']} Rango: [{start_nonce} - {end_nonce}]")
     
     try:
         # Llamada al binario de C++/CUDA que exprime la placa de video
-        # Argumentos posicionales asumidos para hit7_cuda: <cadena_base> <inicio> <fin>
+        # Argumentos posicionales asumidos para hit7_cuda: <cadena_base> <prefijo> <inicio> <fin>
         print(f"    Ejecutando proceso CUDA en la GPU...")
         resultado = subprocess.run(
-            [CUDA_BINARY, cadena_base, str(start_nonce), str(end_nonce)],
+            [CUDA_BINARY, cadena_base, difficulty_prefix, str(start_nonce), str(end_nonce)],
             capture_output=True,
             text=True
         )
         
-        salida_stdout = resultado.stdout
+        salida_stdout = resultado.stdout.strip()
+        salida_stderr = resultado.stderr.strip()
+
+        if resultado.returncode != 0:
+            print("[ERROR CUDA] El binario devolvió error.")
+            print(salida_stderr)
+            ch.basic_nack(delivery_tag=method.delivery_tag, requeue=True)
+            return
+
         nonce_encontrado = None
         hash_encontrado = None
         
         # Analizamos la salida de la consola del programa C++
         # Suponemos un formato de salida exitosa estilo "12345:0000abcdef..."
-        for linea in salida_stdout.split('\n'):
+        for linea in salida_stdout.splitlines():
             linea = linea.strip()
-            if "0000" in linea and ":" in linea:
-                partes = linea.split(":", 1)
-                if len(partes) == 2 and partes[0].strip().isdigit():
-                    nonce_encontrado = int(partes[0].strip())
-                    hash_encontrado = partes[1].strip()
+            # if "0000" in linea and ":" in linea:
+            #     partes = linea.strip()
+            #     if len(partes) == 2 and partes[0].strip().isdigit():
+            #         nonce_encontrado = int(partes[0].strip())
+            #         hash_encontrado = partes[1].strip()
+            #         break
+
+            if linea == "NO_ENCONTRADO":
+                continue
+
+            if ":" not in linea:
+                continue
+
+            nonce_txt, hash_txt = linea.split(":", 1)
+            nonce_txt = nonce_txt.strip()
+            hash_txt = hash_txt.strip().lower()
+
+            if nonce_txt.isdigit() and len(hash_txt) == 32:
+                if hash_txt.startswith(difficulty_prefix):
+                    nonce_encontrado = int(nonce_txt)
+                    hash_encontrado = hash_txt
                     break
         
         # Evaluar resultado matemático
