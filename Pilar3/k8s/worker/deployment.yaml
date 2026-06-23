@@ -28,6 +28,7 @@ spec:
           limits:
             cpu: "2000m"
             memory: "2Gi"
+            nvidia.com/gpu: 1
         env:
         - name: REDIS_HOST
           value: "redis-service"
