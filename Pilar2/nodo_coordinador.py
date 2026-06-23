@@ -13,6 +13,7 @@ Responsabilidades Arquitectónicas:
    y, de ser válida, adjunta formalmente el bloque al estado distribuido en Redis.
 """
 
+from operator import index
 import os
 import json
 import time
@@ -184,7 +185,73 @@ def bully_heartbeat():
 pending_transactions: List[Dict[str, Any]] = []
 
 # Dificultad objetivo. (Se exige que el hash generado comience con este prefijo)
-DIFFICULTY_PREFIX = "0000" 
+# DIFFICULTY_PREFIX = "0000" 
+# ==============================================================================
+# DIFICULTAD DINÁMICA DE MINERÍA
+# ==============================================================================
+
+INITIAL_DIFFICULTY_LEN = int(os.environ.get("INITIAL_DIFFICULTY_LEN", 4))
+MIN_DIFFICULTY_LEN = int(os.environ.get("MIN_DIFFICULTY_LEN", 1))
+MAX_DIFFICULTY_LEN = int(os.environ.get("MAX_DIFFICULTY_LEN", 8))
+
+# Si un bloque se resuelve por debajo de este tiempo, subimos dificultad.
+POW_TOO_FAST_SECONDS = float(os.environ.get("POW_TOO_FAST_SECONDS", 3.0))
+
+# Si un bloque tarda más que este tiempo, bajamos dificultad.
+POW_TOO_SLOW_SECONDS = float(os.environ.get("POW_TOO_SLOW_SECONDS", 20.0))
+
+current_difficulty_len = INITIAL_DIFFICULTY_LEN
+
+# Guarda tiempos de inicio de minado por índice de bloque.
+mining_started_at = {}
+
+
+def get_current_difficulty_prefix():
+    """
+    Devuelve el prefijo actual de dificultad.
+    Ejemplo:
+        current_difficulty_len = 4 -> "0000"
+    """
+    return "0" * current_difficulty_len
+
+
+def ajustar_dificultad(segundos_resolucion):
+    """
+    Ajusta dinámicamente la dificultad según el tiempo de resolución.
+
+    - Si se resuelve muy rápido, agrega un cero.
+    - Si tarda demasiado, quita un cero.
+    - Respeta límites mínimo y máximo.
+    """
+    global current_difficulty_len
+
+    dificultad_anterior = current_difficulty_len
+
+    if segundos_resolucion < POW_TOO_FAST_SECONDS:
+        current_difficulty_len = min(
+            current_difficulty_len + 1,
+            MAX_DIFFICULTY_LEN
+        )
+    elif segundos_resolucion > POW_TOO_SLOW_SECONDS:
+        current_difficulty_len = max(
+            current_difficulty_len - 1,
+            MIN_DIFFICULTY_LEN
+        )
+
+    if current_difficulty_len != dificultad_anterior:
+        print(
+            "NCT [DIFFICULTAD]: "
+            f"Tiempo={segundos_resolucion:.3f}s. "
+            f"Dificultad {dificultad_anterior} -> {current_difficulty_len} "
+            f"({get_current_difficulty_prefix()})"
+        )
+    else:
+        print(
+            "NCT [DIFICULTAD]: "
+            f"Tiempo={segundos_resolucion:.3f}s. "
+            f"Se mantiene dificultad {current_difficulty_len} "
+            f"({get_current_difficulty_prefix()})"
+        )
 
 # ==============================================================================
 # Pool de Figuritas y RNG (Gacha System - Mundial 2026)
@@ -331,14 +398,19 @@ def pack_candidate_block():
     index = int(latest_block["index"]) + 1 if latest_block else 0
     previous_hash = latest_block["block_hash"] if latest_block else ("0" * 32)
     
+    difficulty_prefix = get_current_difficulty_prefix()
+    
     candidate_block = {
         "index": index,
         "previous_hash": previous_hash,
         "timestamp": int(time.time()),
         "transactions": pending_transactions.copy(),
-        "difficulty_prefix": DIFFICULTY_PREFIX
+        "difficulty_prefix": difficulty_prefix
     }
     
+    # Registramos cuándo empezó el minado de este bloque para ajustar dificultad luego.
+    mining_started_at[index] = time.time()
+
     # Delegar la carga de trabajo intensiva al microservicio de fragmentación (TrP)
     try:
         response = requests.post(f"{TRP_URL}/split", json=candidate_block, timeout=5)

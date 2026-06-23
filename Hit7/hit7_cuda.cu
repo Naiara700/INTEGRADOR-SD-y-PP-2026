@@ -337,8 +337,9 @@ int main(int argc, char* argv[]) {
     thrust::host_vector<int> encontradoCPU = encontradoGPU;
 
     if (encontradoCPU[0] == 0) {
-        cout << endl;
-        cout << "No se encontro solucion en el rango indicado." << endl;
+        // cout << endl;
+        // cout << "No se encontro solucion en el rango indicado." << endl;
+        cout << "NO_ENCONTRADO" << endl;
         return 0;
     }
 
