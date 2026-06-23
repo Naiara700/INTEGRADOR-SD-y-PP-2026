@@ -20,7 +20,7 @@ spec:
         node_role: applications
       containers:
       - name: nct
-        image: gcr.io/stickerchain-project/nct:latest
+        image: naiaracollazo/sticker-nct:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
@@ -40,7 +40,7 @@ spec:
         - name: RABBITMQ_HOST
           value: "rabbitmq-service"
         - name: TRP_SERVICE_URL
-          value: "http://trp-service"
+          value: "http://trp-service:8001"
         - name: PEERS
           value: "nct-statefulset-0.nct-headless:8000,nct-statefulset-1.nct-headless:8000,nct-statefulset-2.nct-headless:8000"
         livenessProbe:
@@ -79,6 +79,6 @@ spec:
     app: nct
   ports:
   - protocol: TCP
-    port: 80
+    port: 8000
     targetPort: 8000
   type: ClusterIP

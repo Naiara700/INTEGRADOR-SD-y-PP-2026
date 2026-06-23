@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-gpu-deployment
+  namespace: g-naj
+  labels:
+    app: worker-gpu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker-gpu
+  template:
+    metadata:
+      labels:
+        app: worker-gpu
+    spec:
+      nodeSelector:
+        node_role: gpu # Etiqueta para nodos con GPU en el clúster k3s de Ale
+      containers:
+      - name: worker-gpu
+        image: naiaracollazo/sticker-hit7:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: "1"
+            memory: "2Gi"
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+            nvidia.com/gpu: 1 # Asignación de 1 GPU física
+        env:
+        # PENDIENTE: Reemplazar con la IP externa real expuesta por el LoadBalancer de RabbitMQ en tu GKE
+        - name: RABBITMQ_HOST
+          value: "<RABBITMQ_EXTERNAL_IP>"
+        - name: REDIS_HOST
+          value: "<REDIS_EXTERNAL_IP_SI_APLICA>"
