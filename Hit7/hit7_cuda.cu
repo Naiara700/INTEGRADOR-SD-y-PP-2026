@@ -290,10 +290,10 @@ int main(int argc, char* argv[]) {
 
     unsigned long long inicioActual = inicioRango;
 
-    cout << "Buscando nonce en rango..." << endl;
-    cout << "Cadena base: " << cadenaBase << endl;
-    cout << "Prefijo requerido: " << prefijo << endl;
-    cout << "Rango: [" << inicioRango << ", " << finRango << "]" << endl;
+    // cout << "Buscando nonce en rango..." << endl;
+    // cout << "Cadena base: " << cadenaBase << endl;
+    // cout << "Prefijo requerido: " << prefijo << endl;
+    // cout << "Rango: [" << inicioRango << ", " << finRango << "]" << endl;
 
     /*
         Recorremos el rango hasta:
@@ -337,8 +337,9 @@ int main(int argc, char* argv[]) {
     thrust::host_vector<int> encontradoCPU = encontradoGPU;
 
     if (encontradoCPU[0] == 0) {
-        cout << endl;
-        cout << "No se encontro solucion en el rango indicado." << endl;
+        // cout << endl;
+        // cout << "No se encontro solucion en el rango indicado." << endl;
+        cout << "NO_ENCONTRADO" << endl;
         return 0;
     }
 
@@ -348,11 +349,14 @@ int main(int argc, char* argv[]) {
     thrust::host_vector<unsigned long long> numeroCPU = numeroGPU;
     thrust::host_vector<unsigned char> hashCPU = hashGPU;
 
-    cout << endl;
-    cout << "Solucion encontrada" << endl;
-    cout << "Numero: " << numeroCPU[0] << endl;
-    cout << "Texto usado: " << cadenaBase << numeroCPU[0] << endl;
-    cout << "Hash:   ";
+    // cout << endl;
+    // cout << "Solucion encontrada" << endl;
+    // cout << "Numero: " << numeroCPU[0] << endl;
+    // cout << "Texto usado: " << cadenaBase << numeroCPU[0] << endl;
+    // cout << "Hash:   ";
+    // imprimirHash(hashCPU);
+
+    cout << numeroCPU[0] << ":";
     imprimirHash(hashCPU);
 
     return 0;
