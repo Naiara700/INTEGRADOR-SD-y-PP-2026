@@ -54,7 +54,7 @@ resource "google_container_node_pool" "infra_pool" {
 
   node_config {
     preemptible  = true
-    machine_type = "e2-medium"
+    machine_type = "e2-standard-2"  # Subido de e2-medium: 2 vCPU + 8GB RAM (vs 4GB antes)
     
     labels = {
       node_role = "infrastructure"
