@@ -39,16 +39,19 @@ COPY --chown=10001:10001 requirements.txt ./
 RUN pip3 install --no-cache-dir --upgrade pip && \
     pip3 install --no-cache-dir -r requirements.txt
 
-# Copiar el código del script CPU de minería y el binario CUDA compilado
-COPY --chown=10001:10001 Hit7/ ./Hit7/
+# Copiar el script principal del minero y el binario CUDA compilado
+COPY --chown=10001:10001 Pilar3/worker_miner.py ./Pilar3/
 COPY --from=builder --chown=10001:10001 /build/hit7_cuda ./hit7_cuda
+
+# Configurar variable para que worker_miner.py encuentre el binario compilado en Linux
+ENV CUDA_BINARY=./hit7_cuda
 
 # Correr como usuario no-root por seguridad
 USER 10001
 
-# Health check usando pgrep (habilitado gracias a procps)
+# Health check usando pgrep
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s \
-  CMD pgrep -f "python3 Hit7/hit7_cpu.py" || exit 1
+  CMD pgrep -f "python3 Pilar3/worker_miner.py" || exit 1
 
-# Ejecutar el script real de minería CPU (hit7_cpu.py) como entrypoint
-CMD ["python3", "Hit7/hit7_cpu.py"]
+# Ejecutar el minero que escucha RabbitMQ
+CMD ["python3", "Pilar3/worker_miner.py"]
