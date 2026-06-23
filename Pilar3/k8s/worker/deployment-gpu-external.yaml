@@ -35,6 +35,8 @@ spec:
             memory: "4Gi"
             nvidia.com/gpu: 1   # Solicita 1 GPU física al device plugin de NVIDIA
         env:
-        # RABBITMQ_URL con credenciales embebidas — el worker lee esta variable directamente
         - name: RABBITMQ_URL
-          value: "amqp://miner_user:miner2026@34.170.90.101:5672"
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-secret
+              key: url
