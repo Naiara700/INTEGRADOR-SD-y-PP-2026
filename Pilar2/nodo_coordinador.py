@@ -211,8 +211,10 @@ def bully_coordinator(msg: BullyMessage):
 def bully_heartbeat():
     return {"status": "alive", "node_id": NODE_ID, "is_leader": IS_LEADER}
 
-# Mempool temporal en memoria para agrupar transacciones antes del minado
-pending_transactions: List[Dict[str, Any]] = []
+# Mempool compartido en Redis para que todos los pods NCT compartan el mismo pool
+# Clave Redis: 'shared_mempool' (lista FIFO con RPUSH/LRANGE/LTRIM)
+MEMPOOL_KEY = "shared_mempool"
+MEMPOOL_BATCH_SIZE = 5  # Cantidad de TXs por bloque
 
 # Dificultad objetivo. (Se exige que el hash generado comience con este prefijo)
 # DIFFICULTY_PREFIX = "0000" 
@@ -407,28 +409,32 @@ def verificar_firma_digital(public_key_pem: str, payload_dict: dict, signature_h
 
 def add_transaction_to_mempool(tx_data: Dict[str, Any]):
     """
-    Agrega una transacción verificada al mempool en memoria.
-    Si el mempool alcanza el límite establecido (e.g., 5 TXs), gatilla
-    la creación del "Bloque Candidato" y lo expide al clúster de minería.
+    Agrega una transacción verificada al mempool COMPARTIDO en Redis.
+    Cualquier pod NCT puede recibir transacciones del balanceador de carga
+    y encolarlas en la misma lista Redis. Solo el LÍDER empaqueta bloques.
     """
-    global pending_transactions
-    pending_transactions.append(tx_data)
+    db.client.rpush(MEMPOOL_KEY, json.dumps(tx_data, sort_keys=True))
     
-    # Batch threshold: 5 transacciones por bloque para mantener fluidez
-    if len(pending_transactions) >= 5:
+    # Verificar si el mempool compartido alcanzó el threshold
+    mempool_size = db.client.llen(MEMPOOL_KEY)
+    if mempool_size >= MEMPOOL_BATCH_SIZE:
         pack_candidate_block()
 
 def pack_candidate_block():
     """
-    Construye la estructura inmutable del Bloque Candidato.
-    Enlaza criptográficamente el bloque con el historial previo obteniendo
-    el hash del último bloque cerrado. Luego, emite una solicitud HTTP POST
-    hacia el Pool de Transacciones (TrP) para que este fragmente matemáticamente
-    la búsqueda del nonce y despache tareas a RabbitMQ.
+    Construye la estructura inmutable del Bloque Candidato desde el mempool
+    compartido en Redis. Extrae atómicamente las primeras N transacciones
+    usando LRANGE + LTRIM para evitar condiciones de carrera entre pods.
+    Enlaza criptográficamente el bloque con el historial previo y lo emite
+    al Pool de Transacciones (TrP) para minado distribuido.
     """
-    global pending_transactions
-    if not pending_transactions:
+    # Leer las transacciones pendientes del mempool compartido
+    raw_txs = db.client.lrange(MEMPOOL_KEY, 0, MEMPOOL_BATCH_SIZE - 1)
+    if not raw_txs:
         return
+    
+    # Deserializar las transacciones
+    batch_transactions = [json.loads(tx) for tx in raw_txs]
         
     latest_block = db.get_latest_block()
     
@@ -442,7 +448,7 @@ def pack_candidate_block():
         "index": index,
         "previous_hash": previous_hash,
         "timestamp": int(time.time()),
-        "transactions": pending_transactions.copy(),
+        "transactions": batch_transactions,
         "difficulty_prefix": difficulty_prefix
     }
     
@@ -455,8 +461,8 @@ def pack_candidate_block():
         response.raise_for_status()
         print(f"NCT: Bloque {index} enviado exitosamente al Pool de Transacciones para Split.")
         
-        # Limpiamos el mempool tras despachar exitosamente
-        pending_transactions = []
+        # Remover atómicamente solo las transacciones que empaquetamos
+        db.client.ltrim(MEMPOOL_KEY, len(batch_transactions), -1)
     except requests.exceptions.RequestException as e:
         print(f"NCT Error CRÍTICO: No se pudo contactar al TrP en {TRP_URL}. Detalle: {e}")
 

@@ -74,6 +74,16 @@ class DBBlockchain:
             index = block_data.get("index")
             block_hash = block_data.get("block_hash")
             
+            if index is None or block_hash is None:
+                print("DB Error: Bloque inválido (falta index o block_hash).")
+                return False
+            
+            # Verificar si ya existe un bloque consolidado con este índice
+            # El Bloque Génesis (index 0) es la única excepción permitida
+            if int(index) > 0 and self.client.exists(f"block:{index}"):
+                print(f"DB: Bloque {index} ya existe. Rechazando duplicado (First-Writer-Wins).")
+                return False
+            
             pipeline = self.client.pipeline()
             
             # Guardar atributos del bloque (hashmap en Redis)
@@ -85,24 +95,6 @@ class DBBlockchain:
             pipeline.set(f"block_hash:{block_hash}", str(index))
             
             pipeline.execute()
-            
-            # Limpiar solo las transacciones procesadas del mempool
-            current_mempool_str = self.client.get("mempool")
-            if current_mempool_str:
-                current_mempool = json.loads(current_mempool_str)
-                block_txs_str = block_data.get("transactions", "[]")
-                block_txs = json.loads(block_txs_str) if isinstance(block_txs_str, str) else block_txs_str
-                
-                # Crear strings de txs procesadas para comparar fácilmente
-                block_txs_strings = [json.dumps(tx, sort_keys=True) for tx in block_txs]
-                
-                new_mempool = []
-                for tx in current_mempool:
-                    tx_str = json.dumps(tx, sort_keys=True)
-                    if tx_str not in block_txs_strings:
-                        new_mempool.append(tx)
-                
-                self.client.set("mempool", json.dumps(new_mempool))
             
             return True
         except Exception as e:
