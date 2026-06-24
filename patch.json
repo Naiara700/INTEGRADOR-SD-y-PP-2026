@@ -1,0 +1,14 @@
+﻿{
+  "spec": {
+    "template": {
+      "spec": {
+        "containers": [
+          {
+            "name": "worker-gpu",
+            "command": ["sleep", "3600"]
+          }
+        ]
+      }
+    }
+  }
+}

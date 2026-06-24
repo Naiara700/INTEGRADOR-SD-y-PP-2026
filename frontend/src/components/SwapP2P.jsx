@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { signTransaction } from '../utils/cryptoUtils';
 import { ArrowRightLeft, Search, User } from 'lucide-react';
 
-export default function SwapP2P({ figuritas, privateKeyHex, publicKeyPem, onSuccess }) {
+export default function SwapP2P({ figuritas, privateKey, publicKeyPem, onSuccess }) {
     const [aliasB, setAliasB] = useState('');
     const [figGive, setFigGive] = useState('');
     const [figReceive, setFigReceive] = useState('');
@@ -33,7 +33,7 @@ export default function SwapP2P({ figuritas, privateKeyHex, publicKeyPem, onSucc
                 fig_y: figReceive
             };
 
-            const signature = await signTransaction(privateKeyHex, payload);
+            const signature = await signTransaction(privateKey, payload);
 
             const response = await fetch(`${baseUrl}/smart_contracts/swap_stickers`, {
                 method: 'POST',

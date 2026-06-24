@@ -41,7 +41,7 @@ export default function Dashboard({ wallet }) {
             const { signTransaction } = await import('../utils/cryptoUtils');
             
             const payload = { alias: wallet.alias };
-            const signature = await signTransaction(wallet.privateKeyHex, payload);
+            const signature = await signTransaction(wallet.privateKey, payload);
             
             await fetch(`${baseUrl}/wallet/register_alias`, {
                 method: 'POST',
@@ -69,7 +69,7 @@ export default function Dashboard({ wallet }) {
                     <button 
                         onClick={() => setActiveView('home')}
                         className="glass-button"
-                        style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', padding: '10px' }}
+                        style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', padding: '10px 15px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
                     >
                         <ArrowLeft size={24} /> Volver
                     </button>
@@ -121,7 +121,7 @@ export default function Dashboard({ wallet }) {
             {activeView === 'home' ? (
                 <>
                     <h3 style={{ marginBottom: '20px', fontSize: '1.2rem', color: 'var(--text-muted)' }} className="dashboard-action-title">Acciones Disponibles</h3>
-                    <div className="dashboard-action-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+                    <div className="dashboard-action-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px' }}>
                         <button className="glass-panel action-card" onClick={() => setActiveView('album')}>
                             <BookOpen size={40} color="#3b82f6" />
                             <h4>Mi Álbum</h4>
@@ -149,14 +149,14 @@ export default function Dashboard({ wallet }) {
                 </>
             ) : activeView === 'pack_opener' ? (
                 <PackOpener 
-                    privateKeyHex={wallet.privateKeyHex} 
+                    privateKey={wallet.privateKey} 
                     publicKeyPem={wallet.publicKeyPem} 
                     currentPts={balanceData?.puntos_disponibles || 0}
                     onPackOpened={fetchBalance}
                 />
             ) : activeView === 'qr_scanner' ? (
                 <QRScanner 
-                    privateKeyHex={wallet.privateKeyHex} 
+                    privateKey={wallet.privateKey} 
                     publicKeyPem={wallet.publicKeyPem}
                     onSuccess={() => {
                         fetchBalance();
@@ -165,14 +165,14 @@ export default function Dashboard({ wallet }) {
             ) : activeView === 'album' ? (
                 <Album 
                     figuritas={balanceData?.figuritas_poseidas || []}
-                    privateKeyHex={wallet.privateKeyHex}
+                    privateKey={wallet.privateKey}
                     publicKeyPem={wallet.publicKeyPem}
                     onRewardClaimed={fetchBalance}
                 />
             ) : activeView === 'swap' ? (
                 <SwapP2P 
                     figuritas={balanceData?.figuritas_poseidas || []}
-                    privateKeyHex={wallet.privateKeyHex}
+                    privateKey={wallet.privateKey}
                     publicKeyPem={wallet.publicKeyPem}
                     onSuccess={() => {
                         setActiveView('home');

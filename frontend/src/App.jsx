@@ -19,7 +19,7 @@ export default function App() {
       <nav className="top-nav glass-panel">
         <div className="nav-brand">🏆 StickerChain '26</div>
         {wallet && (
-          <div className="flex items-center" style={{ display: 'flex', gap: '15px' }}>
+          <div className="flex items-center" style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
             <span style={{ color: 'var(--text-muted)' }}>{wallet.alias}</span>
             <button onClick={handleLogout} className="glass-button" style={{ padding: '6px 12px', fontSize: '12px' }}>
               Salir

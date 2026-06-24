@@ -49,7 +49,7 @@ spec:
               key: password
         - name: RABBITMQ_URL
           value: "amqp://$(RABBITMQ_USER):$(RABBITMQ_PASS)@rabbitmq-service:5672"
-        - name: TRP_SERVICE_URL
+        - name: TRP_URL
           value: "http://trp-service:8001"
         - name: PEERS
           value: "nct-statefulset-0.nct-headless:8000,nct-statefulset-1.nct-headless:8000,nct-statefulset-2.nct-headless:8000"

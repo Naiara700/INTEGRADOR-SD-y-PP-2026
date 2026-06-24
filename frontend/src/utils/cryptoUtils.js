@@ -45,7 +45,7 @@ export async function generateWalletKeys() {
  * Firma un payload (diccionario/objeto) de forma determinista usando la Clave Privada.
  * Retorna la firma en formato Hexadecimal.
  */
-export async function signPayload(privateKey, payload) {
+export async function signTransaction(privateKey, payload) {
     // Es crucial que el string generado coincida con json.dumps(..., separators=(',', ':'), sort_keys=True) de Python
     // Implementaremos una serialización determinística simple:
     const sortedKeys = Object.keys(payload).sort();

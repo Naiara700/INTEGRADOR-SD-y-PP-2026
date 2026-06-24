@@ -70,22 +70,44 @@ class DBBlockchain:
         - block_hash:{hash} -> Llave/Valor apuntando al índice para búsquedas rápidas (O(1)).
         - blockchain:state:height -> Entero indicando el tope de la cadena.
         """
-        index = int(block_data.get("index", 0))
-        block_hash = block_data.get("block_hash", "")
-        
-        # Iniciar pipeline para garantizar atomicidad en las operaciones
-        pipeline = self.client.pipeline()
-        
-        # Convertir los valores a str y eludir la varianza de tipado estricta de la librería usando Any
-        mapping_data = {k: str(v) for k, v in block_data.items()}
-        pipeline.hset(f"block:{index}", mapping=cast(Any, mapping_data))
-        
-        # Actualizar punteros de estado e índices de búsqueda
-        pipeline.set("blockchain:state:height", index)
-        pipeline.set(f"block_hash:{block_hash}", index)
-        
-        pipeline.execute()
-        return True
+        try:
+            index = block_data.get("index")
+            block_hash = block_data.get("block_hash")
+            
+            pipeline = self.client.pipeline()
+            
+            # Guardar atributos del bloque (hashmap en Redis)
+            mapping_data = {k: str(v) for k, v in block_data.items()}
+            pipeline.hset(f"block:{index}", mapping=cast(Any, mapping_data))
+            
+            # Actualizar punteros de estado e índices de búsqueda
+            pipeline.set("blockchain:state:height", str(index))
+            pipeline.set(f"block_hash:{block_hash}", str(index))
+            
+            pipeline.execute()
+            
+            # Limpiar solo las transacciones procesadas del mempool
+            current_mempool_str = self.client.get("mempool")
+            if current_mempool_str:
+                current_mempool = json.loads(current_mempool_str)
+                block_txs_str = block_data.get("transactions", "[]")
+                block_txs = json.loads(block_txs_str) if isinstance(block_txs_str, str) else block_txs_str
+                
+                # Crear strings de txs procesadas para comparar fácilmente
+                block_txs_strings = [json.dumps(tx, sort_keys=True) for tx in block_txs]
+                
+                new_mempool = []
+                for tx in current_mempool:
+                    tx_str = json.dumps(tx, sort_keys=True)
+                    if tx_str not in block_txs_strings:
+                        new_mempool.append(tx)
+                
+                self.client.set("mempool", json.dumps(new_mempool))
+            
+            return True
+        except Exception as e:
+            print(f"Error guardando bloque {block_data.get('index')}: {e}")
+            return False
 
     def get_wallet_state(self, wallet_id: str) -> Dict[str, Any]:
         """
@@ -113,7 +135,7 @@ class DBBlockchain:
             for tx in transactions:
                 sender = tx.get("usuario_a")
                 receiver = tx.get("usuario_b")
-                monto = int(tx.get("monto", 0))
+                monto = int(tx.get("monto", tx.get("puntos", 0)))
                 metadata = tx.get("metadata", {})
                 
                 # Reglas de negocio analíticas

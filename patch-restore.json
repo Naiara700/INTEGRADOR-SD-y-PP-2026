@@ -1,0 +1,15 @@
+﻿{
+  "spec": {
+    "template": {
+      "spec": {
+        "containers": [
+          {
+            "name": "worker-gpu",
+            "image": "us-central1-docker.pkg.dev/project-f3583ede-db03-4872-95c/stickerchain/sticker-worker:latest",
+            "command": ["python3", "Pilar3/worker_miner.py"]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@ import { Html5QrcodeScanner } from 'html5-qrcode';
 import { signTransaction } from '../utils/cryptoUtils';
 import { Camera, CheckCircle, XCircle } from 'lucide-react';
 
-export default function QRScanner({ privateKeyHex, publicKeyPem, onSuccess }) {
+export default function QRScanner({ privateKey, publicKeyPem, onSuccess }) {
     const [scanState, setScanState] = useState('scanning'); // 'scanning', 'processing', 'success', 'error'
     const [message, setMessage] = useState('');
     const [scannedData, setScannedData] = useState(null);
@@ -11,28 +11,43 @@ export default function QRScanner({ privateKeyHex, publicKeyPem, onSuccess }) {
     const baseUrl = import.meta.env.VITE_BACKEND_URL || '/proxy-api';
 
     useEffect(() => {
-        // Inicializar el escáner si estamos en modo escaneo
         if (scanState !== 'scanning') return;
 
-        const scanner = new Html5QrcodeScanner(
-            "reader",
-            { fps: 10, qrbox: { width: 250, height: 250 } },
-            /* verbose= */ false
-        );
+        let isMounted = true;
+        let scanner = null;
 
-        scanner.render(onScanSuccess, onScanFailure);
+        // Un pequeño retraso evita la condición de carrera del React Strict Mode 
+        // que causaba que la cámara se abriera dos veces al mismo tiempo.
+        const timeoutId = setTimeout(() => {
+            if (!isMounted) return;
+
+            scanner = new Html5QrcodeScanner(
+                "reader",
+                { 
+                    fps: 15, 
+                    qrbox: { width: 300, height: 300 }, // Cuadro más grande para enfocar mejor
+                },
+                /* verbose= */ false
+            );
+
+            scanner.render(onScanSuccess, onScanFailure);
+        }, 50);
 
         function onScanSuccess(decodedText) {
-            scanner.clear(); // Detener la cámara al detectar un QR exitosamente
+            if (scanner) scanner.clear();
             handleQRData(decodedText);
         }
 
         function onScanFailure(error) {
-            // Se ignora silenciosamente porque se dispara muchas veces por segundo buscando el QR
+            // Se ignora silenciosamente
         }
 
         return () => {
-            scanner.clear().catch(err => console.error("Error limpiando scanner:", err));
+            isMounted = false;
+            clearTimeout(timeoutId);
+            if (scanner) {
+                scanner.clear().catch(err => console.error("Error limpiando scanner:", err));
+            }
         };
     }, [scanState]);
 
@@ -56,7 +71,7 @@ export default function QRScanner({ privateKeyHex, publicKeyPem, onSuccess }) {
                 firma_hmac: qrData.firma_hmac
             };
             
-            const signature = await signTransaction(privateKeyHex, payload);
+            const signature = await signTransaction(privateKey, payload);
 
             const requestBody = {
                 public_key: publicKeyPem,

@@ -76,7 +76,9 @@ def procesar_tarea(ch, method, properties, body):
 def iniciar_worker():
     """Conecta con RabbitMQ e inicia el bucle infinito del Daemon minero (CPU)"""
     try:
-        connection = pika.BlockingConnection(pika.URLParameters(RABBITMQ_URL))
+        params = pika.URLParameters(RABBITMQ_URL)
+        params.heartbeat = 0
+        connection = pika.BlockingConnection(params)
         channel = connection.channel()
         
         channel.queue_declare(queue='tareas_mineria', durable=True)

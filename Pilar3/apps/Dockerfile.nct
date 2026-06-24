@@ -19,8 +19,9 @@ COPY --chown=10001:10001 requirements.txt ./
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# 4. Copiar el script de Pilar2 a su subdirectorio correspondiente
+# 4. Copiar el script de Pilar2 y la base de datos a su subdirectorio correspondiente
 COPY --chown=10001:10001 Pilar2/ ./Pilar2/
+COPY --chown=10001:10001 mundial_2026_album_figuritas.txt ./
 
 # 5. Cambiar al usuario no-root por seguridad
 USER 10001

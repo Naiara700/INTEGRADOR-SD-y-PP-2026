@@ -23,6 +23,7 @@ import threading
 import pika
 import requests
 import random
+from datetime import datetime
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import RedirectResponse, JSONResponse
 from pydantic import BaseModel, Field
@@ -130,6 +131,7 @@ def bully_monitor():
     global LAST_HEARTBEAT, IS_LEADER, LEADER_ID
     while True:
         time.sleep(5)
+        print(f"DEBUG BULLY: NODE_ID={NODE_ID} IS_LEADER={IS_LEADER} LEADER_ID={LEADER_ID}", flush=True)
         if IS_LEADER:
             continue
             
@@ -153,13 +155,34 @@ def bully_monitor():
 @app.middleware("http")
 async def bully_leadership_middleware(request: Request, call_next):
     if request.url.path.startswith("/smart_contracts/") and not request.url.path.startswith("/bully/"):
-        if not IS_LEADER:
+        if request.method == "GET":
+            # Los nodos seguidores pueden responder consultas de lectura (ej. balance, daily_challenges)
+            pass
+        elif not IS_LEADER:
             leader_host = get_leader_peer_hostname()
             if not leader_host:
                 return JSONResponse(status_code=503, content={"detail": "Elección de líder en progreso. Intente nuevamente en unos segundos."})
-            url = f"http://{leader_host}{request.url.path}"
-            # 307 preserve method and body
-            return RedirectResponse(url=url, status_code=307)
+            
+            # Reenviar la solicitud internamente en lugar de hacer un redirect HTTP al cliente
+            try:
+                body = await request.body()
+                headers = dict(request.headers)
+                # Removemos el host original para que requests ponga el correcto del leader
+                headers.pop("host", None)
+                
+                resp = requests.request(
+                    method=request.method,
+                    url=f"http://{leader_host}{request.url.path}",
+                    headers=headers,
+                    data=body,
+                    params=request.query_params,
+                    timeout=5
+                )
+                from fastapi.responses import Response
+                return Response(content=resp.content, status_code=resp.status_code, headers=dict(resp.headers))
+            except Exception as e:
+                return JSONResponse(status_code=502, content={"detail": f"Error al reenviar al líder: {str(e)}"})
+                
     response = await call_next(request)
     return response
 
@@ -426,9 +449,9 @@ def pack_candidate_block():
     # Registramos cuándo empezó el minado de este bloque para ajustar dificultad luego.
     mining_started_at[index] = time.time()
 
-    # Delegar la carga de trabajo intensiva al microservicio de fragmentación (TrP)
+    # Delegar el bloque al Pool de Transacciones para su procesamiento distribuido
     try:
-        response = requests.post(f"{TRP_URL}/split", json=candidate_block, timeout=5)
+        response = requests.post(f"{TRP_URL}/mine", json=candidate_block, timeout=5)
         response.raise_for_status()
         print(f"NCT: Bloque {index} enviado exitosamente al Pool de Transacciones para Split.")
         
@@ -508,6 +531,7 @@ def mint_points_contract(req: SignedTransaction):
         "usuario_a": "Sistema_Sponsor",
         "usuario_b": wallet_id,
         "monto": 500,
+        "tipo": "QR_SCANNED",
         "metadata": {"concepto": f"Escaneo validado QR {nonce}"}
     }
     add_transaction_to_mempool(tx)
@@ -599,6 +623,52 @@ def swap_stickers_contract(req: SignedTransaction):
     add_transaction_to_mempool(tx_swap_2)
     return {"status": "success", "message": "Contrato P2P validado. Intercambio atómico encolado."}
 
+POOL_DESAFIOS = [
+    {"id": "DESAFIO_5_FIGUS", "desc": "Tener 5 figuritas en total", "pts": 50, "tipo": "total", "cantidad": 5},
+    {"id": "DESAFIO_10_FIGUS", "desc": "Tener 10 figuritas en total", "pts": 100, "tipo": "total", "cantidad": 10},
+    {"id": "DESAFIO_15_FIGUS", "desc": "Tener 15 figuritas en total", "pts": 150, "tipo": "total", "cantidad": 15},
+    {"id": "DESAFIO_DORADA", "desc": "Tener 1 figurita dorada", "pts": 300, "tipo": "dorada", "cantidad": 1},
+    {"id": "DESAFIO_ARGENTINA", "desc": "Tener 1 figurita de Argentina", "pts": 100, "tipo": "equipo", "equipo": "Argentina", "cantidad": 1},
+    {"id": "DESAFIO_BRASIL", "desc": "Tener 1 figurita de Brasil", "pts": 100, "tipo": "equipo", "equipo": "Brasil", "cantidad": 1},
+    {"id": "DESAFIO_MEXICO", "desc": "Tener 1 figurita de México", "pts": 100, "tipo": "equipo", "equipo": "México", "cantidad": 1},
+    {"id": "DESAFIO_ESPANA", "desc": "Tener 1 figurita de España", "pts": 100, "tipo": "equipo", "equipo": "España", "cantidad": 1},
+    {"id": "DESAFIO_EEUU", "desc": "Tener 1 figurita de Estados Unidos", "pts": 100, "tipo": "equipo", "equipo": "Estados Unidos", "cantidad": 1},
+    {"id": "DESAFIO_JAPON", "desc": "Tener 1 figurita de Japón", "pts": 100, "tipo": "equipo", "equipo": "Japón", "cantidad": 1},
+    {"id": "DESAFIO_URUGUAY", "desc": "Tener 1 figurita de Uruguay", "pts": 100, "tipo": "equipo", "equipo": "Uruguay", "cantidad": 1},
+    {"id": "DESAFIO_FRANCIA", "desc": "Tener 1 figurita de Francia", "pts": 100, "tipo": "equipo", "equipo": "Francia", "cantidad": 1},
+    {"id": "DESAFIO_2_DORADAS", "desc": "Tener 2 figuritas doradas", "pts": 600, "tipo": "dorada", "cantidad": 2},
+]
+
+def obtener_retos_del_dia():
+    seed = datetime.now().toordinal()
+    random.seed(seed)
+    return random.sample(POOL_DESAFIOS, 3)
+
+@app.get("/smart_contracts/daily_challenges", summary="Obtener retos diarios vigentes")
+def get_daily_challenges(wallet_id: str):
+    retos_dia = obtener_retos_del_dia()
+    retos_con_estado = []
+    
+    retos_con_estado.append({
+        "id": "LOGIN_DIARIO",
+        "desc": "Login Diario (50 PTS)",
+        "pts": 50,
+        "completado": db.fue_desafio_reclamado(wallet_id, "LOGIN_DIARIO", es_diario=True)
+    })
+    
+    for reto in retos_dia:
+        retos_con_estado.append({
+            "id": reto["id"],
+            "desc": f"{reto['desc']} ({reto['pts']} PTS)",
+            "pts": reto["pts"],
+            "completado": db.fue_desafio_reclamado(wallet_id, str(reto["id"]), es_diario=True),
+            "condicion": reto
+        })
+        
+    # Reset random seed behavior
+    random.seed()
+    return {"status": "success", "challenges": retos_con_estado}
+
 @app.post("/smart_contracts/claim_reward", summary="Contrato de Recompensa (CLAIM_REWARD)")
 def claim_reward_contract(req: SignedTransaction):
     wallet_id = verificar_firma_digital(req.public_key, req.payload, req.signature)
@@ -619,35 +689,33 @@ def claim_reward_contract(req: SignedTransaction):
         add_transaction_to_mempool(tx_premio)
         return {"status": "success", "message": "50 PTS de login diario cobrados exitosamente."}
         
-    elif tipo_desafio == "COLECCIONISTA_PRINCIPIANTE":
-        if db.fue_desafio_reclamado(wallet_id, "COLECCIONISTA_PRINCIPIANTE", es_diario=False):
-             raise HTTPException(status_code=400, detail="FRAUDE: Ya reclamaste este logro único.")
+    retos_dia = obtener_retos_del_dia()
+    reto_dinamico = next((r for r in retos_dia if r["id"] == tipo_desafio), None)
+    if reto_dinamico:
+        if db.fue_desafio_reclamado(wallet_id, tipo_desafio, es_diario=True):
+             raise HTTPException(status_code=400, detail="FRAUDE: Ya reclamaste este reto diario hoy.")
              
-        jugadores_unicos = set()
-        for fig in figuritas_poseidas:
-            if isinstance(fig, dict) and "jugador" in fig:
-                jugadores_unicos.add(fig["jugador"])
-             
-        if len(jugadores_unicos) >= 5:
-            db.marcar_desafio(wallet_id, "COLECCIONISTA_PRINCIPIANTE", es_diario=False)
-            tx_premio = {"usuario_a": "Direccion_Nula_Tesoreria", "usuario_b": wallet_id, "monto": 500, "metadata": {"concepto": "Logro: 5 Jugadores Únicos"}}
-            add_transaction_to_mempool(tx_premio)
-            return {"status": "success", "message": "Logro de Coleccionista Principiante completado! 500 PTS cobrados."}
+        cumple = False
+        if reto_dinamico["tipo"] == "total":
+            jugadores_unicos = set(fig["jugador"] for fig in figuritas_poseidas if isinstance(fig, dict) and "jugador" in fig)
+            cumple = len(jugadores_unicos) >= int(reto_dinamico["cantidad"])
+        elif reto_dinamico["tipo"] == "dorada":
+            doradas = [fig for fig in figuritas_poseidas if isinstance(fig, dict) and fig.get("jugador") in JUGADORES_DORADOS and fig.get("rareza") == "Legendaria"]
+            cumple = len(doradas) >= int(reto_dinamico["cantidad"])
+        elif reto_dinamico["tipo"] == "equipo":
+            equipo = [fig for fig in figuritas_poseidas if isinstance(fig, dict) and fig.get("equipo") == reto_dinamico["equipo"]]
+            cumple = len(equipo) >= int(reto_dinamico["cantidad"])
             
-    elif tipo_desafio == "FIGURITA_DORADA":
-        if db.fue_desafio_reclamado(wallet_id, "FIGURITA_DORADA", es_diario=False):
-             raise HTTPException(status_code=400, detail="FRAUDE: Ya reclamaste la recompensa por esta figurita dorada.")
-             
-        tiene_dorada = any(
-            isinstance(fig, dict) and fig.get("jugador") in JUGADORES_DORADOS and fig.get("rareza") == "Legendaria"
-            for fig in figuritas_poseidas
-        )
-             
-        if tiene_dorada:
-            db.marcar_desafio(wallet_id, "FIGURITA_DORADA", es_diario=False)
-            tx_premio = {"usuario_a": "Direccion_Nula_Tesoreria", "usuario_b": wallet_id, "monto": 2000, "metadata": {"concepto": "Logro: Obtuviste un Jugador Dorado Legendario"}}
+        if cumple:
+            db.marcar_desafio(wallet_id, tipo_desafio, es_diario=True)
+            tx_premio = {"usuario_a": "Direccion_Nula_Tesoreria", "usuario_b": wallet_id, "monto": reto_dinamico["pts"], "metadata": {"concepto": f"Reto Diario: {reto_dinamico['desc']}"}}
             add_transaction_to_mempool(tx_premio)
-            return {"status": "success", "message": "Logro de Figurita Dorada completado! 2000 PTS cobrados."}
+            # Reset random seed behavior
+            random.seed()
+            return {"status": "success", "message": f"Reto {tipo_desafio} completado! {reto_dinamico['pts']} PTS cobrados."}
+            
+        # Reset random seed behavior
+        random.seed()
 
     elif tipo_desafio == "HOJA_COMPLETA":
         if db.fue_desafio_reclamado(wallet_id, "HOJA_COMPLETA", es_diario=False):
@@ -693,15 +761,17 @@ def rabbitmq_join_listener():
         try:
             connection = pika.BlockingConnection(pika.URLParameters(RABBITMQ_URL))
             channel = connection.channel()
-            channel.queue_declare(queue='solved_blocks')
+            channel.queue_declare(queue='solved_blocks', durable=True)
             
             def on_solved_block_received(ch, method, properties, body):
                 data = json.loads(body)
-                candidate = data.get("candidate", {})
+                candidate = data.get("block_data", data.get("candidate", {}))
                 nonce = data.get("nonce")
-                reported_hash = data.get("block_hash", "")
+                reported_hash = data.get("hash", data.get("block_hash", ""))
                 
-                base_string = f"{candidate.get('previous_hash', '')}{json.dumps(candidate.get('transactions', []))}"
+                tx_str = json.dumps(candidate.get("transactions", []), sort_keys=True)
+                base_string = f"{candidate.get('index', '')}{candidate.get('previous_hash', '')}{candidate.get('timestamp', '')}{tx_str}"
+                
                 calculated_hash = hashlib.md5(f"{base_string}{nonce}".encode('utf-8')).hexdigest()
                 
                 if calculated_hash == reported_hash and calculated_hash.startswith(candidate.get('difficulty_prefix', '')):

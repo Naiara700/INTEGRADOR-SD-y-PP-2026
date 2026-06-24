@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { signTransaction } from '../utils/cryptoUtils';
 import '../styles/pack.css';
 
-const PackOpener = ({ privateKeyHex, publicKeyPem, onPackOpened, currentPts }) => {
+const PackOpener = ({ privateKey, publicKeyPem, onPackOpened, currentPts }) => {
   const [isOpening, setIsOpening] = useState(false);
   const [revealedCards, setRevealedCards] = useState([]);
   const [error, setError] = useState(null);
@@ -27,7 +27,7 @@ const PackOpener = ({ privateKeyHex, publicKeyPem, onPackOpened, currentPts }) =
       };
 
       // 2. Firmamos la transacción con Web Crypto API
-      const signature = await signTransaction(privateKeyHex, payload);
+      const signature = await signTransaction(privateKey, payload);
 
       const requestBody = {
         public_key: publicKeyPem,

@@ -8,9 +8,11 @@ export default defineConfig({
     proxy: {
       // Captura todo lo que empiece con /proxy-api
       '/proxy-api': {
-        target: 'https://api.stickerchain.lat',
-        changeOrigin: true,
+        target: 'https://34.71.7.126',
         secure: false, // Por si el certificado SSL está recién creándose
+        headers: {
+          Host: 'api.stickerchain.lat'
+        },
         rewrite: (path) => path.replace(/^\/proxy-api/, '') // Le quita el /proxy-api antes de mandarlo al backend
       }
     }

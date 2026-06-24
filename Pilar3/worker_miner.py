@@ -50,7 +50,8 @@ def procesar_tarea(ch, method, properties, body):
 
         if resultado.returncode != 0:
             print("[ERROR CUDA] El binario devolvió error.")
-            print(salida_stderr)
+            print("STDOUT:", salida_stdout)
+            print("STDERR:", salida_stderr)
             ch.basic_nack(delivery_tag=method.delivery_tag, requeue=True)
             return
 
@@ -123,7 +124,9 @@ def procesar_tarea(ch, method, properties, body):
 def iniciar_worker():
     """Conecta con RabbitMQ e inicia el bucle infinito del Daemon minero"""
     try:
-        connection = pika.BlockingConnection(pika.URLParameters(RABBITMQ_URL))
+        params = pika.URLParameters(RABBITMQ_URL)
+        params.heartbeat = 0
+        connection = pika.BlockingConnection(params)
         channel = connection.channel()
         
         # Declaramos ambas colas (por si no las creó el Gestor Split todavía)
