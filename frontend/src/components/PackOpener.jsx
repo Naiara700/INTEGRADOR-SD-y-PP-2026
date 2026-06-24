@@ -23,12 +23,13 @@ const playerFolderMap = {
   "República Checa": "República Checa",
   "Turquía": "Turquía",
   "Túnez": "Túnez",
-  "Uzbekistán": "Uzbekistán"
+  "Uzbekistán": "Uzbekistán",
+  "RD Congo": "República Democrática del Congo"
 };
 
 const getPlayerFolder = (equipo) => playerFolderMap[equipo] || equipo;
 
-const PackOpener = ({ privateKey, publicKeyPem, onPackOpened, currentPts }) => {
+const PackOpener = ({ privateKey, publicKeyPem, onPackOpened, currentPts, figuritas }) => {
   const [isOpening, setIsOpening] = useState(false);
   const [revealedCards, setRevealedCards] = useState([]);
   const [error, setError] = useState(null);
@@ -105,7 +106,16 @@ const PackOpener = ({ privateKey, publicKeyPem, onPackOpened, currentPts }) => {
       }
 
       setTimeout(() => {
-        setRevealedCards(data.cartas || []);
+        const seen = new Set((figuritas || []).map(f => `${f.equipo}-${f.jugador}`));
+        const cartasConRepetidas = (data.cartas || []).map(card => {
+            const key = `${card.equipo}-${card.jugador}`;
+            if (seen.has(key)) {
+                return { ...card, is_repeated: true };
+            }
+            seen.add(key);
+            return card;
+        });
+        setRevealedCards(cartasConRepetidas);
         if (onPackOpened) onPackOpened();
         setIsOpening(false);
       }, 1500);
@@ -160,9 +170,18 @@ const PackOpener = ({ privateKey, publicKeyPem, onPackOpened, currentPts }) => {
       {revealedCards.length > 0 && (
         <div className="pack-results-container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
           {revealedCards.map((card, index) => {
+            const idx = getPlayerIndex(card.jugador, card.equipo);
             const imgUrl = getPlayerImageUrl(card);
+            const isTeamPhoto = idx === 13;
             return (
-              <div key={card.fig_id || index} className={`card-item rarity-${card.rareza.toLowerCase()}`}>
+              <div 
+                key={card.fig_id || index} 
+                className={`card-item rarity-${card.rareza.toLowerCase()}`}
+                style={{
+                  width: isTeamPhoto ? '340px' : '180px',
+                  height: '260px'
+                }}
+              >
                 {/* Foto del jugador */}
                 <div className="card-photo-container" style={{
                   width: '100%',
@@ -198,6 +217,26 @@ const PackOpener = ({ privateKey, publicKeyPem, onPackOpened, currentPts }) => {
 
                 {/* Badge de rareza */}
                 <div className="card-rarity">{getRarityLabel(card.rareza)}</div>
+                
+                {/* Badge de REPETIDA */}
+                {card.is_repeated && (
+                    <div style={{
+                        position: 'absolute',
+                        top: '-10px',
+                        right: '-10px',
+                        background: 'var(--danger)',
+                        color: 'white',
+                        padding: '4px 8px',
+                        borderRadius: '4px',
+                        fontWeight: 'bold',
+                        fontSize: '0.8rem',
+                        boxShadow: '0 2px 4px rgba(0,0,0,0.5)',
+                        zIndex: 10,
+                        border: '2px solid white'
+                    }}>
+                        ¡REPETIDA!
+                    </div>
+                )}
               </div>
             );
           })}

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { deriveAddress } from '../utils/cryptoUtils';
-import { Coins, BookOpen, PackageOpen, QrCode, RefreshCcw, ArrowRightLeft, ArrowLeft } from 'lucide-react';
+import { Coins, BookOpen, PackageOpen, QrCode, RefreshCcw, ArrowRightLeft, ArrowLeft, List } from 'lucide-react';
 import PackOpener from './PackOpener';
 import QRScanner from './QRScanner';
 import Album from './Album';
 import SwapP2P from './SwapP2P';
+import StickerRegistry from './StickerRegistry';
 
 export default function Dashboard({ wallet }) {
     const [balanceData, setBalanceData] = useState(null);
@@ -121,7 +122,7 @@ export default function Dashboard({ wallet }) {
             {activeView === 'home' ? (
                 <>
                     <h3 style={{ marginBottom: '20px', fontSize: '1.2rem', color: 'var(--text-muted)' }} className="dashboard-action-title">Acciones Disponibles</h3>
-                    <div className="dashboard-action-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px' }}>
+                    <div className="dashboard-action-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '20px' }}>
                         <button className="glass-panel action-card" onClick={() => setActiveView('album')}>
                             <BookOpen size={40} color="#3b82f6" />
                             <h4>Mi Álbum</h4>
@@ -145,6 +146,12 @@ export default function Dashboard({ wallet }) {
                             <h4>Intercambio</h4>
                             <p>Swap P2P con otros coleccionistas.</p>
                         </button>
+
+                        <button className="glass-panel action-card" onClick={() => setActiveView('registry')}>
+                            <List size={40} color="#ec4899" />
+                            <h4>Mis Figuritas</h4>
+                            <p>Gestioná tus pegadas y repetidas.</p>
+                        </button>
                     </div>
                 </>
             ) : activeView === 'pack_opener' ? (
@@ -152,6 +159,7 @@ export default function Dashboard({ wallet }) {
                     privateKey={wallet.privateKey} 
                     publicKeyPem={wallet.publicKeyPem} 
                     currentPts={balanceData?.puntos_disponibles || 0}
+                    figuritas={balanceData?.figuritas_poseidas || []}
                     onPackOpened={fetchBalance}
                 />
             ) : activeView === 'qr_scanner' ? (
@@ -178,6 +186,10 @@ export default function Dashboard({ wallet }) {
                         setActiveView('home');
                         fetchBalance();
                     }}
+                />
+            ) : activeView === 'registry' ? (
+                <StickerRegistry 
+                    figuritas={balanceData?.figuritas_poseidas || []}
                 />
             ) : null}
         </div>

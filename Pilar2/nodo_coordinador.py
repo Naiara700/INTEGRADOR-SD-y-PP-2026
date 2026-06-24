@@ -23,6 +23,7 @@ import threading
 import pika
 import requests
 import random
+import uuid
 from datetime import datetime
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import RedirectResponse, JSONResponse
@@ -574,60 +575,135 @@ def buy_pack_contract(req: SignedTransaction):
     
     raise HTTPException(status_code=400, detail="Fondos insuficientes en la blockchain.")
 
-@app.post("/smart_contracts/swap_stickers", summary="Contrato de Intercambio (SWAP_STICKERS)")
-def swap_stickers_contract(req: SignedTransaction):
+@app.post("/smart_contracts/create_swap_offer", summary="Crear Oferta de Intercambio (P2P)")
+def create_swap_offer_contract(req: SignedTransaction):
     wallet_id_a = verificar_firma_digital(req.public_key, req.payload, req.signature)
     
-    usuario_b_input = req.payload.get("usuario_b") # Alias o Wallet B
-    if not isinstance(usuario_b_input, str):
-        raise HTTPException(status_code=400, detail="El destinatario debe ser un texto válido.")
-        
-    # Intento de resolución de alias
-    usuario_b_redis = db.client.get(f"alias:{usuario_b_input.lower()}")
-    if usuario_b_redis is not None:
-        usuario_b = str(usuario_b_redis)
-    else:
-        usuario_b = usuario_b_input # Fallback: asumir que ingresó un Wallet ID directamente
+    usuario_b_input = req.payload.get("usuario_b") # Alias
+    fig_x = req.payload.get("fig_x") # ID figurita de A
+    fig_y = req.payload.get("fig_y") # ID figurita de B
     
-    fig_x = req.payload.get("fig_x")
-    fig_y = req.payload.get("fig_y")
-    
-    if not usuario_b or not fig_x or not fig_y:
+    if not usuario_b_input or not fig_x or not fig_y:
         raise HTTPException(status_code=400, detail="Faltan datos en el payload del swap.")
-        
+
+    # 1. Verificar si el destinatario existe
+    usuario_b_redis = db.client.get(f"alias:{usuario_b_input.lower()}")
+    if not usuario_b_redis:
+        raise HTTPException(status_code=404, detail=f"El usuario {usuario_b_input} no existe.")
+    
+    usuario_b = str(usuario_b_redis)
     estado_a = db.get_wallet_state(wallet_id_a)
     estado_b = db.get_wallet_state(usuario_b)
+    
+    # 2. Verificar que el destinatario tenga la figurita y sea repetida
+    fig_y_data = next((f for f in estado_b["figuritas_poseidas"] if isinstance(f, dict) and f.get("fig_id") == fig_y), None)
+    if not fig_y_data:
+        raise HTTPException(status_code=400, detail=f"El usuario {usuario_b_input} no tiene esa figurita.")
+        
+    count_jugador_b = sum(1 for f in estado_b["figuritas_poseidas"] if isinstance(f, dict) and f.get("jugador") == fig_y_data.get("jugador"))
+    if count_jugador_b <= 1:
+        raise HTTPException(status_code=400, detail=f"El usuario {usuario_b_input} no tiene esa figurita repetida.")
+
+    # 3. Verificar que el emisor tenga la figurita y sea repetida
+    fig_x_data = next((f for f in estado_a["figuritas_poseidas"] if isinstance(f, dict) and f.get("fig_id") == fig_x), None)
+    if not fig_x_data:
+        raise HTTPException(status_code=400, detail="No posees la figurita ofrecida.")
+        
+    count_jugador_a = sum(1 for f in estado_a["figuritas_poseidas"] if isinstance(f, dict) and f.get("jugador") == fig_x_data.get("jugador"))
+    if count_jugador_a <= 1:
+        raise HTTPException(status_code=400, detail="Tu figurita ofrecida no está repetida (ya está pegada en el álbum).")
+
+    # Generar oferta pendiente
+    offer_id = str(uuid.uuid4())
+    offer_data = {
+        "offer_id": offer_id,
+        "emisor_wallet": wallet_id_a,
+        "emisor_alias": req.payload.get("emisor_alias", wallet_id_a), # Alias del que envía para mostrar
+        "receptor_wallet": usuario_b,
+        "receptor_alias": usuario_b_input,
+        "fig_ofrecida": fig_x_data,
+        "fig_solicitada": fig_y_data,
+        "timestamp": time.time(),
+        "estado": "PENDIENTE"
+    }
+    
+    db.client.set(f"swap_offer:{offer_id}", json.dumps(offer_data), ex=86400) # Expira en 24hs
+    
+    return {"status": "success", "message": "Oferta enviada exitosamente al coleccionista.", "offer_id": offer_id}
+
+@app.get("/smart_contracts/pending_offers")
+def get_pending_offers(wallet_id: str):
+    # Buscar todas las ofertas dirigidas a esta wallet
+    keys = db.client.keys("swap_offer:*")
+    ofertas = []
+    for key in keys:
+        offer_str = db.client.get(key)
+        if offer_str:
+            offer = json.loads(offer_str)
+            if offer.get("receptor_wallet") == wallet_id and offer.get("estado") == "PENDIENTE":
+                ofertas.append(offer)
+    return {"status": "success", "ofertas": ofertas}
+
+@app.post("/smart_contracts/accept_swap_offer", summary="Aceptar Oferta de Intercambio (P2P)")
+def accept_swap_offer_contract(req: SignedTransaction):
+    wallet_id_b = verificar_firma_digital(req.public_key, req.payload, req.signature)
+    offer_id = req.payload.get("offer_id")
+    
+    if not offer_id:
+        raise HTTPException(status_code=400, detail="Falta el ID de la oferta.")
+        
+    offer_str = db.client.get(f"swap_offer:{offer_id}")
+    if not offer_str:
+        raise HTTPException(status_code=404, detail="Oferta no encontrada o expirada.")
+        
+    offer = json.loads(offer_str)
+    
+    if offer["receptor_wallet"] != wallet_id_b:
+        raise HTTPException(status_code=403, detail="No eres el destinatario de esta oferta.")
+        
+    if offer["estado"] != "PENDIENTE":
+        raise HTTPException(status_code=400, detail="Esta oferta ya no está pendiente.")
+
+    estado_a = db.get_wallet_state(offer["emisor_wallet"])
+    estado_b = db.get_wallet_state(wallet_id_b)
+    
+    fig_x = offer["fig_ofrecida"]["fig_id"]
+    fig_y = offer["fig_solicitada"]["fig_id"]
     
     fig_x_data = next((f for f in estado_a["figuritas_poseidas"] if isinstance(f, dict) and f.get("fig_id") == fig_x), None)
     fig_y_data = next((f for f in estado_b["figuritas_poseidas"] if isinstance(f, dict) and f.get("fig_id") == fig_y), None)
     
-    if not fig_x_data:
-        raise HTTPException(status_code=400, detail=f"Inconsistencia: El emisor A no posee el token {fig_x}")
-    if not fig_y_data:
-        raise HTTPException(status_code=400, detail=f"Inconsistencia: El emisor B no posee el token {fig_y}")
+    if not fig_x_data or not fig_y_data:
+        # Invalidar la oferta porque alguno ya no tiene la figurita
+        offer["estado"] = "CANCELADA_POR_INCONSISTENCIA"
+        db.client.set(f"swap_offer:{offer_id}", json.dumps(offer))
+        raise HTTPException(status_code=400, detail="Uno de los usuarios ya no posee la figurita acordada. Oferta cancelada.")
         
-    # 2. Validar regla de "Pegada vs Repetida"
-    # Solo se puede intercambiar si el jugador está repetido (>1 copias en el inventario)
     count_jugador_a = sum(1 for f in estado_a["figuritas_poseidas"] if isinstance(f, dict) and f.get("jugador") == fig_x_data.get("jugador"))
     count_jugador_b = sum(1 for f in estado_b["figuritas_poseidas"] if isinstance(f, dict) and f.get("jugador") == fig_y_data.get("jugador"))
     
-    if count_jugador_a <= 1:
-        raise HTTPException(status_code=400, detail=f"Inconsistencia: El usuario A tiene su única copia de {fig_x_data.get('jugador')} pegada en el álbum. Solo puede intercambiar repetidas.")
-    if count_jugador_b <= 1:
-        raise HTTPException(status_code=400, detail=f"Inconsistencia: El usuario B tiene su única copia de {fig_y_data.get('jugador')} pegada en el álbum. Solo puede intercambiar repetidas.")
-        
+    if count_jugador_a <= 1 or count_jugador_b <= 1:
+        offer["estado"] = "CANCELADA_POR_INCONSISTENCIA"
+        db.client.set(f"swap_offer:{offer_id}", json.dumps(offer))
+        raise HTTPException(status_code=400, detail="Una de las figuritas ya no está repetida. Oferta cancelada.")
+
+    # Generar transacciones atómicas
     tx_swap_1 = {
-        "usuario_a": wallet_id_a, "usuario_b": usuario_b, "monto": 1,
+        "usuario_a": offer["emisor_wallet"], "usuario_b": wallet_id_b, "monto": 1,
         "metadata": {"fig_id": fig_x, "operacion": "SWAP_P2P"}
     }
     tx_swap_2 = {
-        "usuario_a": usuario_b, "usuario_b": wallet_id_a, "monto": 1,
+        "usuario_a": wallet_id_b, "usuario_b": offer["emisor_wallet"], "monto": 1,
         "metadata": {"fig_id": fig_y, "operacion": "SWAP_P2P"}
     }
     
     add_transaction_to_mempool(tx_swap_1)
     add_transaction_to_mempool(tx_swap_2)
-    return {"status": "success", "message": "Contrato P2P validado. Intercambio atómico encolado."}
+    
+    offer["estado"] = "COMPLETADA"
+    db.client.set(f"swap_offer:{offer_id}", json.dumps(offer))
+    
+    return {"status": "success", "message": "Intercambio aceptado y encolado en la blockchain."}
 
 POOL_DESAFIOS = [
     {"id": "DESAFIO_5_FIGUS", "desc": "Tener 5 figuritas en total", "pts": 50, "tipo": "total", "cantidad": 5},

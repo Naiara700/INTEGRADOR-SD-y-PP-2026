@@ -163,7 +163,8 @@ export default function Album({ figuritas, privateKey, publicKeyPem, onRewardCla
         "República Checa": "República Checa",
         "Turquía": "Turquía",
         "Túnez": "Túnez",
-        "Uzbekistán": "Uzbekistán"
+        "Uzbekistán": "Uzbekistán",
+        "RD Congo": "República Democrática del Congo"
     };
 
     const getPlayerFolder = (equipo) => {
@@ -216,7 +217,8 @@ export default function Album({ figuritas, privateKey, publicKeyPem, onRewardCla
             // Sigue intentando obtener el estado real en background, 
             // aunque puede tardar hasta que el bloque se mine.
             try {
-                const res = await fetch(`${baseUrl}/smart_contracts/daily_challenges?wallet_id=${encodeURIComponent(publicKeyPem)}`);
+                const derivedAddr = await deriveAddress(publicKeyPem);
+                const res = await fetch(`${baseUrl}/smart_contracts/daily_challenges?wallet_id=${derivedAddr}`);
                 const d = await res.json();
                 if (res.ok && d.challenges) {
                     // Solo actualizamos si nos devuelve algo nuevo o válido
@@ -291,9 +293,11 @@ export default function Album({ figuritas, privateKey, publicKeyPem, onRewardCla
                                         textAlign: 'center',
                                         padding: '10px 5px',
                                         fontSize: '0.80rem',
-                                        opacity: isDisabled ? 0.5 : 1,
-                                        borderColor: isCompleted ? '#10b981' : (reto.id === 'LOGIN_DIARIO' ? '' : (cumple ? 'gold' : '')),
-                                        color: isCompleted ? '#10b981' : ''
+                                        opacity: (isDisabled && !isCompleted) ? 0.5 : 1,
+                                        borderColor: isCompleted ? '#34d399' : (reto.id === 'LOGIN_DIARIO' ? '' : (cumple ? 'gold' : '')),
+                                        background: isCompleted ? 'rgba(16, 185, 129, 0.15)' : '',
+                                        color: isCompleted ? '#6ee7b7' : '',
+                                        fontWeight: isCompleted ? 'bold' : 'normal'
                                     }}
                                     title={isCompleted ? "Ya completado hoy" : (!cumple && reqStr ? reqStr : "")}
                                 >
